@@ -7,7 +7,7 @@ module.exports = {
   copyright: '© All rights reserved.',
   disqusShortname: '',
   postsPerPage: 4,
-  googleAnalyticsId: 'UA-73379983-2',
+  googleAnalyticsId: 'UA-126057649-4',
   menu: [
     {
       label: '記事一覧',
@@ -19,12 +19,8 @@ module.exports = {
     photo: '/photo.jpg',
     bio: '面白いことが好きです。Laravel/React Redux/Elm/Rust/Docker',
     contacts: {
-      email: '#',
-      telegram: '#',
       twitter: 'Panda_Program',
       github: 'KushibikiMashu',
-      rss: '#',
-      vkontakte: '#'
     }
   }
 };
