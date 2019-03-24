@@ -10,15 +10,14 @@ export const PureAuthor = ({ data }) => {
     <div>
       <div className={styles['author']}>
         <div className={styles['author__photo']}>
-        <img
-          style={{
-          }}
-          className={styles['author__photo-image']}
-          width="75"
-          height="75"
-          src={author.photo}
-          alt={author.name}
-        />
+          <img
+            style={{}}
+            className={styles['author__photo-image']}
+            width="75"
+            height="75"
+            src={author.photo}
+            alt={author.name}
+          />
         </div>
         <p className={styles['author__bio']}>
           <strong>プログラミングをするパンダ</strong>
