@@ -10,7 +10,8 @@ const Menu = ({ menu }) => (
           <Link
             to={item.path}
             className={styles['menu__list-item-link']}
-            activeClassName={styles['menu__list-item-link--active']}
+            // pagesが複数になればコメントアウトを外す
+            // activeClassName={styles['menu__list-item-link--active']}
           >
             {item.label}
           </Link>
