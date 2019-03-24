@@ -16,6 +16,14 @@ const Menu = ({ menu }) => (
           </Link>
         </li>
       ))}
+      <li className={styles['menu__list-item']} key="portofolip">
+        <a
+          href="https://kushibikimashu.github.io/portfolio/"
+          className={styles['menu__list-item-link']}
+        >
+          ポートフォリオ
+        </a>
+      </li>
     </ul>
   </nav>
 );
