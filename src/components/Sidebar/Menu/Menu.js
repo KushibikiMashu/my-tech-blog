@@ -26,6 +26,15 @@ const Menu = ({ menu }) => (
           ポートフォリオ
         </a>
       </li>
+      <li className={styles['menu__list-item']} key="hipsty">
+        <a
+          className={styles['menu__list-item-link']}
+          href="https://hipsty.net/"
+          target="_blank"
+        >
+          HIPSTY<br/>(HIPHOP好きのためのサイト)
+        </a>
+      </li>
     </ul>
   </nav>
 );
