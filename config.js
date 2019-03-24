@@ -3,7 +3,7 @@
 module.exports = {
   url: 'https://panda-program.com/',
   title: 'パンダのプログラミングブログ',
-  subtitle: '個人のTechブログです',
+  subtitle: 'プログラミングをするパンダのTechブログ',
   copyright: '© All rights reserved.',
   disqusShortname: '',
   postsPerPage: 4,

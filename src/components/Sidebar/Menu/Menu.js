@@ -19,8 +19,9 @@ const Menu = ({ menu }) => (
       ))}
       <li className={styles['menu__list-item']} key="portofolip">
         <a
-          href="https://kushibikimashu.github.io/portfolio/"
           className={styles['menu__list-item-link']}
+          href="https://kushibikimashu.github.io/portfolio/"
+          target="_blank"
         >
           ポートフォリオ
         </a>

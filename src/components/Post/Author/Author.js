@@ -10,14 +10,17 @@ export const PureAuthor = ({ data }) => {
     <div className={styles['author']}>
       <p className={styles['author__bio']}>
         {author.bio}
-        <a
-          className={styles['author__bio-twitter']}
-          href={getContactHref('twitter', author.contacts.twitter)}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <strong>{author.name}</strong> on Twitter
-        </a>
+
+        <div className={styles['author__bio-twitter']}>
+          Twitter:{' '}
+          <a
+            href={getContactHref('twitter', author.contacts.twitter)}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <strong>@Panda_Program</strong>
+          </a>
+        </div>
       </p>
     </div>
   );
@@ -32,7 +35,7 @@ export const Author = (props) => (
             author {
               name
               bio
-              contacts {       
+              contacts {
                 twitter
               }
             }
@@ -40,7 +43,7 @@ export const Author = (props) => (
         }
       }
     `}
-    render={(data) => <PureAuthor {...props} data={data} />}
+    render={(data) => <PureAuthor {...props} data={data}/>}
   />
 );
 
