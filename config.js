@@ -1,36 +1,28 @@
 'use strict';
 
 module.exports = {
-  url: 'https://lumen.netlify.com',
-  title: 'Blog by John Doe',
-  subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+  url: 'https://panda-program.com/',
+  title: 'パンダのプログラミングブログ',
+  subtitle: '個人のTechブログです',
   copyright: '© All rights reserved.',
   disqusShortname: '',
   postsPerPage: 4,
   googleAnalyticsId: 'UA-73379983-2',
   menu: [
     {
-      label: 'Articles',
+      label: '記事一覧',
       path: '/'
     },
-    {
-      label: 'About me',
-      path: '/pages/about'
-    },
-    {
-      label: 'Contact me',
-      path: '/pages/contacts'
-    }
   ],
   author: {
-    name: 'John Doe',
+    name: 'プログラミングをするパンダ',
     photo: '/photo.jpg',
-    bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    bio: '面白いことが好きです。Laravel/React Redux/Elm/Rust/Docker',
     contacts: {
       email: '#',
       telegram: '#',
-      twitter: '#',
-      github: '#',
+      twitter: 'Panda_Program',
+      github: 'KushibikiMashu',
       rss: '#',
       vkontakte: '#'
     }
