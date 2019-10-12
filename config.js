@@ -17,7 +17,7 @@ module.exports = {
   author: {
     name: 'プログラミングをするパンダ',
     photo: '/photo.jpg',
-    bio: '面白いことと個人開発が好きです。Laravel/React/Redux/Elm/Rust/Docker',
+    bio: 'Reactとオブジェクト指向設計が好きなサーバーサイドエンジニア。Laravel/React Redux',
     contacts: {
       twitter: 'Panda_Program',
       github: 'KushibikiMashu',
