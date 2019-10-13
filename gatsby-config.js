@@ -4,9 +4,9 @@ const siteConfig = require('./config.js');
 const postCssPlugins = require('./postcss-config.js');
 
 module.exports = {
+  pathPrefix: siteConfig.pathPrefix,
   siteMetadata: {
     url: siteConfig.url,
-    siteUrl: siteConfig.url,
     title: siteConfig.title,
     subtitle: siteConfig.subtitle,
     copyright: siteConfig.copyright,
@@ -32,6 +32,13 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'css',
+        path: `${__dirname}/static/css`
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         name: 'assets',
         path: `${__dirname}/static`
       }
@@ -43,7 +50,7 @@ module.exports = {
           {
             site {
               siteMetadata {
-                siteUrl: url
+                site_url: url
                 title
                 description: subtitle
               }
@@ -55,8 +62,8 @@ module.exports = {
             allMarkdownRemark.edges.map((edge) => Object.assign({}, edge.node.frontmatter, {
               description: edge.node.frontmatter.description,
               date: edge.node.frontmatter.date,
-              url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-              guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+              url: site.siteMetadata.site_url + edge.node.fields.slug,
+              guid: site.siteMetadata.site_url + edge.node.fields.slug,
               custom_elements: [{ 'content:encoded': edge.node.html }]
             }))
           ),
@@ -85,7 +92,8 @@ module.exports = {
                 }
               }
             `,
-          output: '/rss.xml'
+          output: '/rss.xml',
+          title: siteConfig.title
         }]
       }
     },
@@ -93,6 +101,7 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          'gatsby-remark-relative-images',
           {
             resolve: 'gatsby-remark-katex',
             options: {
@@ -101,7 +110,11 @@ module.exports = {
           },
           {
             resolve: 'gatsby-remark-images',
-            options: { maxWidth: 960 }
+            options: {
+              maxWidth: 960,
+              withWebp: true,
+              ignoreFileExtensions: [],
+            }
           },
           {
             resolve: 'gatsby-remark-responsive-iframe',
@@ -110,7 +123,8 @@ module.exports = {
           'gatsby-remark-autolink-headers',
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants'
+          'gatsby-remark-smartypants',
+          'gatsby-remark-external-links'
         ]
       }
     },
@@ -120,7 +134,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
+        modulePath: `${__dirname}/src/cms/index.js`,
       }
     },
     {
@@ -139,7 +153,7 @@ module.exports = {
           {
             site {
               siteMetadata {
-                siteUrl
+                siteUrl: url
               }
             }
             allSitePage(
@@ -157,7 +171,7 @@ module.exports = {
         `,
         output: '/sitemap.xml',
         serialize: ({ site, allSitePage }) => allSitePage.edges.map((edge) => ({
-          url: site.siteMetadata.url + edge.node.path,
+          url: site.siteMetadata.siteUrl + edge.node.path,
           changefreq: 'daily',
           priority: 0.7
         }))
@@ -186,6 +200,8 @@ module.exports = {
           camelCase: false,
         }
       }
-    }
+    },
+    'gatsby-plugin-flow',
+    'gatsby-plugin-optimize-svgs',
   ]
 };

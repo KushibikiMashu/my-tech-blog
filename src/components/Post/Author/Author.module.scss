@@ -6,6 +6,7 @@
   max-width: $layout-post-width;
   padding-left: 20px;
   display: flex;
+  padding-top: 20px;
   @include line-height(1);
   @include margin-top(1);
   @include margin-bottom(2);
@@ -18,7 +19,6 @@
       margin-right: 0;
       margin-bottom: 0;
       min-width: 75px;
-      border-radius: 100%;
     }
   }
 

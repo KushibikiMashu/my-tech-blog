@@ -1,9 +1,15 @@
+// @flow strict
 import React from 'react';
 import moment from 'moment';
 import { Link } from 'gatsby';
+import type { Edges } from '../../types';
 import styles from './Feed.module.scss';
 
-const Feed = ({ edges }) => (
+type Props = {
+  edges: Edges
+};
+
+const Feed = ({ edges }: Props) => (
   <div className={styles['feed']}>
     {edges.map((edge) => (
       <div className={styles['feed__item']} key={edge.node.fields.slug}>
@@ -20,7 +26,7 @@ const Feed = ({ edges }) => (
           <Link className={styles['feed__item-title-link']} to={edge.node.fields.slug}>{edge.node.frontmatter.title}</Link>
         </h2>
         <p className={styles['feed__item-description']}>{edge.node.frontmatter.description}</p>
-        <Link className={styles['feed__item-readmore']} to={edge.node.fields.slug}>続きを読む</Link>
+        <Link className={styles['feed__item-readmore']} to={edge.node.fields.slug}>記事を読む</Link>
       </div>
     ))}
   </div>
