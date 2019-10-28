@@ -19,7 +19,7 @@ module.exports = {
   author: {
     name: 'プログラミングをするパンダ',
     photo: '/photo.jpg',
-    bio: 'オブジェクト指向プログラミングとReactが好きなサーバーサイドエンジニア。PHP/React Redux/Rust/Docker',
+    bio: 'OOPとTDDとペア・モブプロが好きなサーバーサイドエンジニア。Reactも好きで得意',
     contacts: {
       twitter: 'Panda_Program',
       github: 'KushibikiMashu',
