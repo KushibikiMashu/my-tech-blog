@@ -27,11 +27,20 @@ const Menu = ({ menu }: Props) => (
       <li className={styles['menu__list-item']} key="portofolip">
         <a
           className={styles['menu__list-item-link']}
-          href="https://kushibikimashu.github.io/portfolio/"
+          href="https://kushibikimashu.github.io/portfolio"
           target="_blank"
         >
           ポートフォリオ
         </a>
+        <li className={styles['menu__list-item']} key="portofolip">
+          <a
+            className={styles['menu__list-item-link']}
+            href="https://github.com/KushibikiMashu"
+            target="_blank"
+          >
+            GitHub
+          </a>
+        </li>
       </li>
     </ul>
   </nav>

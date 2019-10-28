@@ -12,8 +12,8 @@ const useSiteMetadata = () => {
               bio
               photo
               contacts {
-                github
                 twitter
+                github
               }
             }
             menu {
