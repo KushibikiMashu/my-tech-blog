@@ -17,9 +17,12 @@
     "test:watch": "jest --watch --config ./jest/jest-config.js",
     "test:update": "jest  --config ./jest/jest-config.js --updateSnapshot -u"
   },
-  "repository": "https://github.com/alxshelepenok/gatsby-starter-lumen",
-  "author": "Alexander Shelepenok <alxshelepenok@gmail.com>",
-  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm test"
+    }
+  },
+  "repository": "https://github.com/KushibikiMashu/my-tech-blog",
   "keywords": [
     "gatsby",
     "graphql",
@@ -107,6 +110,7 @@
     "flow-bin": "^0.109.0",
     "flow-typed": "^2.6.1",
     "gh-pages": "2.1.1",
+    "husky": "^3.0.9",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
     "jest-cli": "24.9.0",
