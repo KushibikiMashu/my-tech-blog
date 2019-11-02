@@ -76,6 +76,28 @@ exports[`CategoryTemplate renders correctly 1`] = `
               Test label 3
             </a>
           </li>
+          <li
+            className="menu__list-item"
+          >
+            <a
+              className="menu__list-item-link"
+              href="https://kushibikimashu.github.io/portfolio"
+              target="_blank"
+            >
+              ポートフォリオ
+            </a>
+            <li
+              className="menu__list-item"
+            >
+              <a
+                className="menu__list-item-link"
+                href="https://github.com/KushibikiMashu"
+                target="_blank"
+              >
+                GitHub
+              </a>
+            </li>
+          </li>
         </ul>
       </nav>
       <div
@@ -250,9 +272,9 @@ exports[`CategoryTemplate renders correctly 1`] = `
             >
               <time
                 className="feed__item-meta-time"
-                dateTime="September 1, 2016"
+                dateTime="2016-09-01"
               >
-                September 2016
+                2016-09-01
               </time>
               <span
                 className="feed__item-meta-divider"
@@ -287,7 +309,7 @@ exports[`CategoryTemplate renders correctly 1`] = `
               className="feed__item-readmore"
               href="/test_0"
             >
-              Read
+              記事を読む
             </a>
           </div>
           <div
@@ -298,9 +320,9 @@ exports[`CategoryTemplate renders correctly 1`] = `
             >
               <time
                 className="feed__item-meta-time"
-                dateTime="September 1, 2016"
+                dateTime="2016-09-01"
               >
-                September 2016
+                2016-09-01
               </time>
               <span
                 className="feed__item-meta-divider"
@@ -335,7 +357,7 @@ exports[`CategoryTemplate renders correctly 1`] = `
               className="feed__item-readmore"
               href="/test_1"
             >
-              Read
+              記事を読む
             </a>
           </div>
         </div>
@@ -350,7 +372,7 @@ exports[`CategoryTemplate renders correctly 1`] = `
               href="/page/1"
               rel="prev"
             >
-              ← PREV
+              ← 前へ
             </a>
           </div>
           <div
@@ -361,7 +383,7 @@ exports[`CategoryTemplate renders correctly 1`] = `
               href="/page/3"
               rel="next"
             >
-              → NEXT
+              次へ →
             </a>
           </div>
         </div>

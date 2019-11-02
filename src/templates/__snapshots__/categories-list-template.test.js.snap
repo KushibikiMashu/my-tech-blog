@@ -76,6 +76,28 @@ exports[`CategoriesListTemplate renders correctly 1`] = `
               Test label 3
             </a>
           </li>
+          <li
+            className="menu__list-item"
+          >
+            <a
+              className="menu__list-item-link"
+              href="https://kushibikimashu.github.io/portfolio"
+              target="_blank"
+            >
+              ポートフォリオ
+            </a>
+            <li
+              className="menu__list-item"
+            >
+              <a
+                className="menu__list-item-link"
+                href="https://github.com/KushibikiMashu"
+                target="_blank"
+              >
+                GitHub
+              </a>
+            </li>
+          </li>
         </ul>
       </nav>
       <div
