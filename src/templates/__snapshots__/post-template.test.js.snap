@@ -116,6 +116,12 @@ exports[`PostTemplate renders correctly 1`] = `
           </p>
         </div>
       </div>
+      <a
+        className="post__home-button"
+        href="/"
+      >
+        記事一覧へ
+      </a>
     </div>
     <div
       className="post__comments"
