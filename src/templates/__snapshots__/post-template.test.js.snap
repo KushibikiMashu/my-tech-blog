@@ -32,6 +32,13 @@ exports[`PostTemplate renders correctly 1`] = `
             }
           }
         />
+        <div
+          className="content__body"
+        >
+          <p>
+            Happy Coding 🎉
+          </p>
+        </div>
       </div>
     </div>
     <div
