@@ -3,6 +3,7 @@ node_modules/
 public/
 npm-debug.log
 .eslintcache
+.stylelintcache
 .gatsby-context.js
 .idea
 gatsby-starter-lumen.iml
