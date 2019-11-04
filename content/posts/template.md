@@ -1,16 +1,32 @@
 ---
 title: 
-date: "2019-00-00T19:00:00.000Z"
+date: "2019-00-00T00:00:00.000Z"
 template: "post"
 draft: true
-slug: "/posts//"
+slug: "/posts/blog-title-in-english"
 category: ""
-tags:
-  - ""
-  - ""
+tags: 
+    - ""
 description: ""
+socialImage: "/media/2019-00-00__0.png"
 ---
 
-Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum.
+howを書くときはカテゴリーは"how to"
+これは検索流入狙い
 
-![Nulla faucibus vestibulum eros in tempus. Vestibulum tempor imperdiet velit nec dapibus](/media/image-2.jpg)
+what, whyを書くときはカテゴリーをその場で考える
+これはtwitterでのリツイート狙い
+プログラマ、プログラミング学習者（初〜中級）を対象にする
+
+![]()
+
+##
+
+
+##
+
+
+##
+
+
+##
