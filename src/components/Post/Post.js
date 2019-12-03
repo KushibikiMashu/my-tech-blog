@@ -1,6 +1,11 @@
 // @flow strict
 import React from 'react';
-import { TwitterShareButton, TwitterIcon } from 'react-share';
+import {
+  TwitterShareButton,
+  TwitterIcon,
+  PocketShareButton,
+  PocketIcon
+} from 'react-share';
 import { Link } from 'gatsby';
 import Author from './Author';
 import Comments from './Comments';
@@ -48,6 +53,13 @@ const Post = ({ post }: Props) => {
             >
               <TwitterIcon className={styles['post__footer-shareIcon']} size={40} round />
             </TwitterShareButton>
+            <PocketShareButton
+                className={styles['post__footer-shareButton']}
+                url={postUrl}
+                title={title}
+            >
+              <PocketIcon className={styles['post__footer-shareIcon']} size={40} round />
+            </PocketShareButton>
             <HatenaBookmarkButton url={postUrl}/>
           </div>
         <Author/>
