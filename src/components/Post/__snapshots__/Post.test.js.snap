@@ -129,7 +129,7 @@ exports[`Post renders correctly 1`] = `
           data-hatena-bookmark-height="40"
           data-hatena-bookmark-layout="touch"
           data-hatena-bookmark-width="40"
-          href="https://b.hatena.ne.jp/entry/"
+          href="https://b.hatena.ne.jp/entry/http://localhost/test"
           title="このエントリーをはてなブックマークに追加"
         >
           <img

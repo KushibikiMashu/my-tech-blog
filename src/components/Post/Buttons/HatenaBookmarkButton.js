@@ -1,7 +1,12 @@
+// @flow strict
 import React from 'react';
 
-const HatenaBookmarkButton = () => <div>
-    <a href="https://b.hatena.ne.jp/entry/"
+type Props = {
+    url: string
+}
+
+const HatenaBookmarkButton = ({ url }: Props) => <div>
+    <a href={ `https://b.hatena.ne.jp/entry/${url}` }
        className="hatena-bookmark-button"
        data-hatena-bookmark-layout="touch"
        data-hatena-bookmark-width="40"

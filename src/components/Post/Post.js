@@ -21,6 +21,8 @@ const Post = ({ post }: Props) => {
   const { tagSlugs, slug } = post.fields;
   const { tags, title, date } = post.frontmatter;
   const { url } = useSiteMetadata();
+  const postUrl = url + slug;
+  const shareTitle = `「${title}」\n`;
 
   const postListLink = <Link className={styles['post__home-button']} to="/">記事一覧へ</Link>;
 
@@ -40,13 +42,13 @@ const Post = ({ post }: Props) => {
           <div className={styles['post__footer-share']}>
             <TwitterShareButton
                 className={styles['post__footer-shareButton']}
-                url={url + slug}
-                title={`「${title}」\n`}
+                url={postUrl}
+                title={shareTitle}
                 via="Panda_Program"
             >
               <TwitterIcon className={styles['post__footer-shareIcon']} size={40} round />
             </TwitterShareButton>
-            <HatenaBookmarkButton/>
+            <HatenaBookmarkButton url={postUrl}/>
           </div>
         <Author/>
         {postListLink}
