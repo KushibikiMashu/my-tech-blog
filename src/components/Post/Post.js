@@ -9,6 +9,7 @@ import Meta from './Meta';
 import Tags from './Tags';
 import styles from './Post.module.scss';
 import { useSiteMetadata } from '../../hooks';
+import HatenaBookmarkButton from './Buttons/HatenaBookmarkButton';
 import type { Node } from '../../types';
 
 type Props = {
@@ -36,7 +37,7 @@ const Post = ({ post }: Props) => {
       <div className={styles['post__footer']}>
         <Meta date={date}/>
           {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs}/>}
-          <div>
+          <div className={styles['post__footer-share']}>
             <TwitterShareButton
                 className={styles['post__footer-shareButton']}
                 url={url + slug}
@@ -45,6 +46,7 @@ const Post = ({ post }: Props) => {
             >
               <TwitterIcon className={styles['post__footer-shareIcon']} size={40} round />
             </TwitterShareButton>
+            <HatenaBookmarkButton/>
           </div>
         <Author/>
         {postListLink}

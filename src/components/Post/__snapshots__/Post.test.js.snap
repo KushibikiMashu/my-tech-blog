@@ -79,10 +79,12 @@ exports[`Post renders correctly 1`] = `
         </li>
       </ul>
     </div>
-    <div>
+    <div
+      className="post__footer-share"
+    >
       <div
         aria-label="twitter"
-        className="SocialMediaShareButton SocialMediaShareButton--twitter post__share-button"
+        className="SocialMediaShareButton SocialMediaShareButton--twitter post__footer-shareButton"
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"
@@ -98,7 +100,7 @@ exports[`Post renders correctly 1`] = `
           }
         >
           <svg
-            className="social-icon social-icon--twitter post__share-icon"
+            className="social-icon social-icon--twitter post__footer-shareIcon"
             height={40}
             viewBox="0 0 64 64"
             width={40}
@@ -120,6 +122,34 @@ exports[`Post renders correctly 1`] = `
             </g>
           </svg>
         </div>
+      </div>
+      <div>
+        <a
+          className="hatena-bookmark-button"
+          data-hatena-bookmark-height="40"
+          data-hatena-bookmark-layout="touch"
+          data-hatena-bookmark-width="40"
+          href="https://b.hatena.ne.jp/entry/"
+          title="このエントリーをはてなブックマークに追加"
+        >
+          <img
+            alt="このエントリーをはてなブックマークに追加"
+            height="40"
+            src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png"
+            style={
+              Object {
+                "border": "none",
+              }
+            }
+            width="40"
+          />
+        </a>
+        <script
+          async="async"
+          charSet="utf-8"
+          src="https://b.st-hatena.com/js/bookmark_button.js"
+          type="text/javascript"
+        />
       </div>
     </div>
     <div>
