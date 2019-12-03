@@ -84,7 +84,8 @@
     "react": "^16.10.2",
     "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.10.2",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-share": "^3.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.6.4",
