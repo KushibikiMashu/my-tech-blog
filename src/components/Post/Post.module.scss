@@ -6,6 +6,17 @@
     max-width: $layout-post-width;
     margin: 0 auto;
     padding: 0 15px;
+
+    &-shareButton {
+      width: 40px;
+    }
+
+    &-shareIcon {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
   }
 
   &__comments {

@@ -82,7 +82,7 @@ exports[`Post renders correctly 1`] = `
     <div>
       <div
         aria-label="twitter"
-        className="SocialMediaShareButton SocialMediaShareButton--twitter"
+        className="SocialMediaShareButton SocialMediaShareButton--twitter post__share-button"
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"
@@ -98,7 +98,7 @@ exports[`Post renders correctly 1`] = `
           }
         >
           <svg
-            className="social-icon social-icon--twitter "
+            className="social-icon social-icon--twitter post__share-icon"
             height={40}
             viewBox="0 0 64 64"
             width={40}

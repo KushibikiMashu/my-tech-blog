@@ -37,8 +37,13 @@ const Post = ({ post }: Props) => {
         <Meta date={date}/>
           {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs}/>}
           <div>
-            <TwitterShareButton url={url + slug} title={`「${title}」`} via="Panda_Program">
-                <TwitterIcon size={40} round />
+            <TwitterShareButton
+                className={styles['post__footer-shareButton']}
+                url={url + slug}
+                title={`「${title}」\n`}
+                via="Panda_Program"
+            >
+              <TwitterIcon className={styles['post__footer-shareIcon']} size={40} round />
             </TwitterShareButton>
           </div>
         <Author/>
