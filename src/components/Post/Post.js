@@ -95,6 +95,7 @@ const Post = ({ post }: Props) => {
              data-hatena-bookmark-width="100%"
              data-hatena-bookmark-height="40"
              title="このエントリーをはてなブックマークに追加"
+             style={{ width: '100%' }}
           >
             <img
               src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png"
