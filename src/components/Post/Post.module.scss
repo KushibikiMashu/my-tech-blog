@@ -53,6 +53,14 @@
 
   }
 
+  &__sticky--footer {
+    position: fixed;
+    height: 60px;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+  }
+
 }
 
 @include breakpoint-md {

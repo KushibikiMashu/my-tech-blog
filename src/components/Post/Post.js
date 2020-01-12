@@ -1,11 +1,5 @@
 // @flow strict
 import React from 'react';
-import {
-  TwitterShareButton,
-  TwitterIcon,
-  PocketShareButton,
-  PocketIcon
-} from 'react-share';
 import { Link } from 'gatsby';
 import Author from './Author';
 import Comments from './Comments';
@@ -16,6 +10,8 @@ import styles from './Post.module.scss';
 import { useSiteMetadata } from '../../hooks';
 import HatenaBookmarkButton from './Buttons/HatenaBookmarkButton';
 import type { Node } from '../../types';
+import TwitterButton from './Buttons/TwitterButton';
+import PocketButton from './Buttons/PocketButton';
 
 type Props = {
   post: Node
@@ -45,21 +41,8 @@ const Post = ({ post }: Props) => {
         <Meta date={date}/>
           {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs}/>}
           <div className={styles['post__footer-share']}>
-            <TwitterShareButton
-                className={styles['post__footer-shareButton']}
-                url={postUrl}
-                title={shareTitle}
-                via="Panda_Program"
-            >
-              <TwitterIcon className={styles['post__footer-shareIcon']} size={40} round />
-            </TwitterShareButton>
-            <PocketShareButton
-                className={styles['post__footer-shareButton']}
-                url={postUrl}
-                title={title}
-            >
-              <PocketIcon className={styles['post__footer-shareIcon']} size={40} round />
-            </PocketShareButton>
+            <TwitterButton url={postUrl} title={shareTitle} />
+            <PocketButton url={postUrl} title={title}/>
             <HatenaBookmarkButton url={postUrl}/>
           </div>
         <Author/>
@@ -68,6 +51,10 @@ const Post = ({ post }: Props) => {
 
         <div className={styles['post__comments']}>
         <Comments postSlug={slug} postTitle={post.frontmatter.title}/>
+      </div>
+
+      <div className={styles['post__sticky--footer']}>
+        sticky footer
       </div>
     </div>
   );
