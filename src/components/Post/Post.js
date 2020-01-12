@@ -92,7 +92,7 @@ const Post = ({ post }: Props) => {
           <a href={`https://b.hatena.ne.jp/entry/${postUrl}`}
              className="hatena-bookmark-button"
              data-hatena-bookmark-layout="touch-counter"
-             data-hatena-bookmark-width="80"
+             data-hatena-bookmark-width="100%"
              data-hatena-bookmark-height="40"
              title="このエントリーをはてなブックマークに追加"
           >
