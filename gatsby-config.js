@@ -140,10 +140,16 @@ module.exports = {
           '/static/*': [
             'cache-control: public, max-age=31536000, immutable;'
           ],
-          '/*.js': [
+          '/icons/*': [
             'cache-control: public, max-age=31536000, immutable;'
           ],
-          '/*.css': [
+          '/media/*': [
+            'cache-control: public, max-age=31536000, immutable;'
+          ],
+          '/**/*.js': [
+            'cache-control: public, max-age=31536000, immutable;'
+          ],
+          '/**/*.css': [
             'cache-control: public, max-age=31536000, immutable;'
           ],
           '/sw.js': [
