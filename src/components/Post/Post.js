@@ -1,6 +1,11 @@
 // @flow strict
 import React from 'react';
 import { Link } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faPaperclip } from '@fortawesome/free-solid-svg-icons';
+import { TwitterShareButton } from 'react-share';
+import { CopyToClipboard } from 'react-copy-to-clipboard/lib/Component';
 import Author from './Author';
 import Comments from './Comments';
 import Content from './Content';
@@ -53,8 +58,70 @@ const Post = ({ post }: Props) => {
         <Comments postSlug={slug} postTitle={post.frontmatter.title}/>
       </div>
 
-      <div className={styles['post__sticky--footer']}>
-        sticky footer
+      <div className={styles['post__sticky-footer']}>
+        <TwitterShareButton
+          className={styles['post__sticky-footer-shareButton']}
+          url={url}
+          title={title}
+          via="Panda_Program"
+        >
+          <FontAwesomeIcon
+            className={styles['post__sticky-footer-share--Icon']}
+            color="white"
+            icon={faTwitter}
+            style={{
+              paddingTop: 8,
+              paddingBottom: 8,
+              height: 24,
+              width: '33vw',
+              borderRadius: 6,
+              backgroundColor: '#1DA1F2'
+            }}
+          />
+        </TwitterShareButton>
+        <div style={{
+          marginLeft: 2,
+          marginRight: 2,
+          width: '33vw',
+          backgroundColor: '#00a4de',
+          borderRadius: 6,
+          height: 40,
+        }}>
+          <a href={ `https://b.hatena.ne.jp/entry/${postUrl}` }
+             className="hatena-bookmark-button"
+             data-hatena-bookmark-layout="touch-counter"
+             data-hatena-bookmark-width="80"
+             data-hatena-bookmark-height="40"
+             title="このエントリーをはてなブックマークに追加"
+          >
+            <img
+              src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png"
+              alt="このエントリーをはてなブックマークに追加" height="40" width="40"
+              style={{ border: 'none', margin: 'auto' }}
+            />
+          </a>
+          <script
+            type="text/javascript"
+            src="https://b.st-hatena.com/js/bookmark_button.js"
+            charSet="utf-8"
+            async="async"
+          />
+        </div>
+        <CopyToClipboard text={postUrl} onCopy={() => {}}>
+          <FontAwesomeIcon
+            className={styles['post__sticky-footer-share--Icon']}
+            color="white"
+            icon={faPaperclip}
+            style={{
+              paddingTop: 8,
+              paddingBottom: 8,
+              height: 24,
+              width: '33vw',
+              borderRadius: 6,
+              backgroundColor: '#A0AEC0'
+            }}
+          />
+        </CopyToClipboard>
       </div>
     </div>
   );

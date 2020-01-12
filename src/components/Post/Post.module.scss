@@ -2,28 +2,6 @@
 @import '../../assets/scss/mixins';
 
 .post {
-  &__footer {
-    max-width: $layout-post-width;
-    margin: 0 auto;
-    padding: 0 15px;
-
-    &-share {
-      display: flex;
-
-      &Button {
-        width: 40px;
-        margin-right: 36px;
-      }
-
-      &Icon {
-        &:hover {
-          cursor: pointer;
-        }
-      }
-    }
-
-  }
-
   &__comments {
     max-width: $layout-post-width;
     margin: 0 auto;
@@ -53,12 +31,59 @@
 
   }
 
-  &__sticky--footer {
+  &__footer {
+    max-width: $layout-post-width;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    &-share {
+      display: flex;
+
+      &Button {
+        width: 40px;
+        margin-right: 36px;
+      }
+
+      &Icon {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+  }
+
+  &__sticky-footer {
+    display: flex;
+    height: 42px;
+    background-color: #FFFFFF;
+    margin: auto;
     position: fixed;
-    height: 60px;
     bottom: 0;
-    width: 100%;
-    z-index: 100;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    &-share {
+
+      &Button {
+        padding-bottom: 0;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+      }
+
+      &--Icon {
+        //padding-top: 6px;
+        //padding-bottom: 6px;
+        //height: 36px;
+        //width: 33vw;
+        //border-radius: 6px;
+      }
+    }
+
   }
 
 }

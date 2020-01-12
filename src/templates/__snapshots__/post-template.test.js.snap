@@ -247,6 +247,115 @@ exports[`PostTemplate renders correctly 1`] = `
     <div
       className="post__comments"
     />
+    <div
+      className="post__sticky-footer"
+    >
+      <div
+        aria-label="twitter"
+        className="SocialMediaShareButton SocialMediaShareButton--twitter post__sticky-footer-shareButton"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        role="button"
+        style={Object {}}
+        tabIndex="0"
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-twitter fa-w-16 post__sticky-footer-share--Icon"
+          color="white"
+          data-icon="twitter"
+          data-prefix="fab"
+          focusable="false"
+          role="img"
+          style={
+            Object {
+              "backgroundColor": "#1DA1F2",
+              "borderRadius": 6,
+              "height": 24,
+              "paddingBottom": 8,
+              "paddingTop": 8,
+              "width": "33vw",
+            }
+          }
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#00a4de",
+            "borderRadius": 6,
+            "height": 40,
+            "marginLeft": 2,
+            "marginRight": 2,
+            "width": "33vw",
+          }
+        }
+      >
+        <a
+          className="hatena-bookmark-button"
+          data-hatena-bookmark-height="40"
+          data-hatena-bookmark-layout="touch-counter"
+          data-hatena-bookmark-width="80"
+          href="https://b.hatena.ne.jp/entry/http://localhostundefined"
+          title="このエントリーをはてなブックマークに追加"
+        >
+          <img
+            alt="このエントリーをはてなブックマークに追加"
+            height="40"
+            src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png"
+            style={
+              Object {
+                "border": "none",
+                "margin": "auto",
+              }
+            }
+            width="40"
+          />
+        </a>
+        <script
+          async="async"
+          charSet="utf-8"
+          src="https://b.st-hatena.com/js/bookmark_button.js"
+          type="text/javascript"
+        />
+      </div>
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-paperclip fa-w-14 post__sticky-footer-share--Icon"
+        color="white"
+        data-icon="paperclip"
+        data-prefix="fas"
+        focusable="false"
+        onClick={[Function]}
+        role="img"
+        style={
+          Object {
+            "backgroundColor": "#A0AEC0",
+            "borderRadius": 6,
+            "height": 24,
+            "paddingBottom": 8,
+            "paddingTop": 8,
+            "width": "33vw",
+          }
+        }
+        viewBox="0 0 448 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M43.246 466.142c-58.43-60.289-57.341-157.511 1.386-217.581L254.392 34c44.316-45.332 116.351-45.336 160.671 0 43.89 44.894 43.943 117.329 0 162.276L232.214 383.128c-29.855 30.537-78.633 30.111-107.982-.998-28.275-29.97-27.368-77.473 1.452-106.953l143.743-146.835c6.182-6.314 16.312-6.422 22.626-.241l22.861 22.379c6.315 6.182 6.422 16.312.241 22.626L171.427 319.927c-4.932 5.045-5.236 13.428-.648 18.292 4.372 4.634 11.245 4.711 15.688.165l182.849-186.851c19.613-20.062 19.613-52.725-.011-72.798-19.189-19.627-49.957-19.637-69.154 0L90.39 293.295c-34.763 35.56-35.299 93.12-1.191 128.313 34.01 35.093 88.985 35.137 123.058.286l172.06-175.999c6.177-6.319 16.307-6.433 22.626-.256l22.877 22.364c6.319 6.177 6.434 16.307.256 22.626l-172.06 175.998c-59.576 60.938-155.943 60.216-214.77-.485z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+    </div>
   </div>
 </div>
 `;
