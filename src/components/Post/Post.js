@@ -6,6 +6,8 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faPaperclip } from '@fortawesome/free-solid-svg-icons';
 import { TwitterShareButton } from 'react-share';
 import { CopyToClipboard } from 'react-copy-to-clipboard/lib/Component';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 import Author from './Author';
 import Comments from './Comments';
 import Content from './Content';
@@ -44,17 +46,17 @@ const Post = ({ post }: Props) => {
 
       <div className={styles['post__footer']}>
         <Meta date={date}/>
-          {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs}/>}
-          <div className={styles['post__footer-share']}>
-            <TwitterButton url={postUrl} title={shareTitle} />
-            <PocketButton url={postUrl} title={title}/>
-            <HatenaBookmarkButton url={postUrl}/>
-          </div>
+        {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs}/>}
+        <div className={styles['post__footer-share']}>
+          <TwitterButton url={postUrl} title={shareTitle}/>
+          <PocketButton url={postUrl} title={title}/>
+          <HatenaBookmarkButton url={postUrl}/>
+        </div>
         <Author/>
         {postListLink}
       </div>
 
-        <div className={styles['post__comments']}>
+      <div className={styles['post__comments']}>
         <Comments postSlug={slug} postTitle={post.frontmatter.title}/>
       </div>
 
@@ -87,7 +89,7 @@ const Post = ({ post }: Props) => {
           borderRadius: 6,
           height: 40,
         }}>
-          <a href={ `https://b.hatena.ne.jp/entry/${postUrl}` }
+          <a href={`https://b.hatena.ne.jp/entry/${postUrl}`}
              className="hatena-bookmark-button"
              data-hatena-bookmark-layout="touch-counter"
              data-hatena-bookmark-width="80"
@@ -107,7 +109,21 @@ const Post = ({ post }: Props) => {
             async="async"
           />
         </div>
-        <CopyToClipboard text={postUrl} onCopy={() => {}}>
+        <CopyToClipboard
+          className={styles['post__sticky-footer-shareButton']}
+          text={postUrl}
+          onCopy={() => toast.success(
+            'Copied! 🎉',
+            {
+              position: 'top-center',
+              autoClose: 2000,
+              hideProgressBar: true,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+            }
+          )
+        }>
           <FontAwesomeIcon
             className={styles['post__sticky-footer-share--Icon']}
             color="white"
@@ -122,6 +138,17 @@ const Post = ({ post }: Props) => {
             }}
           />
         </CopyToClipboard>
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnVisibilityChange
+          draggable
+          pauseOnHover
+        />
       </div>
     </div>
   );
