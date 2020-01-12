@@ -130,13 +130,41 @@ module.exports = {
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-netlify',
+    {
+      resolve: 'gatsby-plugin-netlify',
+      options: {
+        headers: {
+          '/*.html': [
+            'cache-control: public, max-age=0, must-revalidate;'
+          ],
+          '/static/*': [
+            'cache-control: public, max-age=31536000, immutable;'
+          ],
+          '/*.js': [
+            'cache-control: public, max-age=31536000, immutable;'
+          ],
+          '/*.css': [
+            'cache-control: public, max-age=31536000, immutable;'
+          ],
+          '/sw.js': [
+            'cache-control: public, max-age=0, must-revalidate;'
+          ],
+        },
+        allPageHeaders: [],
+        mergeSecurityHeaders: true,
+        mergeLinkHeaders: true,
+        mergeCachingHeaders: true,
+        transformHeaders: (headers) => headers,
+        generateMatchPathRewrites: true,
+      },
+    },
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
         modulePath: `${__dirname}/src/cms/index.js`,
       }
     },
+    'gatsby-plugin-netlify-cache',
     {
       resolve: 'gatsby-plugin-google-gtag',
       options: {
