@@ -221,3 +221,94 @@ Reactは2015年から、k8sは2017年（？）から取り入れるなどして�
 枯れていない技術を採用した結果、なのだと思う
 
 CI/CD、XP
+
+---
+
+Kotlinで遊んでみた
+delegate、 interfaceで具象メソッドを実装、をやってみたい
+
+
+DIを簡単に書ける
+
+```kotlin
+fun main() {
+    val fooEngine = Engine("foo式")
+    val fooCar = Car(fooEngine)
+    fooCar.run()
+
+    val barEngine = Engine("bar式")
+    val barCar = Car(barEngine)
+    barCar.run()
+}
+
+interface EngineInterface {
+    fun start()
+}
+
+class Engine(val type: String): EngineInterface {
+    override fun start() = println("$type エンジンが動き出しました")
+}
+
+class Car(val engine: EngineInterface) {
+    fun run() {
+        engine.start()
+    }
+}
+```
+
+```kotlin
+interface RadioProgramFactoryInterface {
+    fun create(title: String, personalities: List<Personality>, guests: List<Guest?>): RadioProgram
+}
+
+class RadioProgramFactory: RadioProgramFactoryInterface {
+    override fun create(title: String, personalities: List<Personality>, guests: List<Guest?>): RadioProgram
+    	= RadioProgram(title, personalities, guests)
+}
+
+class RadioProgram(val title: String,
+                        val personalities: List<Personality>,
+                        val guests: List<Guest?>
+        ) {
+    fun introduce(): String {
+        return personalities.fold("", {greetings, personality ->
+            if (title == "オードリーのオールナイトニッポン" && personality.name == "春日俊彰") {
+                return greetings + "土曜の夜カスミン。"
+            }
+            greetings + personality.greet()
+        })
+    }
+
+    fun introduceGuests(): String {
+        val first = guests.first()
+
+        if (guests.count() == 1 && first != null) {
+          return "今夜のゲストは" + first.name + "さんです。"
+        }
+
+        return ""
+    }
+}
+
+class Personality(val name: String, val age: Int) {
+    fun greet(): String = this.name + "です。"
+}
+
+data class Guest(val name: String, val age: Int)
+
+fun main() {
+    var title = "オードリーのオールナイトニッポン"
+    val wakasama = Personality("若林正恭", 41)
+    val kasumin = Personality("春日俊彰", 40)
+    val radioProgram = RadioProgramFactory().create(title, listOf(wakasama, kasumin), listOf())
+    println(radioProgram.title)
+    println(radioProgram.introduce())
+
+    title = "スペシャルウィーク"
+    val yamachan = Guest("山里亮太", 42)
+    val specialWeek = RadioProgramFactory().create(title, listOf(wakasama), listOf(yamachan))
+    println(specialWeek.title)
+    println(specialWeek.introduceGuests())
+}
+```
+https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjYxIiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiIsImpzQ29kZSI6IiIsIm5vbmVNYXJrZXJzIjp0cnVlLCJ0aGVtZSI6ImlkZWEiLCJjb2RlIjoiaW50ZXJmYWNlIFJhZGlvUHJvZ3JhbUZhY3RvcnlJbnRlcmZhY2Uge1xuICAgIGZ1biBjcmVhdGUodGl0bGU6IFN0cmluZywgcGVyc29uYWxpdGllczogTGlzdDxQZXJzb25hbGl0eT4sIGd1ZXN0czogTGlzdDxHdWVzdD8+KTogUmFkaW9Qcm9ncmFtXG59XG5cbmNsYXNzIFJhZGlvUHJvZ3JhbUZhY3Rvcnk6IFJhZGlvUHJvZ3JhbUZhY3RvcnlJbnRlcmZhY2Uge1xuICAgIG92ZXJyaWRlIGZ1biBjcmVhdGUodGl0bGU6IFN0cmluZywgcGVyc29uYWxpdGllczogTGlzdDxQZXJzb25hbGl0eT4sIGd1ZXN0czogTGlzdDxHdWVzdD8+KTogUmFkaW9Qcm9ncmFtXG4gICAgXHQ9IFJhZGlvUHJvZ3JhbSh0aXRsZSwgcGVyc29uYWxpdGllcywgZ3Vlc3RzKVxufVxuXG5jbGFzcyBSYWRpb1Byb2dyYW0odmFsIHRpdGxlOiBTdHJpbmcsXG4gICAgICAgICAgICAgICAgICAgICAgICB2YWwgcGVyc29uYWxpdGllczogTGlzdDxQZXJzb25hbGl0eT4sXG4gICAgICAgICAgICAgICAgICAgICAgICB2YWwgZ3Vlc3RzOiBMaXN0PEd1ZXN0Pz5cbiAgICAgICAgKSB7XG4gICAgZnVuIGludHJvZHVjZSgpOiBTdHJpbmcge1xuICAgICAgICByZXR1cm4gcGVyc29uYWxpdGllcy5mb2xkKFwiXCIsIHtncmVldGluZ3MsIHBlcnNvbmFsaXR5IC0+IFxuICAgICAgICAgICAgaWYgKHRpdGxlID09IFwi44Kq44O844OJ44Oq44O844Gu44Kq44O844Or44OK44Kk44OI44OL44OD44Od44OzXCIgJiYgcGVyc29uYWxpdHkubmFtZSA9PSBcIuaYpeaXpeS/iuW9sFwiKSB7XG4gICAgICAgICAgICAgICAgcmV0dXJuIGdyZWV0aW5ncyArIFwi5Zyf5puc44Gu5aSc44Kr44K544Of44Oz44CCXCJcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIGdyZWV0aW5ncyArIHBlcnNvbmFsaXR5LmdyZWV0KClcbiAgICAgICAgfSlcbiAgICB9XG4gICAgXG4gICAgZnVuIGludHJvZHVjZUd1ZXN0cygpOiBTdHJpbmcge1xuICAgICAgICB2YWwgZmlyc3QgPSBndWVzdHMuZmlyc3QoKVxuICAgICAgICBcbiAgICAgICAgaWYgKGd1ZXN0cy5jb3VudCgpID09IDEgJiYgZmlyc3QgIT0gbnVsbCkge1xuICAgICAgICAgIHJldHVybiBcIuS7iuWknOOBruOCsuOCueODiOOBr1wiICsgZmlyc3QubmFtZSArIFwi44GV44KT44Gn44GZ44CCXCIgIFxuICAgICAgICB9XG4gICAgICAgIFxuICAgICAgICByZXR1cm4gXCJcIlxuICAgIH1cbn1cblxuY2xhc3MgUGVyc29uYWxpdHkodmFsIG5hbWU6IFN0cmluZywgdmFsIGFnZTogSW50KSB7XG4gICAgZnVuIGdyZWV0KCk6IFN0cmluZyA9IHRoaXMubmFtZSArIFwi44Gn44GZ44CCXCJcbn1cblxuZGF0YSBjbGFzcyBHdWVzdCh2YWwgbmFtZTogU3RyaW5nLCB2YWwgYWdlOiBJbnQpXG5cbmZ1biBtYWluKCkgeyAgICBcbiAgICB2YXIgdGl0bGUgPSBcIuOCquODvOODieODquODvOOBruOCquODvOODq+ODiuOCpOODiOODi+ODg+ODneODs1wiXG4gICAgdmFsIHdha2FzYW1hID0gUGVyc29uYWxpdHkoXCLoi6XmnpfmraPmga1cIiwgNDEpXG4gICAgdmFsIGthc3VtaW4gPSBQZXJzb25hbGl0eShcIuaYpeaXpeS/iuW9sFwiLCA0MClcbiAgICB2YWwgcmFkaW9Qcm9ncmFtID0gUmFkaW9Qcm9ncmFtRmFjdG9yeSgpLmNyZWF0ZSh0aXRsZSwgbGlzdE9mKHdha2FzYW1hLCBrYXN1bWluKSwgbGlzdE9mKCkpXG4gICAgcHJpbnRsbihyYWRpb1Byb2dyYW0udGl0bGUpXG4gICAgcHJpbnRsbihyYWRpb1Byb2dyYW0uaW50cm9kdWNlKCkpXG4gICAgXG4gICAgdGl0bGUgPSBcIuOCueODmuOCt+ODo+ODq+OCpuOCo+ODvOOCr1wiXG4gICAgdmFsIHlhbWFjaGFuID0gR3Vlc3QoXCLlsbHph4zkuq7lpKpcIiwgNDIpXG4gICAgdmFsIHNwZWNpYWxXZWVrID0gUmFkaW9Qcm9ncmFtRmFjdG9yeSgpLmNyZWF0ZSh0aXRsZSwgbGlzdE9mKHdha2FzYW1hKSwgbGlzdE9mKHlhbWFjaGFuKSlcbiAgICBwcmludGxuKHNwZWNpYWxXZWVrLnRpdGxlKVxuICAgIHByaW50bG4oc3BlY2lhbFdlZWsuaW50cm9kdWNlR3Vlc3RzKCkpXG59XG4ifQ==
