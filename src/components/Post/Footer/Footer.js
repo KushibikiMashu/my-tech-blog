@@ -37,6 +37,7 @@ const Footer = ({ title, postUrl }) => <>
          data-hatena-bookmark-width="40"
          data-hatena-bookmark-height="40"
          title="このエントリーをはてなブックマークに追加"
+         style={{ display: 'block' }}
       >
         <img
           src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png"
