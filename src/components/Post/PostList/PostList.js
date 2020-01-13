@@ -43,29 +43,26 @@ const PostList = ({ tags, title }: Props) => {
     return null;
   }
 
-  const renderPosts = () => {
-    const posts = relatedPosts(tags, title, nodes);
-    return posts.map((post) => {
-      if (post === null) {
-        return null;
-      }
+  // 配列中のnullを削除する
+  const posts = relatedPosts(tags, title, nodes).filter((post) => post);
 
-      // title, description, slug, date, category, socialImage
-      const { title, slug } = post;
-      return (
-        <p key={title}><
-          a href={slug}>{title}</a>
-        </p>
-      );
-    });
-  };
+  const renderPosts = () => posts.map((post) => {
+    // title, description, slug, date, category, socialImage
+    const { title, slug } = post;
+    return (
+      <p key={title}>
+        <a href={slug}>{title}</a>
+      </p>
+    );
+  });
 
-  return (
-    <div className={styles['postList']}>
-      <p className={styles['postList__heading']}><strong>関連する記事</strong></p>
-      {renderPosts()}
-    </div>
-  );
+  return posts.length === 0 ? null
+    : (
+      <div className={styles['postList']}>
+        <p className={styles['postList__heading']}><strong>関連する記事</strong></p>
+        {renderPosts()}
+      </div>
+    );
 };
 
 export default PostList;
