@@ -1,0 +1,39 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.footer {
+  display: flex;
+  height: 42px;
+  background-color: #FFFFFF;
+  margin: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  &__button {
+    padding-bottom: 0;
+    width: 33vw;
+    border-radius: 6px;
+    margin-bottom: 2px;
+    text-align: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &-icon {
+      height: 24px;
+      padding-top: 8px;
+    }
+  }
+
+}
+
+@include breakpoint-md {
+  .footer {
+    display: none;
+  }
+
+}

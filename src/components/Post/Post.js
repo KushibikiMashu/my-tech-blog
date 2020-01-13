@@ -1,12 +1,6 @@
 // @flow strict
 import React from 'react';
 import { Link } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faPaperclip } from '@fortawesome/free-solid-svg-icons';
-import { TwitterShareButton } from 'react-share';
-import { CopyToClipboard } from 'react-copy-to-clipboard/lib/Component';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import Author from './Author';
 import Comments from './Comments';
@@ -19,8 +13,9 @@ import HatenaBookmarkButton from './Buttons/HatenaBookmarkButton';
 import type { Node } from '../../types';
 import TwitterButton from './Buttons/TwitterButton';
 import PocketButton from './Buttons/PocketButton';
+import StickyFooter from './Footer/Footer';
 
-type Props = {
+  type Props = {
   post: Node
 };
 
@@ -60,97 +55,11 @@ const Post = ({ post }: Props) => {
         <Comments postSlug={slug} postTitle={post.frontmatter.title}/>
       </div>
 
-      <div className={styles['post__sticky-footer']}>
-        <TwitterShareButton
-          className={styles['post__sticky-footer-shareButton']}
-          url={url}
-          title={title}
-          via="Panda_Program"
-        >
-          <FontAwesomeIcon
-            className={styles['post__sticky-footer-share--Icon']}
-            color="white"
-            icon={faTwitter}
-            style={{
-              paddingTop: 8,
-              paddingBottom: 8,
-              height: 24,
-              width: '33vw',
-              borderRadius: 6,
-              backgroundColor: '#1DA1F2'
-            }}
-          />
-        </TwitterShareButton>
-        <div style={{
-          marginLeft: 2,
-          marginRight: 2,
-          width: '33vw',
-          backgroundColor: '#00a4de',
-          borderRadius: 6,
-          height: 40,
-        }}>
-          <a href={`https://b.hatena.ne.jp/entry/${postUrl}`}
-             className="hatena-bookmark-button"
-             data-hatena-bookmark-layout="touch"
-             data-hatena-bookmark-width="40"
-             data-hatena-bookmark-height="40"
-             title="このエントリーをはてなブックマークに追加"
-             style={{ width: '100%' }}
-          >
-            <img
-              src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png"
-              alt="このエントリーをはてなブックマークに追加" height="40" width="40"
-              style={{ border: 'none', margin: 'auto' }}
-            />
-          </a>
-          <script
-            type="text/javascript"
-            src="https://b.st-hatena.com/js/bookmark_button.js"
-            charSet="utf-8"
-            async="async"
-          />
-        </div>
-        <CopyToClipboard
-          className={styles['post__sticky-footer-shareButton']}
-          text={postUrl}
-          onCopy={() => toast.success(
-            'Copied! 🎉',
-            {
-              position: 'top-center',
-              autoClose: 2000,
-              hideProgressBar: true,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-            }
-          )
-        }>
-          <FontAwesomeIcon
-            className={styles['post__sticky-footer-share--Icon']}
-            color="white"
-            icon={faPaperclip}
-            style={{
-              paddingTop: 8,
-              paddingBottom: 8,
-              height: 24,
-              width: '33vw',
-              borderRadius: 6,
-              backgroundColor: '#A0AEC0'
-            }}
-          />
-        </CopyToClipboard>
-        <ToastContainer
-          position="top-center"
-          autoClose={2000}
-          hideProgressBar
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnVisibilityChange
-          draggable
-          pauseOnHover
-        />
-      </div>
+      <StickyFooter
+        url={url}
+        title={title}
+        postUrl={postUrl}
+      />
     </div>
   );
 };

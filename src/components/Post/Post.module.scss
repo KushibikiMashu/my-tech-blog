@@ -53,39 +53,6 @@
 
   }
 
-  &__sticky-footer {
-    display: flex;
-    height: 42px;
-    background-color: #FFFFFF;
-    margin: auto;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-
-    &-share {
-
-      &Button {
-        padding-bottom: 0;
-
-        &:hover {
-          cursor: pointer;
-        }
-
-      }
-
-      &--Icon {
-        //padding-top: 6px;
-        //padding-bottom: 6px;
-        //height: 36px;
-        //width: 33vw;
-        //border-radius: 6px;
-      }
-    }
-
-  }
-
 }
 
 @include breakpoint-md {
