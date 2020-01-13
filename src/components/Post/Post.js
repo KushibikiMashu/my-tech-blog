@@ -7,14 +7,16 @@ import Comments from './Comments';
 import Content from './Content';
 import Meta from './Meta';
 import Tags from './Tags';
+import StickyFooter from './Footer';
 import styles from './Post.module.scss';
 import { useSiteMetadata } from '../../hooks';
-import HatenaBookmarkButton from './Buttons/HatenaBookmarkButton';
 import type { Node } from '../../types';
-import TwitterButton from './Buttons/TwitterButton';
-import PocketButton from './Buttons/PocketButton';
-import StickyFooter from './Footer/Footer';
-import ClipButton from './Buttons/ClipButton';
+import {
+  TwitterButton,
+  HatenaBookmarkButton,
+  PocketButton,
+  ClipButton,
+} from './Buttons';
 
 type Props = {
   post: Node
