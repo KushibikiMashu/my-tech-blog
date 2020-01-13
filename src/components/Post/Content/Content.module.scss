@@ -25,7 +25,13 @@
       @include line-height(1.25);
     }
 
-    & h2, h3, h4 {
+    & h2 {
+      @include line-height(1.5);
+      border-bottom: 1px solid #ddd;
+    }
+
+    & h3, h4 {
+      @include margin-top(1);
       @include line-height(1.5);
     }
 
