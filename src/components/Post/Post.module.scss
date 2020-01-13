@@ -38,20 +38,10 @@
 
     &-share {
       display: flex;
-      height: 120px;
+      height: 8rem;
       justify-content: center;
       align-items: center;
 
-      &Button {
-        width: 40px;
-        margin-right: 36px;
-      }
-
-      &Icon {
-        &:hover {
-          cursor: pointer;
-        }
-      }
     }
 
   }

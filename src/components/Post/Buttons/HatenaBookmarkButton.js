@@ -1,11 +1,13 @@
 // @flow strict
 import React from 'react';
+import styles from './Buttons.module.scss';
 
 type Props = {
     url: string
 }
 
-const HatenaBookmarkButton = ({ url }: Props) => <div>
+const HatenaBookmarkButton = ({ url }: Props) => (
+  <div className={styles['button']}>
     <a href={ `https://b.hatena.ne.jp/entry/${url}` }
        className="hatena-bookmark-button"
        data-hatena-bookmark-layout="touch"
@@ -24,6 +26,7 @@ const HatenaBookmarkButton = ({ url }: Props) => <div>
         charSet="utf-8"
         async="async"
     />
-</div>;
+</div>
+);
 
 export default HatenaBookmarkButton;

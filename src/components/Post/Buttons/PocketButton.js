@@ -1,7 +1,7 @@
 // @flow strict
 import React from 'react';
 import { PocketIcon, PocketShareButton } from 'react-share';
-import styles from '../Post.module.scss';
+import styles from './Buttons.module.scss';
 
 type Props = {
   url: string,
@@ -10,11 +10,11 @@ type Props = {
 
 const PocketButton = ({ url, title }: Props) => <>
   <PocketShareButton
-    className={styles['post__footer-shareButton']}
+    className={styles['button']}
     url={url}
     title={title}
   >
-    <PocketIcon className={styles['post__footer-shareIcon']} size={40} round/>
+    <PocketIcon className={styles['button-icon']} size={40} borderRadius={10}/>
   </PocketShareButton>
 </>;
 

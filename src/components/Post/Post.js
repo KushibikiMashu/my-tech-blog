@@ -14,8 +14,9 @@ import type { Node } from '../../types';
 import TwitterButton from './Buttons/TwitterButton';
 import PocketButton from './Buttons/PocketButton';
 import StickyFooter from './Footer/Footer';
+import ClipButton from './Buttons/ClipButton';
 
-  type Props = {
+type Props = {
   post: Node
 };
 
@@ -41,11 +42,14 @@ const Post = ({ post }: Props) => {
       <div className={styles['post__footer']}>
         <Meta date={date}/>
         {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs}/>}
+
         <div className={styles['post__footer-share']}>
           <TwitterButton url={postUrl} title={shareTitle}/>
-          <PocketButton url={postUrl} title={title}/>
           <HatenaBookmarkButton url={postUrl}/>
+          <PocketButton url={postUrl} title={title}/>
+          <ClipButton url={postUrl}/>
         </div>
+
         <Author/>
         {postListLink}
       </div>
@@ -55,7 +59,7 @@ const Post = ({ post }: Props) => {
       </div>
 
       <StickyFooter
-        title={title}
+        title={shareTitle}
         postUrl={postUrl}
       />
     </div>
