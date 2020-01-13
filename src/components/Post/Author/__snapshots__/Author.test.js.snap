@@ -1,45 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Author renders correctly 1`] = `
-<div>
+<div
+  className="author"
+>
   <div
-    className="author"
+    className="author__photo"
   >
-    <div
-      className="author__photo"
-    >
-      <img
-        alt="Test name"
-        className="author__photo-image"
-        height="75"
-        src="/test.jpg"
-        width="75"
-      />
-    </div>
-    <p
-      className="author__bio"
-    >
-      <strong>
-        プログラミングをするパンダ
-      </strong>
-      <br />
-      Test bio
-      <div
-        className="author__bio-twitter"
-      >
-        Twitter:
-         
-        <a
-          href="https://www.twitter.com/#"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <strong>
-            @Panda_Program
-          </strong>
-        </a>
-      </div>
-    </p>
+    <img
+      alt="Test name"
+      className="author__photo-image"
+      height="75"
+      src="/test.jpg"
+      width="75"
+    />
   </div>
+  <p
+    className="author__bio"
+  >
+    <strong>
+      プログラミングをするパンダ
+    </strong>
+    <div
+      className="author__bio-twitter"
+    >
+      Twitter:
+       
+      <a
+        href="https://www.twitter.com/#"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <strong>
+          @Panda_Program
+        </strong>
+      </a>
+    </div>
+    Test bio
+  </p>
 </div>
 `;

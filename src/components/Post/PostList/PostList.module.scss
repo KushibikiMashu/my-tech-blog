@@ -1,0 +1,11 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.postList {
+  @include padding(0.25, 0);
+
+  .__heading {
+    @include padding(0.25, 0);
+  }
+
+}

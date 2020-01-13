@@ -17,6 +17,7 @@ import {
   PocketButton,
   ClipButton,
 } from './Buttons';
+import PostList from './PostList';
 
 type Props = {
   post: Node
@@ -30,8 +31,6 @@ const Post = ({ post }: Props) => {
   const postUrl = url + slug;
   const shareTitle = `「${title}」\n`;
 
-  const postListLink = <Link className={styles['post__home-button']} to="/">Topに戻る</Link>;
-
   return (
     <div className={styles['post']}>
 
@@ -41,6 +40,7 @@ const Post = ({ post }: Props) => {
 
       <div className={styles['post__footer']}>
         <Meta date={date}/>
+
         {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs}/>}
 
         <div className={styles['post__footer-share']}>
@@ -50,11 +50,13 @@ const Post = ({ post }: Props) => {
           <ClipButton url={postUrl}/>
         </div>
 
+        <PostList tags={tags} title={title}/>
+
         <Author/>
       </div>
 
       <div className={styles['post__navButton']}>
-        {postListLink}
+        <Link className={styles['post__home-button']} to="/">Topに戻る</Link>
       </div>
 
       <div className={styles['post__comments']}>

@@ -37,8 +37,8 @@
     padding: 0 15px;
 
     &-share {
+      @include padding(2, 0);
       display: flex;
-      height: 8rem;
       justify-content: center;
       align-items: center;
 
