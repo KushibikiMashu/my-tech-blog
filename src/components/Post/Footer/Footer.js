@@ -7,11 +7,11 @@ import { toast, ToastContainer } from 'react-toastify';
 import { faPaperclip } from '@fortawesome/free-solid-svg-icons';
 import styles from './Footer.module.scss';
 
-const Footer = ({ url, title, postUrl }) => <>
+const Footer = ({ title, postUrl }) => <>
   <div className={styles['footer']}>
     <TwitterShareButton
       className={styles['footer__button']}
-      url={url}
+      url={postUrl}
       title={title}
       via="Panda_Program"
       style={{ backgroundColor: '#1DA1F2' }}

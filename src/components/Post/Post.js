@@ -56,7 +56,6 @@ const Post = ({ post }: Props) => {
       </div>
 
       <StickyFooter
-        url={url}
         title={title}
         postUrl={postUrl}
       />
