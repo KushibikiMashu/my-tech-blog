@@ -28,12 +28,10 @@ const Post = ({ post }: Props) => {
   const postUrl = url + slug;
   const shareTitle = `「${title}」\n`;
 
-  const postListLink = <Link className={styles['post__home-button']} to="/">記事一覧へ</Link>;
+  const postListLink = <Link className={styles['post__home-button']} to="/">Topに戻る</Link>;
 
   return (
     <div className={styles['post']}>
-
-      {postListLink}
 
       <div className={styles['post__content']}>
         <Content body={html} title={title}/>
@@ -51,6 +49,9 @@ const Post = ({ post }: Props) => {
         </div>
 
         <Author/>
+      </div>
+
+      <div className={styles['post__navButton']}>
         {postListLink}
       </div>
 

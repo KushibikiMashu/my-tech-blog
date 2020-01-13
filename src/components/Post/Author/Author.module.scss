@@ -9,7 +9,7 @@
   padding-top: 20px;
   @include line-height(1);
   @include margin-top(1);
-  @include margin-bottom(2);
+  @include margin-bottom(1);
 
   &__photo {
     display: flex;
@@ -27,6 +27,7 @@
     padding-left: 20px;
 
     &-twitter {
+      @include margin-bottom(0.5);
       display: block;
       text-decoration: none;
     }
