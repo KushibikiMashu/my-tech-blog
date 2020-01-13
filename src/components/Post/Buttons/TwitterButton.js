@@ -1,8 +1,14 @@
+// @flow strict
 import React from 'react';
 import { TwitterIcon, TwitterShareButton } from 'react-share';
 import styles from '../Post.module.scss';
 
-const TwitterButton = ({ url, title }) => <>
+type Props = {
+  url: string,
+  title: string,
+}
+
+const TwitterButton = ({ url, title }: Props) => <>
   <TwitterShareButton
     className={styles['post__footer-shareButton']}
     url={url}

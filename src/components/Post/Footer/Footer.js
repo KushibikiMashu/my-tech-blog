@@ -1,3 +1,4 @@
+// @flow strict
 import React from 'react';
 import { TwitterShareButton } from 'react-share';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,7 +8,12 @@ import { toast, ToastContainer } from 'react-toastify';
 import { faPaperclip } from '@fortawesome/free-solid-svg-icons';
 import styles from './Footer.module.scss';
 
-const Footer = ({ title, postUrl }) => <>
+type Props = {
+  title: string,
+  postUrl: string,
+}
+
+const Footer = ({ title, postUrl }: Props) => <>
   <div className={styles['footer']}>
     <TwitterShareButton
       className={styles['footer__button']}
