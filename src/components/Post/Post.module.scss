@@ -71,7 +71,7 @@
     }
 
     &__navButton {
-      display: none;
+      @include margin-bottom(0);
     }
 
     &__sticky-footer {
