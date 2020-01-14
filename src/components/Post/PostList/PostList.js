@@ -1,40 +1,56 @@
-// @flow string
+// @flow strict
 import React from 'react';
 import { usePublishedPostList } from '../../../hooks';
 import styles from './PostList.module.scss';
 
 type Props = {
-  tags: Array<string>,
+  tags: string[],
   title: string,
 }
 
-function isEmpty(post: Object) {
-  return Object.keys(post).length === 0;
+type Post = {
+  tags: string[],
+  title: string,
+  description: string,
+  slug: string,
+  date: string,
+  category: string,
+  socialImage: string,
 }
 
-const relatedPosts = (tags: Array<string>, title: string, nodes) => nodes.map((node) => {
-  const { tags: postTags, title: postTitle } = node.frontmatter;
+type Node = {
+  frontmatter: Post
+}
 
-  let post = {};
+type Nodes = Node[]
 
-  // タグのチェックの計算量がO(n * m)なので、ビルドが遅くなったと感じた時にはアルゴリズムを改めたい
-  for (let i = 0; i < tags.length; i += 1) {
-    const tag = tags[i];
+const relatedPosts = (tags: string[], title: string, nodes: Nodes): Array<Post> => {
+  const posts = [];
 
-    if (postTags.includes(tag)) {
-      // 現在の投稿と同じ記事は関連記事として扱わない
-      if (isEmpty(post) && title !== postTitle) {
-        post = node.frontmatter;
+  for (let i = 0; i < nodes.length; i += 1) {
+    const node = nodes[i].frontmatter;
+    const { tags: postTags, title: postTitle } = node;
+
+    // タグのチェックの計算量がO(n * m)なので、ビルドが遅くなったと感じた時にはアルゴリズムを改めたい
+    for (let j = 0; j < tags.length; j += 1) {
+      const tag = tags[j];
+
+      if (isSamePost(title, postTitle) || posts.includes(node)) {
+        continue;
+      }
+
+      if (postTags.includes(tag)) {
+        posts.push(node);
       }
     }
   }
 
-  if (isEmpty(post)) {
-    return null;
-  }
+  return posts;
+};
 
-  return post;
-});
+function isSamePost(title: string, postTitle: string):boolean {
+  return title === postTitle;
+}
 
 const PostList = ({ tags, title }: Props) => {
   const nodes = usePublishedPostList();
@@ -44,9 +60,9 @@ const PostList = ({ tags, title }: Props) => {
   }
 
   // 配列中のnullを削除する
-  const posts = relatedPosts(tags, title, nodes).filter((post) => post);
+  const posts = relatedPosts(tags, title, nodes);
 
-  const renderPosts = () => posts.map((post) => {
+  const renderPosts = () => posts.map((post: Post) => {
     // title, description, slug, date, category, socialImage
     const { title, slug } = post;
     return (
