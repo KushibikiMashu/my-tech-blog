@@ -4,8 +4,31 @@
 .postList {
   @include padding(0.25, 0);
 
-  .__heading {
-    @include padding(0.25, 0);
+  &__heading {
+    &-title {
+      font-weight: bold;
+    }
+  }
+
+  &__post {
+    &-image {
+      margin: auto;
+      width: 345px;
+      height: 215px;
+    }
+  }
+}
+
+@include breakpoint-md {
+  .postList {
+
+    &__post {
+      display: flex;
+
+      &-image {
+        display: none;
+      }
+    }
   }
 
 }

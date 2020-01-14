@@ -59,23 +59,24 @@ const PostList = ({ tags, title }: Props) => {
     return null;
   }
 
-  // 配列中のnullを削除する
   const posts = relatedPosts(tags, title, nodes);
 
   const renderPosts = () => posts.map((post: Post) => {
-    // title, description, slug, date, category, socialImage
-    const { title, slug } = post;
+    const { title, slug, socialImage } = post;
     return (
-      <p key={title}>
-        <a href={slug}>{title}</a>
-      </p>
+      <div className={styles['postList__post']} key={title}>
+        <a href={slug}>
+          <img className={styles['postList__post-image']} src={socialImage} alt="サムネイル画像" width="345" height="215" />
+          <p>{title}</p>
+        </a>
+      </div>
     );
   });
 
   return posts.length === 0 ? null
     : (
       <div className={styles['postList']}>
-        <p className={styles['postList__heading']}><strong>関連する記事</strong></p>
+        <p><span className={styles['postList__heading-title']}>関連する記事</span></p>
         {renderPosts()}
       </div>
     );
