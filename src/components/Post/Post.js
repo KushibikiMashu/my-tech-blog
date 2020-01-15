@@ -8,7 +8,6 @@ import Content from './Content';
 import Meta from './Meta';
 import Tags from './Tags';
 import StickyFooter from './Footer';
-import styles from './Post.module.scss';
 import { useSiteMetadata } from '../../hooks';
 import type { Node } from '../../types';
 import {
@@ -18,6 +17,7 @@ import {
   ClipButton,
 } from './Buttons';
 import PostList from './PostList';
+import styles from './Post.module.scss';
 
 type Props = {
   post: Node
@@ -52,11 +52,11 @@ const Post = ({ post }: Props) => {
 
         <PostList tags={tags} title={title}/>
 
-        <Author/>
-      </div>
+        <div className={styles['post__navButton']}>
+          <Link className={styles['post__homeButton']} to="/">Topに戻る</Link>
+        </div>
 
-      <div className={styles['post__navButton']}>
-        <Link className={styles['post__home-button']} to="/">Topに戻る</Link>
+        <Author/>
       </div>
 
       <div className={styles['post__comments']}>

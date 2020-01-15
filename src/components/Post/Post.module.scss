@@ -8,7 +8,7 @@
     padding: 0 15px;
   }
 
-  &__home-button {
+  &__homeButton {
     display: block;
     max-width: 90px;
     height: $button-height;
@@ -37,7 +37,7 @@
     padding: 0 15px;
 
     &-share {
-      @include padding(2, 0);
+      @include padding(4, 0);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -47,7 +47,8 @@
   }
 
   &__navButton {
-    @include margin-bottom(4);
+    @include margin-top(1);
+    @include margin-bottom(2);
   }
 
 }
@@ -62,7 +63,7 @@
       padding: 0;
     }
 
-    &__home-button {
+    &__homeButton {
       position: fixed;
       max-width: auto;
       margin: 0;

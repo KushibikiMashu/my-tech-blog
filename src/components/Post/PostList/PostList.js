@@ -67,7 +67,7 @@ const PostList = ({ tags, title }: Props) => {
       <div className={styles['postList__post']} key={title}>
         <a href={slug}>
           <img className={styles['postList__post-image']} src={socialImage} alt="サムネイル画像" width="345" height="215" />
-          <p>{title}</p>
+          <p>▶︎ {title}</p>
         </a>
       </div>
     );

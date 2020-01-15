@@ -9,7 +9,7 @@
   padding-top: 20px;
   @include line-height(1);
   @include margin-top(1);
-  @include margin-bottom(1);
+  @include margin-bottom(3);
 
   &__photo {
     display: flex;
@@ -38,5 +38,6 @@
   .author {
     margin-left: auto;
     margin-right: auto;
+    @include margin-bottom(2);
   }
 }
