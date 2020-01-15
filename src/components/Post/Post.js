@@ -10,14 +10,9 @@ import Tags from './Tags';
 import StickyFooter from './Footer';
 import { useSiteMetadata } from '../../hooks';
 import type { Node } from '../../types';
-import {
-  TwitterButton,
-  HatenaBookmarkButton,
-  PocketButton,
-  ClipButton,
-} from './Buttons';
 import PostList from './PostList';
 import styles from './Post.module.scss';
+import ShareButtons from './Buttons';
 
 type Props = {
   post: Node
@@ -27,8 +22,8 @@ const Post = ({ post }: Props) => {
   const { html } = post;
   const { tagSlugs, slug } = post.fields;
   const { tags, title, date } = post.frontmatter;
-  const { url } = useSiteMetadata();
-  const postUrl = url + slug;
+  const { url: siteUrl } = useSiteMetadata();
+  const postUrl = siteUrl + slug;
   const shareTitle = `「${title}」\n`;
 
   return (
@@ -44,10 +39,7 @@ const Post = ({ post }: Props) => {
         {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs}/>}
 
         <div className={styles['post__footer-share']}>
-          <TwitterButton url={postUrl} title={shareTitle}/>
-          <HatenaBookmarkButton url={postUrl}/>
-          <PocketButton url={postUrl} title={title}/>
-          <ClipButton url={postUrl}/>
+          <ShareButtons title={title} shareTitle={shareTitle} url={postUrl}/>
         </div>
 
         <PostList tags={tags} title={title}/>
