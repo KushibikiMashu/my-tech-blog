@@ -47,7 +47,7 @@
   }
 
   &__navButton {
-    @include margin-top(1);
+    @include margin-top(2);
     @include margin-bottom(2);
   }
 
@@ -72,6 +72,7 @@
     }
 
     &__navButton {
+      @include margin-top(0);
       @include margin-bottom(0);
     }
 

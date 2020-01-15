@@ -6,8 +6,9 @@ const usePublishedPostList = () => {
     graphql`
       query PublishedPostList {
         allMarkdownRemark(
-          filter: { frontmatter: { draft: { eq: false }, template: { eq: "post" } } }
-        ) {
+          filter: {frontmatter: {draft: {eq: false}, template: {eq: "post"}}},
+          sort: {fields: frontmatter___date, order: ASC}
+         ) {
           nodes {
             frontmatter {
               tags

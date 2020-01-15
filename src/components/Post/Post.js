@@ -13,6 +13,7 @@ import type { Node } from '../../types';
 import PostList from './PostList';
 import styles from './Post.module.scss';
 import ShareButtons from './Buttons';
+import NextPrevPost from './NextPrevPost';
 
 type Props = {
   post: Node
@@ -43,6 +44,8 @@ const Post = ({ post }: Props) => {
         </div>
 
         <PostList tags={tags} title={title}/>
+
+        <NextPrevPost date={date}/>
 
         <div className={styles['post__navButton']}>
           <Link className={styles['post__homeButton']} to="/">Topに戻る</Link>

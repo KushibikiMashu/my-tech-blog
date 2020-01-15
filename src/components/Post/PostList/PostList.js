@@ -76,7 +76,7 @@ const PostList = ({ tags, title }: Props) => {
   return posts.length === 0 ? null
     : (
       <div className={styles['postList']}>
-        <p><span className={styles['postList__heading-title']}>関連する記事</span></p>
+        <p className={styles['postList__heading-title']}>関連する記事</p>
         {renderPosts()}
       </div>
     );
