@@ -4,7 +4,7 @@
   "description": "A minimal, lightweight and mobile-first starter for creating blazing-fast static blogs",
   "main": "n/a",
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "gatsby develop -H 0.0.0.0",
     "build": "gatsby build",
     "deploy": "gatsby build --prefix-paths",
     "clean": "rimraf .cache public",

@@ -19,10 +19,8 @@
   }
 
   &__body {
-    @include line-height(1.25);
-
     & p {
-      @include line-height(1.25);
+      @include line-height(1.1);
     }
 
     & h2 {
@@ -31,8 +29,8 @@
     }
 
     & h3, h4 {
-      @include margin-top(1);
       @include line-height(1.5);
+      @include margin-top(1);
     }
 
     & figure {
@@ -85,6 +83,7 @@
       & p {
         font-size: $typographic-base-font-size * 1.125;
         @include margin-bottom(1.125)
+        @include line-height(1.25);
       }
 
     }
