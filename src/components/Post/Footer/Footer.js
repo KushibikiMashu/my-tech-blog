@@ -58,7 +58,7 @@ const Footer = ({ title, postUrl }: Props) => <>
     >
       <CopyToClipboard
         text={postUrl}
-        onCopy={() => toast.success('Copied! 🎉')}
+        onCopy={() => toast.success('記事のURLがコピーされました 🎉')}
       >
         <FontAwesomeIcon
           className={styles['footer__button-icon']}

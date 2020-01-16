@@ -45,7 +45,7 @@ const NextPrevPost = ({ date }) => {
     const { title, slug } = node.frontmatter;
     return (
       <Link to={slug} className={styles['nextPrevPost__link--left']}>
-      <p className={styles['nextPrevPost__link-arrow--left']}>← Next post</p>
+      <p className={styles['nextPrevPost__link-arrow--left']}>← 次の記事</p>
           <p>{title}</p>
       </Link>
     );
@@ -55,7 +55,7 @@ const NextPrevPost = ({ date }) => {
     const { title, slug } = node.frontmatter;
     return (
       <Link to={slug} className={styles['nextPrevPost__link--right']}>
-        <p className={styles['nextPrevPost__link-arrow--right']}>Previous post →</p>
+        <p className={styles['nextPrevPost__link-arrow--right']}>前の記事 →</p>
         <p>{title}</p>
       </Link>
     );

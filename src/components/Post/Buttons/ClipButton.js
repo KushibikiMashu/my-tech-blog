@@ -17,7 +17,7 @@ const ClipButton = ({ url }: Props) => (
   >
     <CopyToClipboard
       text={url}
-      onCopy={() => toast.success('Copied! 🎉')}
+      onCopy={() => toast.success('記事のURLがコピーされました 🎉')}
     >
       <FontAwesomeIcon
         className={styles['button__icon-clip']}
