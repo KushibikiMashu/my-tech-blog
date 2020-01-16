@@ -17,12 +17,17 @@ const insertTocIntoBody = (toc: string, body: string): string => {
     return body;
   }
 
+  const h2: HTMLHeadingElement = document.createElement('h2');
+  const text:Text = document.createTextNode('目次');
+  h2.appendChild(text);
+
   const div: HTMLDivElement = document.createElement('div');
   div.innerHTML = toc;
   div.classList.add(styles['content__body-toc']);
 
   // 記事の2番目の位置に目次を追加する
   article.insertBefore(div, firstElement.nextSibling);
+  article.insertBefore(h2, firstElement.nextSibling);
   return article.outerHTML;
 };
 
