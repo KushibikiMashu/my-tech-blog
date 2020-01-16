@@ -37,7 +37,8 @@ export type Node = {
     socialImage?: string
   },
   html: string,
-  id: string
+  id: string,
+  tableOfContents: string,
 };
 
 export type Edge = {

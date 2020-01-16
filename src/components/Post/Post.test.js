@@ -20,6 +20,7 @@ describe('Post', () => {
     post: {
       id: 'test-123',
       html: '<p>test</p>',
+      tableOfContents: '<ul>test</ul>',
       fields: {
         slug: '/test',
         categorySlug: '/test-category',

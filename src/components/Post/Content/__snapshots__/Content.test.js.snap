@@ -13,7 +13,7 @@ exports[`Content renders correctly 1`] = `
     className="content__body"
     dangerouslySetInnerHTML={
       Object {
-        "__html": "<p>test</p>",
+        "__html": "<article><p>test</p><div><ul>test</ul></div></article>",
       }
     }
   />

@@ -7,7 +7,8 @@ describe('Content', () => {
   it('renders correctly', () => {
     const props = {
       title: 'test',
-      body: '<p>test</p>'
+      body: '<p>test</p>',
+      toc: '<ul>test</ul>'
     };
 
     const tree = renderer.create(<Content {...props} />).toJSON();

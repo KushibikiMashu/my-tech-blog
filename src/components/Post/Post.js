@@ -20,18 +20,25 @@ type Props = {
 };
 
 const Post = ({ post }: Props) => {
-  const { html } = post;
+  const { html, tableOfContents } = post;
   const { tagSlugs, slug } = post.fields;
   const { tags, title, date } = post.frontmatter;
+
   const { url: siteUrl } = useSiteMetadata();
   const postUrl = siteUrl + slug;
   const shareTitle = `「${title}」\n`;
+
 
   return (
     <div className={styles['post']}>
 
       <div className={styles['post__content']}>
-        <Content body={html} title={title}/>
+        <Content
+          body={html}
+          title={title}
+          toc={tableOfContents}
+          // date={date}
+        />
       </div>
 
       <div className={styles['post__footer']}>

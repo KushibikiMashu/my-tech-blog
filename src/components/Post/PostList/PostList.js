@@ -1,5 +1,6 @@
 // @flow strict
 import React from 'react';
+import { Link } from 'gatsby';
 import { usePublishedPostList } from '../../../hooks';
 import styles from './PostList.module.scss';
 
@@ -65,10 +66,10 @@ const PostList = ({ tags, title }: Props) => {
     const { title, slug, socialImage } = post;
     return (
       <div className={styles['postList__post']} key={title}>
-        <a href={slug}>
+        <Link to={slug}>
           <img className={styles['postList__post-image']} src={socialImage} alt="サムネイル画像" width="345" height="215" />
           <p>▶︎ {title}</p>
-        </a>
+        </Link>
       </div>
     );
   });
