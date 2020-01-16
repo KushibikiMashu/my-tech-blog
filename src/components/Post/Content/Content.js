@@ -36,7 +36,6 @@ const Content = ({ body, title, toc }: Props) => {
   return (
   <div className={styles['content']}>
     <h1 className={styles['content__title']}>{title}</h1>
-    {/* <Meta date={date}/> */}
     <div className={styles['content__body']} dangerouslySetInnerHTML={{ __html: article }}/>
     <div className={styles['content__body']}>
       <p>Happy Coding 🎉</p>

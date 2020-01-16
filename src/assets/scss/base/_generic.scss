@@ -111,10 +111,13 @@ strong {
 ul {
   list-style: disc;
   @include margin-bottom(1);
+  @include line-height(1.1);
+  padding-inline-start: 40px;
 
   & li {
+    @include margin-top(0.5);
+    @include margin-bottom(0.5);
     padding: 0 2px;
-
   }
 
 }

@@ -19,16 +19,35 @@
   }
 
   &__body {
+    & p {
+      @include line-height(1.1);
+    }
+
     &-toc {
-      @include padding(0.1, 0);
+      @include padding(0.1, 0.3, 0.1, 0);
       @include line-height(1.25);
       background-color: #F7FAFC;
       border-radius: 8px;
 
-    }
+      ul {
 
-    & p {
-      @include line-height(1.1);
+        li {
+          @include margin-top(0.25);
+          @include margin-bottom(0.25);
+
+          ul {
+            margin-top: 0;
+            margin-bottom: 0;
+            list-style: circle;
+            padding-inline-start: 20px;
+
+          }
+
+          p {
+            margin: 0;
+          }
+        }
+      }
     }
 
     & h2 {
@@ -94,8 +113,19 @@
         @include line-height(1.25);
       }
 
+      &-toc {
+        ul {
+          li {
+            @include margin-top(0.5);
+            @include margin-bottom(0.5);
+
+            ul {
+              padding-inline-start: 40px;
+            }
+          }
+        }
+      }
     }
 
   }
-
 }

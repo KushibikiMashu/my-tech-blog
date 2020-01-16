@@ -37,7 +37,6 @@ const Post = ({ post }: Props) => {
           body={html}
           title={title}
           toc={tableOfContents}
-          // date={date}
         />
       </div>
 
