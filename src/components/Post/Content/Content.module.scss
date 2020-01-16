@@ -19,6 +19,14 @@
   }
 
   &__body {
+    &-toc {
+      @include padding(0.1, 0);
+      @include line-height(1.25);
+      background-color: #F7FAFC;
+      border-radius: 8px;
+
+    }
+
     & p {
       @include line-height(1.1);
     }
@@ -54,7 +62,7 @@
     }
 
     & a {
-      text-decoration: underline
+      text-decoration: none
     }
 
     & * {

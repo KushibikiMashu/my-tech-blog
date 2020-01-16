@@ -19,8 +19,7 @@ const insertTocIntoBody = (toc: string, body: string): string => {
 
   const div: HTMLDivElement = document.createElement('div');
   div.innerHTML = toc;
-  // 目次にクラス名を追加する
-  // div.classList.add("test");
+  div.classList.add(styles['content__body-toc']);
 
   // 記事の2番目の位置に目次を追加する
   article.insertBefore(div, firstElement.nextSibling);
