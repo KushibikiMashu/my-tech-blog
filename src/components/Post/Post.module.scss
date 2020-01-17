@@ -22,7 +22,6 @@
     font-weight: normal;
     margin-left: auto;
     margin-right: auto;
-    @include margin-top(1);
 
     &:hover,
     &:focus {
@@ -47,7 +46,7 @@
   }
 
   &__navButton {
-    @include margin-top(2);
+    @include margin-top(1);
     @include margin-bottom(2);
   }
 
@@ -61,19 +60,6 @@
 
     &__comments {
       padding: 0;
-    }
-
-    &__homeButton {
-      position: fixed;
-      max-width: auto;
-      margin: 0;
-      top: 30px;
-      left: 30px
-    }
-
-    &__navButton {
-      @include margin-top(0);
-      @include margin-bottom(0);
     }
 
     &__sticky-footer {

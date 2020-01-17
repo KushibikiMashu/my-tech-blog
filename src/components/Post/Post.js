@@ -8,19 +8,20 @@ import Content from './Content';
 import Meta from './Meta';
 import Tags from './Tags';
 import StickyFooter from './Footer';
-import { useSiteMetadata } from '../../hooks';
-import type { Node } from '../../types';
+import { usePublishedPostList, useSiteMetadata } from '../../hooks';
+import type { Node, FrontmatterObj } from '../../types';
 import PostList from './PostList';
 import styles from './Post.module.scss';
 import ShareButtons from './Buttons';
 import NextPrevPost from './NextPrevPost';
+import SideMenu from './SideMenu';
 
 type Props = {
   post: Node
 };
 
 const Post = ({ post }: Props) => {
-  const { html, tableOfContents } = post;
+  const { id: postId, html, tableOfContents } = post;
   const { tagSlugs, slug } = post.fields;
   const { tags, title, date } = post.frontmatter;
 
@@ -28,9 +29,13 @@ const Post = ({ post }: Props) => {
   const postUrl = siteUrl + slug;
   const shareTitle = `「${title}」\n`;
 
+  const nodes: FrontmatterObj[] = usePublishedPostList();
+  const hasPosts = nodes.length !== 0;
 
   return (
     <div className={styles['post']}>
+
+      <SideMenu postId={postId} nodes={nodes}/>
 
       <div className={styles['post__content']}>
         <Content
@@ -51,11 +56,11 @@ const Post = ({ post }: Props) => {
 
         <PostList tags={tags} title={title}/>
 
-        <NextPrevPost date={date}/>
+        {hasPosts ? <NextPrevPost date={date} nodes={nodes}/> : null}
 
-        <div className={styles['post__navButton']}>
+         <div className={styles['post__navButton']}>
           <Link className={styles['post__homeButton']} to="/">Topに戻る</Link>
-        </div>
+         </div>
 
         <Author/>
       </div>
