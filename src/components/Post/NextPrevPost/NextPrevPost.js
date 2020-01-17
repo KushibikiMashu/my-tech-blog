@@ -1,58 +1,65 @@
+// @flow strict
 import React from 'react';
 import { Link } from 'gatsby';
-import { usePublishedPostList } from '../../../hooks';
 import styles from './NextPrevPost.module.scss';
+import type { FrontmatterObj } from '../../../types';
 
-const NextPrevPost = ({ date }) => {
-  const nodes = usePublishedPostList();
+type Props = {
+  date: string,
+  nodes: FrontmatterObj[]
+}
 
-  if (nodes.length === 0) {
+const binarySearch = (array: string[], target: string): number | false => {
+  let left = 0;
+  let right = array.length - 1;
+
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
+    if (array[mid] === target) {
+      return mid;
+    }
+    if (array[mid] < target) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
+  }
+
+  return false;
+};
+
+const pickDates = (nodes: FrontmatterObj[]): string[] => {
+  const dates = [];
+
+  for (let i = 0; i < nodes.length; i += 1) {
+    dates.push(nodes[i].frontmatter.date);
+  }
+
+  return dates;
+};
+
+const NextPrevPost = ({ date, nodes }: Props) => {
+  const index = binarySearch(pickDates(nodes), date);
+
+  if (index === false) {
     return null;
   }
 
-  const pickDates = (nodes) => {
-    const dates = [];
+  const hasNext = () => index !== nodes.length - 1;
+  const hasPrev = () => index !== 0;
 
-    for (let i = 0; i < nodes.length; i += 1) {
-      dates.push(nodes[i].frontmatter.date);
-    }
-
-    return dates;
-  };
-
-  const binarySearch = (array, target) => {
-    let left = 0;
-    let right = array.length - 1;
-
-    while (left <= right) {
-      const mid = Math.floor((left + right) / 2);
-      if (array[mid] === target) {
-        return mid;
-      }
-      if (array[mid] < target) {
-        left = mid + 1;
-      } else {
-        right = mid - 1;
-      }
-    }
-
-    return false;
-  };
-
-  const key = binarySearch(pickDates(nodes), date);
-
-  const nextPost = (node) => {
-    const { title, slug } = node.frontmatter;
+  const renderNextPost = ({ frontmatter }) => {
+    const { title, slug } = frontmatter;
     return (
       <Link to={slug} className={styles['nextPrevPost__link--left']}>
-      <p className={styles['nextPrevPost__link-arrow--left']}>← 次の記事</p>
-          <p>{title}</p>
+        <p className={styles['nextPrevPost__link-arrow--left']}>← 次の記事</p>
+        <p>{title}</p>
       </Link>
     );
   };
 
-  const prevPost = (node) => {
-    const { title, slug } = node.frontmatter;
+  const renderPrevPost = ({ frontmatter }) => {
+    const { title, slug } = frontmatter;
     return (
       <Link to={slug} className={styles['nextPrevPost__link--right']}>
         <p className={styles['nextPrevPost__link-arrow--right']}>前の記事 →</p>
@@ -61,13 +68,10 @@ const NextPrevPost = ({ date }) => {
     );
   };
 
-  const hasNext = () => key !== nodes.length - 1;
-  const hasPrev = () => key !== 0;
-
   return (
     <div className={styles['nextPrevPost']}>
-      {hasNext() ? nextPost(nodes[key + 1]) : null}
-      {hasPrev() ? prevPost(nodes[key - 1]) : null}
+      {hasNext() ? renderNextPost(nodes[index + 1]) : null}
+      {hasPrev() ? renderPrevPost(nodes[index - 1]) : null}
     </div>
   );
 };
