@@ -32,7 +32,7 @@ const insertTocIntoBody = (toc: string, body: string): string => {
 };
 
 const Content = ({ body, title, toc }: Props) => {
-  const article = insertTocIntoBody(toc, body);
+  const article = typeof document !== 'undefined' ? insertTocIntoBody(toc, body) : body;
   return (
   <div className={styles['content']}>
     <h1 className={styles['content__title']}>{title}</h1>
