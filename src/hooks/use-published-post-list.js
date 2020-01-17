@@ -19,6 +19,7 @@ const usePublishedPostList = () => {
               category
               socialImage
             }
+            id
           }
         }
       }

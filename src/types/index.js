@@ -34,12 +34,18 @@ export type Node = {
     category?: string,
     tags?: string[],
     title: string,
-    socialImage?: string
+    socialImage?: string,
+    slug?: string,
   },
   html: string,
   id: string,
   tableOfContents: string,
 };
+
+export type FrontmatterObj = {
+  frontmatter: $PropertyType<Node, 'frontmatter'>,
+  id: $PropertyType<Node, 'id'>,
+}
 
 export type Edge = {
   node: Node

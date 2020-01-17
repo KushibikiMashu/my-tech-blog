@@ -19,7 +19,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm test"
+      "pre-commit": "npm run lint"
     }
   },
   "repository": "https://github.com/KushibikiMashu/my-tech-blog",
