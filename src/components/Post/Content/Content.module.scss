@@ -23,6 +23,12 @@
       @include line-height(1.1);
     }
 
+    & blockquote {
+      p {
+        @include margin-bottom(0.25);
+      }
+    }
+
     &-toc {
       @include padding(0.1, 0.3, 0.1, 0);
       @include line-height(1.25);
@@ -60,15 +66,11 @@
       @include margin-top(1);
     }
 
+
     & figure {
       @include margin-bottom(1);
 
       & blockquote {
-        font-style: italic;
-        text-align: center;
-        margin-top: 0;
-        @include padding(1, 0);
-
         & p {
           max-width: $layout-post-width;
           font-size: $typographic-base-font-size * 1.6817;

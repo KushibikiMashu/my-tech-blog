@@ -128,9 +128,35 @@ p {
 }
 
 blockquote {
-  padding: 0;
+  position: relative;
+  padding: 30px 15px 8px 15px;
+  box-sizing: border-box;
   font-style: italic;
-  text-align: center;
+  background: #efefef;
+  color: #555;
+}
+blockquote:before{
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  left: 3px;
+  content: "“";
+  font-family: sans-serif;
+  color: #cfcfcf;
+  font-size: 90px;
+  line-height: 1;
+}
+blockquote p {
+  padding: 0;
+  margin: 10px 0;
+  line-height: 1.7;
+}
+
+blockquote cite {
+  display: block;
+  text-align: right;
+  color: #888888;
+  font-size: 0.9em;
 }
 
 figure {
