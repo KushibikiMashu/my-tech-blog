@@ -1,6 +1,7 @@
 ---
 title: 
 date: "2019-00-00T00:00:00.000Z"
+updatedAt: ""
 template: "post"
 draft: true
 slug: "/posts/blog-title-in-english"
@@ -24,7 +25,7 @@ what, whyを書くときはカテゴリーをその場で考える
 自分の興味のある温故知新の記事。
 エンジニアが1万人いたら3000人が読む記事を書くことができるか。
 
-技術の継承。
+技術の継承。技術は層を成す
 
 SEO対策
 - タイトルの決め方
