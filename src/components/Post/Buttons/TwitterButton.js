@@ -15,7 +15,7 @@ const TwitterButton = ({ url, title }: Props) => (
     title={title}
     via="Panda_Program"
   >
-    <TwitterIcon className={styles['button-icon']} size={40} borderRadius={10}/>
+    <TwitterIcon className={styles['button-icon']} size={40} borderRadius={10} round />
   </TwitterShareButton>
 );
 

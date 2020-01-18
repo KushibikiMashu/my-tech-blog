@@ -6,7 +6,7 @@
   width: 40px;
   height: 40px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 50%;
 
   &:hover {
     cursor: pointer;
@@ -18,6 +18,10 @@
       padding-top: 8px;
     }
 
+  }
+
+  &__image {
+    border-radius: 50%;
   }
 
 }

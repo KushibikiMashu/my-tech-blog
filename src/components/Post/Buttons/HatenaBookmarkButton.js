@@ -16,6 +16,7 @@ const HatenaBookmarkButton = ({ url }: Props) => (
        title="このエントリーをはてなブックマークに追加"
     >
         <img
+            className={styles['button__image']}
             src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png"
             alt="このエントリーをはてなブックマークに追加" width="40" height="40" style={{ border: 'none' }}
         />

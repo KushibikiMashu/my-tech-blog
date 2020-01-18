@@ -14,7 +14,7 @@ const PocketButton = ({ url, title }: Props) => <>
     url={url}
     title={title}
   >
-    <PocketIcon className={styles['button-icon']} size={40} borderRadius={10}/>
+    <PocketIcon className={styles['button-icon']} size={40} borderRadius={10} round />
   </PocketShareButton>
 </>;
 
