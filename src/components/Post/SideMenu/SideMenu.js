@@ -25,6 +25,7 @@ const SideMenu = ({ nodes, postId }: Props) => {
             postId === id ? styles['sideMenu__drawer-list__item-activeLink'] : undefined
           }
         >
+          {postId === id ? '▶︎ ' : null}
           {title}
         </Link>
       </li>
