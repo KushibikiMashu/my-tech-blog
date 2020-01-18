@@ -36,6 +36,7 @@ export type Node = {
     title: string,
     socialImage?: string,
     slug?: string,
+    updatedAt?: string,
   },
   html: string,
   id: string,

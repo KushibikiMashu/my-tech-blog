@@ -8,7 +8,9 @@ describe('Content', () => {
     const props = {
       title: 'test',
       body: '<p>test</p>',
-      toc: '<ul>test</ul>'
+      toc: '<ul>test</ul>',
+      date: '2019-12-02T09:00:00.000Z',
+      updatedAt: '2019-12-01T09:00:00.000Z',
     };
 
     const tree = renderer.create(<Content {...props} />).toJSON();

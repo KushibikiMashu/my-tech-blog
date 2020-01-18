@@ -2,8 +2,16 @@
 @import '../../../assets/scss/mixins';
 
 .meta {
+  max-width: $layout-post-width;
+  margin: 12px auto;
+  display: flex;
+  justify-content: flex-end;
+
   &__date {
+    font-size: 14px;
+    color: rgb(160, 174, 192);
     font-style: normal;
+    @include margin(0, 0, 0, 0.5)
   }
 
 }

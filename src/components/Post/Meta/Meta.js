@@ -4,12 +4,14 @@ import moment from 'moment';
 import styles from './Meta.module.scss';
 
 type Props = {
-  date: string
+  date: string,
+  updatedAt?: string,
 };
 
-const Meta = ({ date }: Props) => (
+const Meta = ({ date, updatedAt }: Props) => (
   <div className={styles['meta']}>
-    <p className={styles['meta__date']}>公開日: {moment(date).format('YYYY-MM-DD')}</p>
+    {updatedAt === undefined ? null : <p className={styles['meta__date']}>更新日: {moment(updatedAt).format('YYYY/MM/DD')}</p>}
+    <p className={styles['meta__date']}>公開日: {moment(date).format('YYYY/MM/DD')}</p>
   </div>
 );
 

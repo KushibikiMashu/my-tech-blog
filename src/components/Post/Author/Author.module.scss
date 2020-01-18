@@ -6,10 +6,10 @@
   max-width: $layout-post-width;
   padding-left: 20px;
   display: block;
-  padding-top: 20px;
+  padding-top: 28px;
   @include line-height(1);
   @include margin-top(1);
-  @include margin-bottom(3);
+  @include margin-bottom(5);
 
   &__photo {
     display: flex;
@@ -34,10 +34,11 @@
   }
 }
 
-@include breakpoint-sm {
+@include breakpoint-md {
   .author {
     margin-left: auto;
     margin-right: auto;
+    padding-top: 20px;
     @include margin-bottom(2);
     display: flex;
 

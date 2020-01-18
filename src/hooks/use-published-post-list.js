@@ -18,6 +18,7 @@ const usePublishedPostList = () => {
               date
               category
               socialImage
+              updatedAt
             }
             id
           }

@@ -1,11 +1,14 @@
 // @flow strict
 import React, { useEffect, useState } from 'react';
 import styles from './Content.module.scss';
+import Meta from '../Meta';
 
 type Props = {
   body: string,
   title: string,
   toc: string,
+  date: string,
+  updatedAt?: string,
 };
 
 const insertTocIntoBody = (toc: string, body: string): string => {
@@ -31,7 +34,9 @@ const insertTocIntoBody = (toc: string, body: string): string => {
   return article.outerHTML;
 };
 
-const Content = ({ body, title, toc }: Props) => {
+const Content = ({
+  body, title, toc, date, updatedAt
+}: Props) => {
   const [article, setArticle] = useState<string>(body);
 
   useEffect(() => {
@@ -43,6 +48,8 @@ const Content = ({ body, title, toc }: Props) => {
   return (
   <div className={styles['content']}>
     <h1 className={styles['content__title']}>{title}</h1>
+    <Meta date={date} updatedAt={updatedAt}/>
+
     <div className={styles['content__body']} dangerouslySetInnerHTML={{ __html: article }}/>
     <div className={styles['content__body']}>
       <p>Happy Coding 🎉</p>

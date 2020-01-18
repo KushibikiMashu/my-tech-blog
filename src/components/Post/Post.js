@@ -4,7 +4,6 @@ import { Link } from 'gatsby';
 import 'react-toastify/dist/ReactToastify.min.css';
 import Author from './Author';
 import Content from './Content';
-import Meta from './Meta';
 import Tags from './Tags';
 import StickyFooter from './Footer';
 import { usePublishedPostList, useSiteMetadata } from '../../hooks';
@@ -22,7 +21,9 @@ type Props = {
 const Post = ({ post }: Props) => {
   const { id: postId, html, tableOfContents } = post;
   const { tagSlugs, slug } = post.fields;
-  const { tags, title, date } = post.frontmatter;
+  const {
+    tags, title, date, updatedAt
+  } = post.frontmatter;
 
   const { url: siteUrl } = useSiteMetadata();
   const postUrl = siteUrl + slug;
@@ -41,12 +42,12 @@ const Post = ({ post }: Props) => {
           body={html}
           title={title}
           toc={tableOfContents}
+          date={date}
+          updatedAt={updatedAt}
         />
       </div>
 
       <div className={styles['post__footer']}>
-        <Meta date={date}/>
-
         {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs}/>}
 
         <div className={styles['post__footer-share']}>
