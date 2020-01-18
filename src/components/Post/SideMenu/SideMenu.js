@@ -15,10 +15,9 @@ type Props = {
 
 const SideMenu = ({ nodes, postId }: Props) => {
   const [isOpen, toggle] = useState<boolean>(false);
-  const toggleCallback = useCallback((): void => toggle(!isOpen));
-  const reversed = nodes.slice().reverse();
+  const toggleCallback = useCallback(() => toggle(!isOpen));
 
-  const postList = () => reversed.map((node) => {
+  const renderPostList = () => nodes.slice().reverse().map((node) => {
     const { id, frontmatter } = node;
     const { title, slug } = frontmatter;
     const isActivePost = postId === id;
@@ -53,7 +52,7 @@ const SideMenu = ({ nodes, postId }: Props) => {
           <div>記事一覧</div>
         </header>
         <ul className={styles['sideMenu__drawer-list']}>
-          {postList()}
+          {renderPostList()}
         </ul>
       </div>
       <div

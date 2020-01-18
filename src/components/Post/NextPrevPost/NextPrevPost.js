@@ -50,9 +50,7 @@ const NextPrevPost = ({ date, nodes }: Props) => {
   const hasNext = () => index !== nodes.length - 1;
   const hasPrev = () => index !== 0;
 
-  const renderNextPost = ({ frontmatter }) => {
-    const { title, slug } = frontmatter;
-    return (
+  const renderNextPost = ({ title, slug }) => (
       <Link to={slug} className={styles['nextPrevPost__link--left']}>
         <p className={styles['nextPrevPost__link-arrow--left']}>
           <FontAwesomeIcon className={styles['nextPrevPost__link-icon--left']} icon={faAngleLeft} />
@@ -60,12 +58,9 @@ const NextPrevPost = ({ date, nodes }: Props) => {
         </p>
         <p>{title}</p>
       </Link>
-    );
-  };
+  );
 
-  const renderPrevPost = ({ frontmatter }) => {
-    const { title, slug } = frontmatter;
-    return (
+  const renderPrevPost = ({ title, slug }) => (
       <Link to={slug} className={styles['nextPrevPost__link--right']}>
         <p className={styles['nextPrevPost__link-arrow--right']}>
           前の記事
@@ -73,13 +68,12 @@ const NextPrevPost = ({ date, nodes }: Props) => {
         </p>
         <p>{title}</p>
       </Link>
-    );
-  };
+  );
 
   return (
     <div className={styles['nextPrevPost']}>
-      {hasNext() ? renderNextPost(nodes[index + 1]) : null}
-      {hasPrev() ? renderPrevPost(nodes[index - 1]) : null}
+      {hasNext() ? renderNextPost(nodes[index + 1].frontmatter) : null}
+      {hasPrev() ? renderPrevPost(nodes[index - 1].frontmatter) : null}
     </div>
   );
 };

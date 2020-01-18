@@ -18,20 +18,22 @@ const Author = () => {
           alt={author.name}
         />
       </div>
-      <p className={styles['author__bio']}>
-        <strong>プログラミングをするパンダ</strong>
-        <div className={styles['author__bio-twitter']}>
-          Twitter:{' '}
-          <a
-            href={getContactHref('twitter', author.contacts.twitter)}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <strong>@Panda_Program</strong>
-          </a>
+      <div className={styles['author__bio']}>
+        <div className={styles['author__bio-description']}>
+          <span className={styles['author__bio-name']}>プログラミングをするパンダ</span>
+          <div className={styles['author__bio-twitter']}>
+            Twitter:{' '}
+            <a
+              href={getContactHref('twitter', author.contacts.twitter)}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span className={styles['author__bio-twitter__name']}>@Panda_Program</span>
+            </a>
+          </div>
         </div>
         {author.bio}
-      </p>
+      </div>
     </div>
   );
 };
