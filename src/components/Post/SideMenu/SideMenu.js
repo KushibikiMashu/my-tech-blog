@@ -17,8 +17,7 @@ const SideMenu = ({ nodes, postId }: Props) => {
   const [isOpen, toggle] = useState<boolean>(false);
   const toggleCallback = useCallback(() => toggle(!isOpen));
 
-  const renderPostList = () => nodes.slice().reverse().map((node) => {
-    const { id, frontmatter } = node;
+  const renderPostList = () => nodes.slice().reverse().map(({ id, frontmatter }) => {
     const { title, slug } = frontmatter;
     const isActivePost = postId === id;
     return (
@@ -74,7 +73,7 @@ const SideMenu = ({ nodes, postId }: Props) => {
             : <>
               <FontAwesomeIcon className={styles['sideMenu__fab-icon']} icon={faChevronLeft} />
               {' '}
-            <FontAwesomeIcon className={styles['sideMenu__fab-icon']} icon={faChevronRight} />
+              <FontAwesomeIcon className={styles['sideMenu__fab-icon']} icon={faChevronRight} />
             </>
           }
         </button>

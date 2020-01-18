@@ -30,15 +30,9 @@ const binarySearch = (array: string[], target: string): number | null => {
   return null;
 };
 
-const pickDates = (nodes: FrontmatterObj[]): string[] => {
-  const dates = [];
-
-  for (let i = 0; i < nodes.length; i += 1) {
-    dates.push(nodes[i].frontmatter.date);
-  }
-
-  return dates;
-};
+const pickDates = (nodes: FrontmatterObj[]): string[] => nodes.map(
+  ({ frontmatter }) => frontmatter.date
+);
 
 const NextPrevPost = ({ date, nodes }: Props) => {
   const index = binarySearch(pickDates(nodes), date);
