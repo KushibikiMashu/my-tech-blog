@@ -5,7 +5,7 @@
   border-top: 1px solid $color-gray-border;
   max-width: $layout-post-width;
   padding-left: 20px;
-  display: flex;
+  display: block;
   padding-top: 20px;
   @include line-height(1);
   @include margin-top(1);
@@ -13,7 +13,7 @@
 
   &__photo {
     display: flex;
-    align-items: center;
+    justify-content: center;
 
     &-image {
       margin-right: 0;
@@ -39,5 +39,12 @@
     margin-left: auto;
     margin-right: auto;
     @include margin-bottom(2);
-  }
+    display: flex;
+
+    &__photo {
+      display: flex;
+      align-items: center;
+
+      }
+    }
 }
