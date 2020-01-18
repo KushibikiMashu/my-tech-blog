@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 import 'react-toastify/dist/ReactToastify.min.css';
 import Author from './Author';
-import Comments from './Comments';
 import Content from './Content';
 import Meta from './Meta';
 import Tags from './Tags';
@@ -63,10 +62,6 @@ const Post = ({ post }: Props) => {
          </div>
 
         <Author/>
-      </div>
-
-      <div className={styles['post__comments']}>
-        <Comments postSlug={slug} postTitle={post.frontmatter.title}/>
       </div>
 
       <StickyFooter
