@@ -1,11 +1,11 @@
 // @flow strict
-import React from 'react';
+import React, { useCallback } from 'react';
 import { TwitterShareButton } from 'react-share';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { CopyToClipboard } from 'react-copy-to-clipboard/lib/Component';
 import { toast, ToastContainer } from 'react-toastify';
-import { faPaperclip } from '@fortawesome/free-solid-svg-icons';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 import styles from './Footer.module.scss';
 
 type Props = {
@@ -13,7 +13,9 @@ type Props = {
   postUrl: string,
 }
 
-const Footer = ({ title, postUrl }: Props) => <>
+const Footer = ({ title, postUrl }: Props) => {
+  const toastCallback = useCallback(() => toast.success('記事のURLがコピーされました 🎉'));
+  return (
   <div className={styles['footer']}>
     <TwitterShareButton
       className={styles['footer__button']}
@@ -58,12 +60,12 @@ const Footer = ({ title, postUrl }: Props) => <>
     >
       <CopyToClipboard
         text={postUrl}
-        onCopy={() => toast.success('記事のURLがコピーされました 🎉')}
+        onCopy={toastCallback}
       >
         <FontAwesomeIcon
           className={styles['footer__button-icon']}
           color="white"
-          icon={faPaperclip}
+          icon={faLink}
           size='2x'
           style={{ width: '100%' }}
         />
@@ -81,6 +83,7 @@ const Footer = ({ title, postUrl }: Props) => <>
       />
     </div>
   </div>
-</>;
+  );
+};
 
 export default Footer;
