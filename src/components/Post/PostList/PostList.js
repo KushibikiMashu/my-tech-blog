@@ -64,9 +64,7 @@ const PostList = ({ tags, title }: Props) => {
 
   const posts = relatedPosts(tags, title, nodes);
 
-  const renderPosts = () => posts.map((post: Post) => {
-    const { title, slug, socialImage } = post;
-    return (
+  const renderPosts = () => posts.map(({ title, slug, socialImage }: Post) => (
       <div className={styles['postList__post']} key={title}>
         <Link to={slug}>
           <img className={styles['postList__post-image']} src={socialImage} alt="サムネイル画像" width="345" height="215" />
@@ -77,13 +75,12 @@ const PostList = ({ tags, title }: Props) => {
           </p>
         </Link>
       </div>
-    );
-  });
+  ));
 
   return posts.length === 0 ? null
     : (
       <div className={styles['postList']}>
-        <p className={styles['postList__heading-title']}>関連する記事</p>
+        <p className={styles['postList__heading-title']}>関連記事</p>
         {renderPosts()}
       </div>
     );
