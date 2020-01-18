@@ -4,16 +4,19 @@
 .nextPrevPost {
   @include padding(1, 0);
   display: flex;
+  justify-content: space-around;
 
   &__link {
     &--left {
       @include padding(0, 0.5, 0, 0);
       margin-right: auto;
+      width: 50%;
     }
 
     &--right {
       @include padding(0, 0, 0, 0.5);
       margin-left: auto;
+      width: 50%;
     }
 
     &-arrow {

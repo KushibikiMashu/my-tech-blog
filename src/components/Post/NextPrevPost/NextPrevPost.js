@@ -9,7 +9,7 @@ type Props = {
   nodes: FrontmatterObj[]
 }
 
-const binarySearch = (array: string[], target: string): number | false => {
+const binarySearch = (array: string[], target: string): number | null => {
   let left = 0;
   let right = array.length - 1;
 
@@ -25,7 +25,7 @@ const binarySearch = (array: string[], target: string): number | false => {
     }
   }
 
-  return false;
+  return null;
 };
 
 const pickDates = (nodes: FrontmatterObj[]): string[] => {
@@ -41,7 +41,7 @@ const pickDates = (nodes: FrontmatterObj[]): string[] => {
 const NextPrevPost = ({ date, nodes }: Props) => {
   const index = binarySearch(pickDates(nodes), date);
 
-  if (index === false) {
+  if (index === null) {
     return null;
   }
 
