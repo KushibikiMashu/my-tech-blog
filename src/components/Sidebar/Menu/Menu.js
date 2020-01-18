@@ -13,8 +13,8 @@ type Props = {
 const Menu = ({ menu }: Props) => (
   <nav className={styles['menu']}>
     <ul className={styles['menu__list']}>
-      {menu.map((item) => (
-        <li className={styles['menu__list-item']} key={item.path}>
+      {menu.map((item, index) => (
+        <li className={styles['menu__list-item']} key={index}>
           <Link
             to={item.path}
             className={styles['menu__list-item-link']}
@@ -24,7 +24,7 @@ const Menu = ({ menu }: Props) => (
           </Link>
         </li>
       ))}
-      <li className={styles['menu__list-item']} key="portofolip">
+      <li className={styles['menu__list-item']} key="portofolio">
         <a
           className={styles['menu__list-item-link']}
           href="https://kushibikimashu.github.io/portfolio"
@@ -32,15 +32,15 @@ const Menu = ({ menu }: Props) => (
         >
           ポートフォリオ
         </a>
-        <li className={styles['menu__list-item']} key="portofolip">
-          <a
-            className={styles['menu__list-item-link']}
-            href="https://github.com/KushibikiMashu"
-            target="_blank"
-          >
-            GitHub
-          </a>
-        </li>
+      </li>
+      <li className={styles['menu__list-item']} key="github">
+        <a
+          className={styles['menu__list-item-link']}
+          href="https://github.com/KushibikiMashu"
+          target="_blank"
+        >
+          GitHub
+        </a>
       </li>
     </ul>
   </nav>

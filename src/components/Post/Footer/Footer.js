@@ -67,7 +67,6 @@ const Footer = ({ title, postUrl }: Props) => {
           color="white"
           icon={faLink}
           size='2x'
-          style={{ width: '100%' }}
         />
       </CopyToClipboard>
       <ToastContainer
