@@ -1,5 +1,5 @@
 // @flow strict
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Content.module.scss';
 
 type Props = {
@@ -32,7 +32,14 @@ const insertTocIntoBody = (toc: string, body: string): string => {
 };
 
 const Content = ({ body, title, toc }: Props) => {
-  const article = typeof document !== 'undefined' ? insertTocIntoBody(toc, body) : body;
+  const [article, setArticle] = useState<string>(body);
+
+  useEffect(() => {
+    const withToc = typeof document !== 'undefined' ? insertTocIntoBody(toc, body) : body;
+    setArticle(withToc);
+  },
+  []);
+
   return (
   <div className={styles['content']}>
     <h1 className={styles['content__title']}>{title}</h1>
