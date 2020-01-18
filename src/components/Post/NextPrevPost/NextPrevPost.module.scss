@@ -19,6 +19,17 @@
       width: 50%;
     }
 
+    &-icon {
+      &--left {
+        margin-right: 8px;
+      }
+
+      &--right {
+        margin-left: 8px;
+      }
+
+    }
+
     &-arrow {
       &--left {
         @include margin-top(1);

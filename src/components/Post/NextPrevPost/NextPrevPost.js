@@ -1,6 +1,8 @@
 // @flow strict
 import React from 'react';
 import { Link } from 'gatsby';
+import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './NextPrevPost.module.scss';
 import type { FrontmatterObj } from '../../../types';
 
@@ -52,7 +54,10 @@ const NextPrevPost = ({ date, nodes }: Props) => {
     const { title, slug } = frontmatter;
     return (
       <Link to={slug} className={styles['nextPrevPost__link--left']}>
-        <p className={styles['nextPrevPost__link-arrow--left']}>← 次の記事</p>
+        <p className={styles['nextPrevPost__link-arrow--left']}>
+          <FontAwesomeIcon className={styles['nextPrevPost__link-icon--left']} icon={faAngleLeft} />
+          次の記事
+        </p>
         <p>{title}</p>
       </Link>
     );
@@ -62,7 +67,10 @@ const NextPrevPost = ({ date, nodes }: Props) => {
     const { title, slug } = frontmatter;
     return (
       <Link to={slug} className={styles['nextPrevPost__link--right']}>
-        <p className={styles['nextPrevPost__link-arrow--right']}>前の記事 →</p>
+        <p className={styles['nextPrevPost__link-arrow--right']}>
+          前の記事
+          <FontAwesomeIcon className={styles['nextPrevPost__link-icon--right']} icon={faAngleRight} />
+        </p>
         <p>{title}</p>
       </Link>
     );

@@ -1,6 +1,10 @@
 // @flow strict
 import React, { useCallback, useState } from 'react';
 import { Link } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faChevronRight, faChevronLeft, faAngleRight, faTimes
+} from '@fortawesome/free-solid-svg-icons';
 import styles from './SideMenu.module.scss';
 import type { FrontmatterObj } from '../../../types';
 
@@ -10,22 +14,26 @@ type Props = {
 }
 
 const SideMenu = ({ nodes, postId }: Props) => {
-  const [isOpen, toggle] = useState(false);
-  const toggleCallback = useCallback(() => toggle(!isOpen));
+  const [isOpen, toggle] = useState<boolean>(false);
+  const toggleCallback = useCallback((): void => toggle(!isOpen));
   const reversed = nodes.slice().reverse();
 
   const postList = () => reversed.map((node) => {
     const { id, frontmatter } = node;
     const { title, slug } = frontmatter;
+    const isActivePost = postId === id;
     return (
       <li key={title} className={styles['sideMenu__drawer-list__item']}>
         <Link
           to={slug}
           className={
-            postId === id ? styles['sideMenu__drawer-list__item-activeLink'] : undefined
+            isActivePost ? styles['sideMenu__drawer-list__item-activeLink'] : undefined
           }
         >
-          {postId === id ? '▶︎ ' : null}
+          {isActivePost ? <>
+            <FontAwesomeIcon icon={faAngleRight} className={styles['sideMenu__drawer-list__item-icon']} />
+          </>
+            : null}
           {title}
         </Link>
       </li>
@@ -63,7 +71,13 @@ const SideMenu = ({ nodes, postId }: Props) => {
           type="button"
           onClick={toggleCallback}
         >
-          {isOpen ? '×' : '< >'}
+          {isOpen ? <FontAwesomeIcon className={styles['sideMenu__fab-icon']} icon={faTimes} />
+            : <>
+              <FontAwesomeIcon className={styles['sideMenu__fab-icon']} icon={faChevronLeft} />
+              {' '}
+            <FontAwesomeIcon className={styles['sideMenu__fab-icon']} icon={faChevronRight} />
+            </>
+          }
         </button>
       </div>
     </section>

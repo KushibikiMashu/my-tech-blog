@@ -1,6 +1,8 @@
 // @flow strict
 import React from 'react';
 import { Link } from 'gatsby';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { usePublishedPostList } from '../../../hooks';
 import styles from './PostList.module.scss';
 
@@ -68,7 +70,11 @@ const PostList = ({ tags, title }: Props) => {
       <div className={styles['postList__post']} key={title}>
         <Link to={slug}>
           <img className={styles['postList__post-image']} src={socialImage} alt="サムネイル画像" width="345" height="215" />
-          <p>▶︎ {title}</p>
+          <p>
+            <FontAwesomeIcon icon={faAngleRight} className={styles['postList__post-icon']} />
+            {' '}
+            {title}
+          </p>
         </Link>
       </div>
     );
