@@ -12,6 +12,8 @@
     "lint:js": "eslint --cache --ext .js,.jsx .",
     "lint:scss": "stylelint --cache \"src/**/*.scss\"",
     "lint": "concurrently \"yarn run lint:js\" \"yarn run lint:scss\" \"yarn flow\"",
+    "textlint": "textlint --preset ja-technical-writing content/posts/*.md",
+    "textlint:fix": "textlint --fix --preset ja-technical-writing content/posts/*.md",
     "test": "jest -o --config ./jest/jest-config.js",
     "test:coverage": "jest --coverage --config ./jest/jest-config.js",
     "test:watch": "jest --watch --config ./jest/jest-config.js",
@@ -94,7 +96,8 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-share": "^3.0.1",
-    "react-toastify": "^5.5.0"
+    "react-toastify": "^5.5.0",
+    "textlint-rule-preset-ja-technical-writing": "^4.0.0-beta.0"
   },
   "devDependencies": {
     "@babel/core": "7.6.4",
@@ -131,6 +134,8 @@
     "rimraf": "3.0.0",
     "stylelint": "11.1.1",
     "stylelint-config-recommended-scss": "4.0.0",
-    "stylelint-scss": "3.11.1"
+    "stylelint-scss": "3.11.1",
+    "textlint": "^11.6.1",
+    "textlint-rule-no-todo": "^2.0.1"
   }
 }
