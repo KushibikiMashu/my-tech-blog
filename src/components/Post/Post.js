@@ -25,7 +25,7 @@ const Post = ({ post }: Props) => {
     tags, title, date, updatedAt
   } = post.frontmatter;
 
-  const { url: siteUrl } = useSiteMetadata();
+  const { url: siteUrl, author } = useSiteMetadata();
   const postUrl = siteUrl + slug;
   const shareTitle = `「${title}」\n`;
 
@@ -62,7 +62,7 @@ const Post = ({ post }: Props) => {
           <Link className={styles['post__homeButton']} to="/">Topに戻る</Link>
          </div>
 
-        <Author/>
+        <Author {...author}/>
       </div>
 
       <StickyFooter

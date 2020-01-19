@@ -17,7 +17,17 @@ describe('Author', () => {
   });
 
   it('renders correctly', () => {
-    const tree = renderer.create(<Author />).toJSON();
+    const props = {
+      name: 'string',
+      bio: 'string',
+      photo: 'string',
+      contacts: {
+        twitter: 'string',
+        github: 'string',
+      }
+    };
+
+    const tree = renderer.create(<Author {...props} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

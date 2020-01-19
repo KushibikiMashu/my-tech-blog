@@ -86,17 +86,17 @@ exports[`TagTemplate renders correctly 1`] = `
             >
               ポートフォリオ
             </a>
-            <li
-              className="menu__list-item"
+          </li>
+          <li
+            className="menu__list-item"
+          >
+            <a
+              className="menu__list-item-link"
+              href="https://github.com/KushibikiMashu"
+              target="_blank"
             >
-              <a
-                className="menu__list-item-link"
-                href="https://github.com/KushibikiMashu"
-                target="_blank"
-              >
-                GitHub
-              </a>
-            </li>
+              GitHub
+            </a>
           </li>
         </ul>
       </nav>
@@ -272,9 +272,9 @@ exports[`TagTemplate renders correctly 1`] = `
             >
               <time
                 className="feed__item-meta-time"
-                dateTime="2016-09-01"
+                dateTime="2016/09/01"
               >
-                2016-09-01
+                2016/09/01
               </time>
               <span
                 className="feed__item-meta-divider"
@@ -320,9 +320,9 @@ exports[`TagTemplate renders correctly 1`] = `
             >
               <time
                 className="feed__item-meta-time"
-                dateTime="2016-09-01"
+                dateTime="2016/09/01"
               >
-                2016-09-01
+                2016/09/01
               </time>
               <span
                 className="feed__item-meta-divider"

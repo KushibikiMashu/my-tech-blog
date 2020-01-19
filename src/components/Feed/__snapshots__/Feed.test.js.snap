@@ -12,9 +12,9 @@ exports[`Feed renders correctly 1`] = `
     >
       <time
         className="feed__item-meta-time"
-        dateTime="2016-09-01"
+        dateTime="2016/09/01"
       >
-        2016-09-01
+        2016/09/01
       </time>
       <span
         className="feed__item-meta-divider"
@@ -60,9 +60,9 @@ exports[`Feed renders correctly 1`] = `
     >
       <time
         className="feed__item-meta-time"
-        dateTime="2016-09-01"
+        dateTime="2016/09/01"
       >
-        2016-09-01
+        2016/09/01
       </time>
       <span
         className="feed__item-meta-divider"

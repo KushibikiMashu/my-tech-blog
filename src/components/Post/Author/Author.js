@@ -2,20 +2,28 @@
 import React from 'react';
 import { getContactHref } from '../../../utils';
 import styles from './Author.module.scss';
-import { useSiteMetadata } from '../../../hooks';
 
-const Author = () => {
-  const { author } = useSiteMetadata();
+type Props = {
+  name: string,
+  bio: string,
+  photo: string,
+  contacts: {
+    twitter: string,
+    github: string,
+  }
+}
 
-  return (
+const Author = ({
+  photo, name, contacts, bio
+}: Props) => (
     <div className={styles['author']}>
       <div className={styles['author__photo']}>
         <img
           className={styles['author__photo-image']}
           width="75"
           height="75"
-          src={author.photo}
-          alt={author.name}
+          src={photo}
+          alt={name}
         />
       </div>
       <div className={styles['author__bio']}>
@@ -24,7 +32,7 @@ const Author = () => {
           <div className={styles['author__bio-twitter']}>
             Twitter:{' '}
             <a
-              href={getContactHref('twitter', author.contacts.twitter)}
+              href={getContactHref('twitter', contacts.twitter)}
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -32,10 +40,9 @@ const Author = () => {
             </a>
           </div>
         </div>
-        {author.bio}
+        {bio}
       </div>
     </div>
-  );
-};
+);
 
 export default Author;

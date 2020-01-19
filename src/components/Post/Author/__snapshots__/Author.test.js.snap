@@ -8,35 +8,43 @@ exports[`Author renders correctly 1`] = `
     className="author__photo"
   >
     <img
-      alt="Test name"
+      alt="string"
       className="author__photo-image"
       height="75"
-      src="/test.jpg"
+      src="string"
       width="75"
     />
   </div>
-  <p
+  <div
     className="author__bio"
   >
-    <strong>
-      プログラミングをするパンダ
-    </strong>
     <div
-      className="author__bio-twitter"
+      className="author__bio-description"
     >
-      Twitter:
-       
-      <a
-        href="https://www.twitter.com/#"
-        rel="noopener noreferrer"
-        target="_blank"
+      <span
+        className="author__bio-name"
       >
-        <strong>
-          @Panda_Program
-        </strong>
-      </a>
+        プログラミングをするパンダ
+      </span>
+      <div
+        className="author__bio-twitter"
+      >
+        Twitter:
+         
+        <a
+          href="https://www.twitter.com/string"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="author__bio-twitter__name"
+          >
+            @Panda_Program
+          </span>
+        </a>
+      </div>
     </div>
-    Test bio
-  </p>
+    string
+  </div>
 </div>
 `;
