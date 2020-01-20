@@ -1,5 +1,10 @@
 {
   "rules": {
-    "preset-ja-technical-writing": true
+    // https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing
+    "preset-ja-technical-writing": {
+    "sentence-length": {
+        "max" : 115
+      }
+    }
   }
 }
