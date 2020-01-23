@@ -12,17 +12,12 @@
     "lint:js": "eslint --cache --ext .js,.jsx .",
     "lint:scss": "stylelint --cache \"src/**/*.scss\"",
     "lint": "concurrently \"yarn run lint:js\" \"yarn run lint:scss\" \"yarn flow\"",
-    "textlint": "textlint --preset ja-technical-writing content/posts/2019/*.md",
-    "textlint:fix": "textlint --fix --preset ja-technical-writing content/posts/2019/*.md",
+    "textlint": "textlint --preset ja-technical-writing content/posts/2020/*.md",
+    "textlint:fix": "textlint --fix --preset ja-technical-writing content/posts/2020/*.md",
     "test": "jest -o --config ./jest/jest-config.js",
     "test:coverage": "jest --coverage --config ./jest/jest-config.js",
     "test:watch": "jest --watch --config ./jest/jest-config.js",
     "test:update": "jest -o --config ./jest/jest-config.js --updateSnapshot -u"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint --fix && npm run test"
-    }
   },
   "repository": "https://github.com/KushibikiMashu/my-tech-blog",
   "keywords": [
@@ -137,5 +132,10 @@
     "stylelint-scss": "3.11.1",
     "textlint": "^11.6.1",
     "textlint-rule-no-todo": "^2.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint --fix && npm run test && npm run textlint"
+    }
   }
 }
