@@ -1,6 +1,6 @@
 ---
 title: 
-date: "2019-00-00T00:00:00.000Z"
+date: "2020-00-00T00:00:00.000Z"
 updatedAt: ""
 template: "post"
 draft: true
@@ -9,7 +9,7 @@ category: ""
 tags: 
     - ""
 description: ""
-socialImage: "/media/2019-00-00__0.png"
+socialImage: "/media/2020-00-00__0.png"
 ---
 
 howを書くときはカテゴリーは"how to"
