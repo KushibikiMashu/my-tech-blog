@@ -10,6 +10,17 @@ type Props = {
   }[]
 };
 
+const items = [
+  {
+    title: 'ポートフォリオ',
+    url: 'https://kushibikimashu.github.io/portfolio',
+  },
+  {
+    title: 'GitHub',
+    url: 'https://github.com/KushibikiMashu',
+  },
+];
+
 const Menu = ({ menu }: Props) => (
   <nav className={styles['menu']}>
     <ul className={styles['menu__list']}>
@@ -24,23 +35,25 @@ const Menu = ({ menu }: Props) => (
           </Link>
         </li>
       ))}
-      <li className={styles['menu__list-item']} key="portofolio">
-        <a
-          className={styles['menu__list-item-link']}
-          href="https://kushibikimashu.github.io/portfolio"
-          target="_blank"
-        >
-          ポートフォリオ
-        </a>
-      </li>
+      {items.map((item) => (
+        <li className={styles['menu__list-item']} key={item.title}>
+          <a
+            className={styles['menu__list-item-link']}
+            href={item.url}
+            target="_blank"
+          >
+            {item.title}
+          </a>
+        </li>
+      ))}
       <li className={styles['menu__list-item']} key="github">
-        <a
+        <Link
+          to='/pages/policy'
           className={styles['menu__list-item-link']}
-          href="https://github.com/KushibikiMashu"
-          target="_blank"
+          activeClassName={styles['menu__list-item-link--active']}
         >
-          GitHub
-        </a>
+          プライバシーポリシー
+        </Link>
       </li>
     </ul>
   </nav>

@@ -9,7 +9,7 @@
     "deploy": "gatsby build --prefix-paths",
     "clean": "rimraf .cache public",
     "flow": "flow",
-    "lint:js": "eslint --cache --ext .js,.jsx .",
+    "lint:js": "eslint --fix --cache --ext .js,.jsx .",
     "lint:scss": "stylelint --cache \"src/**/*.scss\"",
     "lint": "concurrently \"yarn run lint:js\" \"yarn run lint:scss\" \"yarn flow\"",
     "textlint": "textlint --preset ja-technical-writing content/posts/2020/*.md",
@@ -135,7 +135,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint --fix && npm run test && npm run textlint"
+      "pre-commit": "npm run lint && npm run textlint:fix"
     }
   }
 }
