@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import 'react-toastify/dist/ReactToastify.min.css';
+import { Disqus } from 'gatsby-plugin-disqus';
 import Author from './Author';
 import Content from './Content';
 import Tags from './Tags';
@@ -13,7 +14,6 @@ import styles from './Post.module.scss';
 import ShareButtons from './Buttons';
 import NextPrevPost from './NextPrevPost';
 import SideMenu from './SideMenu';
-import {Disqus} from 'gatsby-plugin-disqus'
 
 type Props = {
   post: Node
@@ -37,7 +37,7 @@ const Post = ({ post }: Props) => {
     title,
     url: postUrl,
     identifier: postId,
-  }
+  };
 
   return (
     <div className={styles['post']}>
