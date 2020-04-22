@@ -13,6 +13,7 @@ import styles from './Post.module.scss';
 import ShareButtons from './Buttons';
 import NextPrevPost from './NextPrevPost';
 import SideMenu from './SideMenu';
+import {Disqus} from 'gatsby-plugin-disqus'
 
 type Props = {
   post: Node
@@ -32,6 +33,12 @@ const Post = ({ post }: Props) => {
   const nodes: FrontmatterObj[] = usePublishedPostList();
   const hasPosts = nodes.length !== 0;
 
+  const disqusConfig = {
+    title,
+    url: postUrl,
+    identifier: postId,
+  }
+
   return (
     <div className={styles['post']}>
 
@@ -49,6 +56,8 @@ const Post = ({ post }: Props) => {
 
       <div className={styles['post__footer']}>
         {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs}/>}
+
+        <Disqus config={disqusConfig} />
 
         <div className={styles['post__footer-share']}>
           <ShareButtons title={title} shareTitle={shareTitle} url={postUrl}/>
