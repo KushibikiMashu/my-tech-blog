@@ -12,6 +12,11 @@
   }
 
   &__post {
+
+    &-link {
+      width: 100%;
+    }
+
     &-image {
       margin: auto;
       width: 345px;
@@ -30,9 +35,6 @@
     &__post {
       display: flex;
 
-      &-image {
-        display: none;
-      }
     }
   }
 

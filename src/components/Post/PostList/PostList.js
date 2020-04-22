@@ -66,7 +66,7 @@ const PostList = ({ tags, title }: Props) => {
 
   const renderPosts = () => posts.map(({ title, slug, socialImage }: Post) => (
       <div className={styles['postList__post']} key={title}>
-        <Link to={slug}>
+        <Link className={styles['postList__post-link']} to={slug}>
           <img className={styles['postList__post-image']} src={socialImage} alt="サムネイル画像" width="345" height="215" />
           <p>
             <FontAwesomeIcon icon={faAngleRight} className={styles['postList__post-icon']} />
