@@ -6,7 +6,6 @@ import { Disqus } from 'gatsby-plugin-disqus';
 import Author from './Author';
 import Content from './Content';
 import Tags from './Tags';
-import StickyFooter from './Footer';
 import { usePublishedPostList, useSiteMetadata } from '../../hooks';
 import type { Node, FrontmatterObj } from '../../types';
 import PostList from './PostList';
