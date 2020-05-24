@@ -37,10 +37,21 @@
 
     &-share {
       @include padding(2, 0);
-      display: flex;
-      justify-content: center;
-      align-items: center;
 
+      &Comment {
+        text-align: center;
+      }
+
+      &Buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+      }
+
+    }
+    &-comment {
+      @include padding(4, 0);
     }
 
   }

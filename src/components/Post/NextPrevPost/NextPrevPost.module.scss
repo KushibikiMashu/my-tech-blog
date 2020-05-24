@@ -2,7 +2,6 @@
 @import '../../../assets/scss/mixins';
 
 .nextPrevPost {
-  @include padding(1, 0);
   display: flex;
   justify-content: space-around;
 

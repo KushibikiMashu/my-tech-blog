@@ -2,7 +2,7 @@
 @import '../../../assets/scss/mixins';
 
 .postList {
-  @include padding(0.25, 0);
+  @include padding(0, 0);
 
   &__heading {
     &-title {
@@ -15,12 +15,6 @@
 
     &-link {
       width: 100%;
-    }
-
-    &-image {
-      margin: auto;
-      width: 345px;
-      height: 215px;
     }
 
     &-icon {

@@ -57,10 +57,15 @@ const Post = ({ post }: Props) => {
       <div className={styles['post__footer']}>
         {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs}/>}
 
-        <Disqus config={disqusConfig} />
-
         <div className={styles['post__footer-share']}>
-          <ShareButtons title={title} shareTitle={shareTitle} url={postUrl}/>
+          <p className={styles['post__footer-shareComment']}>よかったらシェアをお願いします。励みになります！</p>
+          <div className={styles['post__footer-shareButtons']}>
+            <ShareButtons title={title} shareTitle={shareTitle} url={postUrl}/>
+          </div>
+        </div>
+
+        <div className={styles['post__footer-comment']}>
+          <Disqus config={disqusConfig} />
         </div>
 
         <PostList tags={tags} title={title}/>
@@ -74,10 +79,6 @@ const Post = ({ post }: Props) => {
         <Author {...author}/>
       </div>
 
-      <StickyFooter
-        title={shareTitle}
-        postUrl={postUrl}
-      />
     </div>
   );
 };

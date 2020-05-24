@@ -64,10 +64,9 @@ const PostList = ({ tags, title }: Props) => {
 
   const posts = relatedPosts(tags, title, nodes);
 
-  const renderPosts = () => posts.map(({ title, slug, socialImage }: Post) => (
+  const renderPosts = () => posts.map(({ title, slug }: Post) => (
       <div className={styles['postList__post']} key={title}>
         <Link className={styles['postList__post-link']} to={slug}>
-          <img className={styles['postList__post-image']} src={socialImage} alt="サムネイル画像" width="345" height="215" />
           <p>
             <FontAwesomeIcon icon={faAngleRight} className={styles['postList__post-icon']} />
             {' '}
