@@ -9,7 +9,9 @@ import { useSiteMetadata, useCategoriesList } from '../hooks';
 
 const CategoriesListTemplate = () => {
   const { title, subtitle } = useSiteMetadata();
-  const categories = useCategoriesList();
+  const categories = useCategoriesList().sort(
+    (prev, next) => (prev.totalCount > next.totalCount ? -1 : 1)
+  );
 
   return (
     <Layout title={`Categories - ${title}`} description={subtitle}>
