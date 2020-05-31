@@ -9,7 +9,7 @@ category: ""
 tags:
     - ""
 description: ""
-socialImage: "/media/2020-00-00__0.png"
+socialImage: "/media/2020/0/00/0.png"
 ---
 
 howを書くときはカテゴリーは"how to"

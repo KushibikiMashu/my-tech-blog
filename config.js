@@ -7,7 +7,7 @@ module.exports = {
   subtitle: 'プログラミングをするパンダのTechブログ',
   copyright: '© All rights reserved.',
   disqusShortname: '',
-  postsPerPage: 8,
+  postsPerPage: 20,
   googleAnalyticsId: 'UA-126057649-4',
   useKatex: false,
   menu: [
