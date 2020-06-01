@@ -7,19 +7,20 @@
   margin: 0 auto;
 
   &__title {
-    font-size: $typographic-base-font-size * 2;
+    font-size: $typographic-base-font-size * 1.4;
     max-width: $layout-post-width;
     margin-left: auto;
     margin-right: auto;
     font-weight: 600;
     text-align: center;
-    @include line-height(2);
+    @include line-height(1.5);
     @include margin-top(1);
     @include margin-bottom(0);
   }
 
   &__body {
     & p {
+      font-size: $typographic-base-font-size * 0.9;
       @include line-height(1.1);
     }
 
@@ -38,6 +39,7 @@
       ul {
 
         li {
+          font-size: $typographic-base-font-size * 1;
           @include margin-top(0.25);
           @include margin-bottom(0.25);
 
@@ -55,6 +57,7 @@
 
           p {
             margin: 0;
+            font-size: $typographic-base-font-size * 1;
           }
         }
       }
@@ -77,7 +80,7 @@
       & blockquote {
         & p {
           max-width: $layout-post-width;
-          font-size: $typographic-base-font-size * 1.6817;
+          font-size: $typographic-base-font-size * 1.3;
           margin-top: 0;
           @include margin-bottom(1);
         }
@@ -114,7 +117,7 @@
       @include margin-bottom(1.125);
 
       & p {
-        font-size: $typographic-base-font-size * 1.125;
+        font-size: $typographic-base-font-size * 1.1;
         @include margin-bottom(1.125);
         @include line-height(1.25);
       }
