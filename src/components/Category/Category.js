@@ -10,8 +10,8 @@ const Category = ({ hasHeading }) => {
 
   return (
     <>
-      {hasHeading ? <p>カテゴリー</p> : null}
-    <ul>
+      {hasHeading ? <p style={{ margin: 0 }}>カテゴリー</p> : null}
+    <ul style={{ lineStyle: 'none', paddingLeft: 20 }}>
       {categories.map((category) => (
         <li key={category.fieldValue}>
           <Link to={`/category/${kebabCase(category.fieldValue)}/`}>
