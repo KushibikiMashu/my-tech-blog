@@ -1,9 +1,9 @@
 // @flow strict
 import React from 'react';
-import { Link } from 'gatsby';
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { usePublishedPostList } from '../../../hooks';
+import {Link} from 'gatsby';
+import {faAngleRight} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {usePublishedPostList} from '../../../hooks';
 import styles from './PostList.module.scss';
 
 type Props = {
@@ -32,7 +32,7 @@ const relatedPosts = (tags: string[], title: string, nodes: Nodes): Array<Post> 
 
   for (let i = 0; i < nodes.length; i += 1) {
     const node = nodes[i].frontmatter;
-    const { tags: postTags, title: postTitle } = node;
+    const {tags: postTags, title: postTitle} = node;
 
     // タグのチェックの計算量がO(n * m)なので、ビルドが遅くなったと感じた時にはアルゴリズムを改めたい
     for (let j = 0; j < tags.length; j += 1) {
@@ -51,11 +51,11 @@ const relatedPosts = (tags: string[], title: string, nodes: Nodes): Array<Post> 
   return posts;
 };
 
-function isSamePost(title: string, postTitle: string):boolean {
+function isSamePost(title: string, postTitle: string): boolean {
   return title === postTitle;
 }
 
-const PostList = ({ tags, title }: Props) => {
+const PostList = ({tags, title}: Props) => {
   const nodes = usePublishedPostList();
 
   if (nodes.length === 0) {
@@ -64,23 +64,22 @@ const PostList = ({ tags, title }: Props) => {
 
   const posts = relatedPosts(tags, title, nodes);
 
-  const renderPosts = () => posts.map(({ title, slug }: Post) => (
-      <div className={styles['postList__post']} key={title}>
-        <Link className={styles['postList__post-link']} to={slug}>
-          <p>
-            <FontAwesomeIcon icon={faAngleRight} className={styles['postList__post-icon']} />
-            {' '}
-            {title}
-          </p>
-        </Link>
-      </div>
-  ));
-
   return posts.length === 0 ? null
     : (
       <div className={styles['postList']}>
         <p className={styles['postList__heading-title']}>関連記事</p>
-        {renderPosts()}
+        {posts.map(({title, slug}: Post) => (
+          <div className={styles['postList__post']} key={title}>
+            <Link className={styles['postList__post-link']} to={slug}>
+              <p>
+                <FontAwesomeIcon icon={faAngleRight} className={styles['postList__post-icon']}/>
+                {' '}
+                {title}
+              </p>
+            </Link>
+          </div>
+        ))
+        }
       </div>
     );
 };
