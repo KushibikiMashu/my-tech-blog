@@ -12,9 +12,12 @@
   }
 
   &__post {
-
     &-link {
       width: 100%;
+
+      & p {
+        @include margin-bottom(0.25);
+      }
     }
 
     &-icon {
@@ -25,7 +28,6 @@
 
 @include breakpoint-md {
   .postList {
-
     &__post {
       display: flex;
 
