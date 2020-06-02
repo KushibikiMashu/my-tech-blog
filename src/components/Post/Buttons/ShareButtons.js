@@ -2,19 +2,16 @@
 import React from 'react';
 import TwitterButton from './TwitterButton';
 import HatenaBookmarkButton from './HatenaBookmarkButton';
-import PocketButton from './PocketButton';
 import LinkButton from './LinkButton';
 
 type Props = {
-  title: string,
   shareTitle: string,
   url: string,
 }
 
-const ShareButtons = ({ title, shareTitle, url }: Props) => <>
-  <TwitterButton url={url} title={shareTitle}/>
+const ShareButtons = ({ shareTitle, url }: Props) => <>
   <HatenaBookmarkButton url={url}/>
-  <PocketButton url={url} title={title}/>
+  <TwitterButton url={url} title={shareTitle}/>
   <LinkButton url={url}/>
 </>;
 

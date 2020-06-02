@@ -57,9 +57,13 @@ const Post = ({ post }: Props) => {
         {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs}/>}
 
         <div className={styles['post__footer-share']}>
-          <p className={styles['post__footer-shareComment']}>よかったらシェアをお願いします。励みになります！</p>
+          <p className={styles['post__footer-shareComment']}>
+            記事が良かったらシェアをお願いします😊
+            <br/>
+            記事執筆のやる気を貰えます💪
+          </p>
           <div className={styles['post__footer-shareButtons']}>
-            <ShareButtons title={title} shareTitle={shareTitle} url={postUrl}/>
+            <ShareButtons shareTitle={shareTitle} url={postUrl}/>
           </div>
         </div>
 
