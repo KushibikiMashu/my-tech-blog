@@ -24,14 +24,9 @@ const SideMenu = ({ nodes, postId }: Props) => {
       <li key={title} className={styles['sideMenu__drawer-list__item']}>
         <Link
           to={slug}
-          className={
-            isActivePost ? styles['sideMenu__drawer-list__item-activeLink'] : undefined
-          }
+          activeClassName={styles['sideMenu__drawer-list__item-activeLink']}
         >
-          {isActivePost ? <>
-            <FontAwesomeIcon icon={faAngleRight} className={styles['sideMenu__drawer-list__item-icon']} />
-          </>
-            : null}
+          {isActivePost ? <FontAwesomeIcon icon={faAngleRight} className={styles['sideMenu__drawer-list__item-icon']} /> : null}
           {title}
         </Link>
       </li>
@@ -48,7 +43,8 @@ const SideMenu = ({ nodes, postId }: Props) => {
         }
       >
         <header className={styles['sideMenu__drawer-header']}>
-          <div>記事一覧</div>
+            <div>記事一覧</div>
+            <Link to="/" className={styles['sideMenu__drawer-header-link']}><span>Topに戻る</span></Link>
         </header>
         <ul className={styles['sideMenu__drawer-list']}>
           {renderPostList()}

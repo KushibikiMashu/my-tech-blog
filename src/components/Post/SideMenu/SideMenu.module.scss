@@ -19,8 +19,15 @@
 
     &-header {
       @include padding(1, 0.5, 0.5, 0.5);
-      font-size: 24px;
+      font-size: $typographic-base-font-size * 1.5;
       border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &-link {
+        font-size: $typographic-base-font-size * 0.9;
+      }
     }
 
     &-list {
