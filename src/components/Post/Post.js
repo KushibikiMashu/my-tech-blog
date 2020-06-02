@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import 'react-toastify/dist/ReactToastify.min.css';
-import { Disqus } from 'gatsby-plugin-disqus';
 import Author from './Author';
 import Content from './Content';
 import Tags from './Tags';
@@ -32,12 +31,6 @@ const Post = ({ post }: Props) => {
   const nodes: FrontmatterObj[] = usePublishedPostList();
   const hasPosts = nodes.length !== 0;
 
-  const disqusConfig = {
-    title,
-    url: postUrl,
-    identifier: postId,
-  };
-
   return (
     <div className={styles['post']}>
 
@@ -65,10 +58,6 @@ const Post = ({ post }: Props) => {
           <div className={styles['post__footer-shareButtons']}>
             <ShareButtons shareTitle={shareTitle} url={postUrl}/>
           </div>
-        </div>
-
-        <div className={styles['post__footer-comment']}>
-          <Disqus config={disqusConfig} />
         </div>
 
         <PostList tags={tags} title={title}/>
