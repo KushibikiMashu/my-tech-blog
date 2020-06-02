@@ -41,6 +41,7 @@ const Menu = ({ menu }: Props) => (
             className={styles['menu__list-item-link']}
             href={item.url}
             target="_blank"
+            rel="noopener noreferrer"
           >
             {item.title}
           </a>
