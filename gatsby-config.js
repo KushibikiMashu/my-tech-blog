@@ -262,8 +262,6 @@ module.exports = {
         env: {
           production: {
             policy: [{ userAgent: '*', allow: '/' }],
-            sitemap: `${siteUrl}/sitemap.xml`,
-            host: siteUrl
           },
           'branch-deploy': {
             policy: [{ userAgent: '*', disallow: ['/'] }],
