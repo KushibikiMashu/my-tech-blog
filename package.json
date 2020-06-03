@@ -126,6 +126,7 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "^25.5.4",
     "jest-cli": "^25.5.4",
+    "lint-staged": "^10.2.7",
     "lost": "8.3.1",
     "postcss-pxtorem": "4.0.1",
     "react-test-renderer": "16.10.2",
@@ -136,9 +137,16 @@
     "textlint": "^11.6.1",
     "textlint-rule-no-todo": "^2.0.1"
   },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:js",
+      "npm run textlint:fix",
+      "git add"
+    ]
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint:js && npm run textlint:fix"
+      "pre-commit": "lint-staged"
     }
   }
 }
