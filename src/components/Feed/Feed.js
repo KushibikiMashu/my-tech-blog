@@ -1,8 +1,6 @@
 // @flow strict
 import React from 'react';
 import { Link } from 'gatsby';
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { Edges } from '../../types';
 import styles from './Feed.module.scss';
 
@@ -31,7 +29,6 @@ const Feed = ({ edges }: Props) => (
           {edge.node.frontmatter.description}
           <span className={styles['feed__item-readmore']}>
             <Link to={edge.node.fields.slug}>
-              <FontAwesomeIcon icon={faAngleRight} size="1x" />
               {' '}
               記事を読む
             </Link>
