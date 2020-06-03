@@ -3,10 +3,10 @@ import React from 'react';
 import moment from 'moment';
 import 'moment-timezone';
 import { Link } from 'gatsby';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { Edges } from '../../types';
 import styles from './Feed.module.scss';
-import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 moment.tz.setDefault('Asia/Tokyo');
 
