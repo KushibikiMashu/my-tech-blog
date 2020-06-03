@@ -5,6 +5,8 @@ import 'moment-timezone';
 import { Link } from 'gatsby';
 import type { Edges } from '../../types';
 import styles from './Feed.module.scss';
+import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 moment.tz.setDefault('Asia/Tokyo');
 
@@ -20,6 +22,7 @@ const Feed = ({ edges }: Props) => (
           <Link className={styles['feed__item-title-link']} to={edge.node.fields.slug}>{edge.node.frontmatter.title}</Link>
         </h2>
         <div className={styles['feed__item-meta']}>
+          <span className={styles['feed__item-meta-time']}>公開日:{' '}</span>
           <time className={styles['feed__item-meta-time']} dateTime={moment(edge.node.frontmatter.date).format('YYYY/MM/DD')}>
             {moment(edge.node.frontmatter.date).format('YYYY/MM/DD')}
           </time>
@@ -31,7 +34,11 @@ const Feed = ({ edges }: Props) => (
         <p className={styles['feed__item-description']}>
           {edge.node.frontmatter.description}
           <span className={styles['feed__item-readmore']}>
-            <Link to={edge.node.fields.slug}>記事を読む</Link>
+            <Link to={edge.node.fields.slug}>
+              <FontAwesomeIcon icon={faAngleRight}/>
+              {' '}
+              記事を読む
+            </Link>
           </span>
         </p>
       </div>
