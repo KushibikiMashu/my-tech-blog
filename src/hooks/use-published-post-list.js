@@ -15,7 +15,7 @@ const usePublishedPostList = () => {
               title
               description
               slug
-              date
+              date(formatString: "YYYY/MM/DD")
               category
               socialImage
               updatedAt

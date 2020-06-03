@@ -72,7 +72,7 @@ const PostList = ({ tags, title }: Props) => {
           <div className={styles['postList__post']} key={title}>
             <Link className={styles['postList__post-link']} to={slug}>
               <p>
-                <FontAwesomeIcon icon={faAngleRight} className={styles['postList__post-icon']}/>
+                <FontAwesomeIcon icon={faAngleRight} size="1x" className={styles['postList__post-icon']}/>
                 {' '}
                 {title}
               </p>

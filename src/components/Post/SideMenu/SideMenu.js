@@ -26,7 +26,7 @@ const SideMenu = ({ nodes, postId }: Props) => {
           to={slug}
           activeClassName={styles['sideMenu__drawer-list__item-activeLink']}
         >
-          {isActivePost ? <FontAwesomeIcon icon={faAngleRight} className={styles['sideMenu__drawer-list__item-icon']} /> : null}
+          {isActivePost ? <FontAwesomeIcon icon={faAngleRight} size="1x" className={styles['sideMenu__drawer-list__item-icon']} /> : null}
           {title}
         </Link>
       </li>

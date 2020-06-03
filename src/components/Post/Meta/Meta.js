@@ -1,6 +1,5 @@
 // @flow strict
 import React from 'react';
-import moment from 'moment';
 import styles from './Meta.module.scss';
 
 type Props = {
@@ -8,25 +7,20 @@ type Props = {
   updatedAt?: string,
 };
 
+const Date = ({ label, date }) => (
+  <>
+    <span>{label}:{' '}</span>
+    <time dateTime={date}>
+      {date}
+    </time>
+  </>
+);
+
 const Meta = ({ date, updatedAt }: Props) => (
   <div className={styles['meta']}>
     <p className={styles['meta__date']}>
-      {updatedAt === undefined || updatedAt === '' ? (
-        <>
-            <span>公開日:{' '}</span>
-            <time dateTime={`${moment(date).format('YYYY/MM/DD')}`}>
-              {moment(date).format('YYYY/MM/DD')}
-            </time>
-        </>
-      )
-        : (
-          <>
-            <span>更新日:{' '}</span>
-            <time dateTime={moment(updatedAt).format('YYYY/MM/DD')}>
-              {moment(updatedAt).format('YYYY/MM/DD')}
-            </time>
-          </>
-        )
+      {updatedAt === undefined || updatedAt === '' ? <Date label="公開日" date={date}/>
+        : <Date label="更新日" date={updatedAt}/>
       }
     </p>
     <p className={styles['meta__date']}>by <a href="https://twitter.com/Panda_Program">@Panda_Program</a></p>

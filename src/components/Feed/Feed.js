@@ -1,14 +1,10 @@
 // @flow strict
 import React from 'react';
-import moment from 'moment';
-import 'moment-timezone';
 import { Link } from 'gatsby';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { Edges } from '../../types';
 import styles from './Feed.module.scss';
-
-moment.tz.setDefault('Asia/Tokyo');
 
 type Props = {
   edges: Edges
@@ -23,8 +19,8 @@ const Feed = ({ edges }: Props) => (
         </h2>
         <div className={styles['feed__item-meta']}>
           <span className={styles['feed__item-meta-time']}>公開日:{' '}</span>
-          <time className={styles['feed__item-meta-time']} dateTime={moment(edge.node.frontmatter.date).format('YYYY/MM/DD')}>
-            {moment(edge.node.frontmatter.date).format('YYYY/MM/DD')}
+          <time className={styles['feed__item-meta-time']} dateTime={edge.node.frontmatter.date}>
+            {edge.node.frontmatter.date}
           </time>
           <span className={styles['feed__item-meta-divider']} />
           <span className={styles['feed__item-meta-category']}>
@@ -35,7 +31,7 @@ const Feed = ({ edges }: Props) => (
           {edge.node.frontmatter.description}
           <span className={styles['feed__item-readmore']}>
             <Link to={edge.node.fields.slug}>
-              <FontAwesomeIcon icon={faAngleRight}/>
+              <FontAwesomeIcon icon={faAngleRight} size="1x" />
               {' '}
               記事を読む
             </Link>
