@@ -1,3 +1,17 @@
+---
+title: React Hooksを本番環境で使ったらコンポーネントの状態管理がとても楽だった
+template: "post"
+date: "2019-05-23T21:35:00.000Z"
+updatedAt: ""
+draft: true
+slug: "/posts/2019-05-23"
+category: "React"
+tags:
+    - "React"
+    - "React Hooks"
+description: ""
+---
+
 イシューより始めよ。目標から逆算する
 
 # 人が読みたい記事
