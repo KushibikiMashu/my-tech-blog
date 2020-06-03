@@ -8,11 +8,25 @@ type Props = {
   updatedAt?: string,
 };
 
-const Meta = ({ date, updatedAt }: Props) => (
+const Meta = ({date, updatedAt}: Props) => (
   <div className={styles['meta']}>
     <p className={styles['meta__date']}>
-      {updatedAt === undefined || updatedAt === '' ? `公開日: ${moment(date).format('YYYY/MM/DD')}`
-        : `更新日: ${moment(updatedAt).format('YYYY/MM/DD')}`
+      {updatedAt === undefined || updatedAt === '' ? (
+          <>
+            <span>公開日:{' '}</span>
+            <time dateTime={`${moment(date).format('YYYY/MM/DD')}`}>
+              {moment(date).format('YYYY/MM/DD')}
+            </time>
+          </>
+        )
+        : (
+          <>
+            <span>更新日:{' '}</span>
+            <time dateTime={moment(updatedAt).format('YYYY/MM/DD')}>
+              {moment(updatedAt).format('YYYY/MM/DD')}
+            </time>
+          </>
+        )
       }
     </p>
     <p className={styles['meta__date']}>by <a href="https://twitter.com/Panda_Program">@Panda_Program</a></p>

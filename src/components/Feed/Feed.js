@@ -1,9 +1,12 @@
 // @flow strict
 import React from 'react';
 import moment from 'moment';
+import 'moment-timezone';
 import { Link } from 'gatsby';
 import type { Edges } from '../../types';
 import styles from './Feed.module.scss';
+
+moment.tz.setDefault('Asia/Tokyo');
 
 type Props = {
   edges: Edges
