@@ -40,7 +40,7 @@ export const query = graphql`
         tags
         title
         socialImage
-        updatedAt
+        updatedAt(formatString: "YYYY年MM月DD日")
       }
     }
   }

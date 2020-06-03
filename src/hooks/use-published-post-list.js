@@ -18,7 +18,7 @@ const usePublishedPostList = () => {
               date(formatString: "YYYY/MM/DD")
               category
               socialImage
-              updatedAt
+              updatedAt(formatString: "YYYY年MM月DD日")
             }
             id
           }
