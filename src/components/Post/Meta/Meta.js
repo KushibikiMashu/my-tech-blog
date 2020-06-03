@@ -11,7 +11,7 @@ type Props = {
 const Meta = ({ date, updatedAt }: Props) => (
   <div className={styles['meta']}>
     <p className={styles['meta__date']}>
-      {updatedAt === undefined ? `公開日: ${moment(date).format('YYYY/MM/DD')}`
+      {updatedAt === undefined || updatedAt === '' ? `公開日: ${moment(date).format('YYYY/MM/DD')}`
         : `更新日: ${moment(updatedAt).format('YYYY/MM/DD')}`
       }
     </p>
