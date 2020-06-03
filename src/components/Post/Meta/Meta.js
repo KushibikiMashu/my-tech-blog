@@ -8,17 +8,17 @@ type Props = {
   updatedAt?: string,
 };
 
-const Meta = ({date, updatedAt}: Props) => (
+const Meta = ({ date, updatedAt }: Props) => (
   <div className={styles['meta']}>
     <p className={styles['meta__date']}>
       {updatedAt === undefined || updatedAt === '' ? (
-          <>
+        <>
             <span>公開日:{' '}</span>
             <time dateTime={`${moment(date).format('YYYY/MM/DD')}`}>
               {moment(date).format('YYYY/MM/DD')}
             </time>
-          </>
-        )
+        </>
+      )
         : (
           <>
             <span>更新日:{' '}</span>
