@@ -140,8 +140,7 @@
   "lint-staged": {
     "*.js": [
       "npm run lint:js",
-      "npm run textlint:fix",
-      "git add"
+      "npm run textlint:fix"
     ]
   },
   "husky": {
