@@ -142,10 +142,5 @@
       "npm run lint:js",
       "npm run textlint:fix"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
