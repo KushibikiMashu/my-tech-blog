@@ -29,7 +29,6 @@ const Menu = ({ menu }: Props) => (
           <Link
             to={item.path}
             className={styles['menu__list-item-link']}
-            activeClassName={styles['menu__list-item-link--active']}
           >
             {item.label}
           </Link>
@@ -51,7 +50,6 @@ const Menu = ({ menu }: Props) => (
         <Link
           to='/pages/policy'
           className={styles['menu__list-item-link']}
-          activeClassName={styles['menu__list-item-link--active']}
         >
           プライバシーポリシー
         </Link>

@@ -6,8 +6,8 @@ import Copyright from './Copyright';
 import Menu from './Menu';
 import styles from './Sidebar.module.scss';
 import Category from '../Category';
+import Ranking from './Ranking';
 import { useSiteMetadata } from '../../hooks';
-
 
 type Props = {
   isIndex?: boolean,
@@ -20,6 +20,7 @@ const Sidebar = ({ isIndex }: Props) => {
     <div className={styles['sidebar']}>
       <div className={styles['sidebar__inner']}>
         <Author author={author} isIndex={isIndex} />
+        <Ranking />
         <Menu menu={menu} />
         <Category hasHeading={true} />
         <Contacts contacts={author.contacts} />
