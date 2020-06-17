@@ -19,7 +19,7 @@ const Date = ({ label, date }) => (
 const Meta = ({ date, updatedAt }: Props) => (
   <div className={styles['meta']}>
     <p className={styles['meta__date']}>
-      {updatedAt === undefined || updatedAt === '' ? <Date label="公開日" date={date}/>
+      {typeof updatedAt === 'undefined' || updatedAt === 'Invalid date' ? <Date label="公開日" date={date}/>
         : <Date label="更新日" date={updatedAt}/>
       }
     </p>
