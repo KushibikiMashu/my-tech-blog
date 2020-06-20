@@ -56,18 +56,19 @@ function isSamePost(title: string, postTitle: string): boolean {
 }
 
 const PostList = ({ tags, title }: Props) => {
-  const nodes = usePublishedPostList();
+  const nodes = usePublishedPostList('DESC');
 
   if (nodes.length === 0) {
     return null;
   }
 
-  const posts = relatedPosts(tags, title, nodes);
+  // 最大5件に絞る
+  const posts = relatedPosts(tags, title, nodes).reverse().slice(0, 5);
 
   return posts.length === 0 ? null
     : (
       <div className={styles['postList']}>
-        <p className={styles['postList__heading-title']}>関連記事</p>
+        <p className={styles['postList__heading-title']}>{tags[0]}に関する記事</p>
         {posts.map(({ title, slug }: Post) => (
           <div className={styles['postList__post']} key={title}>
             <Link className={styles['postList__post-link']} to={slug}>

@@ -28,7 +28,7 @@ const Post = ({ post }: Props) => {
   const postUrl = siteUrl + slug;
   const shareTitle = `「${title}」\n`;
 
-  const nodes: FrontmatterObj[] = usePublishedPostList();
+  const nodes: FrontmatterObj[] = usePublishedPostList('ASC');
   const hasPosts = nodes.length !== 0;
 
   return (
