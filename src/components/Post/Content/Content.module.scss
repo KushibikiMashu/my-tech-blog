@@ -64,13 +64,14 @@
     }
 
     & h2 {
+      @include margin-top(3);
       @include line-height(1.5);
       border-bottom: 1px solid #ddd;
     }
 
     & h3, h4 {
       @include line-height(1.5);
-      @include margin-top(1);
+      @include margin-top(1.5);
     }
 
 
