@@ -5,9 +5,11 @@
   "main": "n/a",
   "scripts": {
     "dev": "gatsby develop -H 0.0.0.0",
-    "build": "gatsby build && cp -r public amp && rm amp/*.js amp/*.map amp/*.css amp/*.xml amp/*.json amp/*.txt amp/*.webmanifest && mv amp public/amp && node ampify.js",
+    "build": "gatsby build",
     "start": "gatsby serve",
     "deploy": "gatsby build --prefix-paths",
+    "amp:prepare": "cp -r public amp && rm amp/*.js amp/*.map amp/*.css amp/*.xml amp/*.json amp/*.txt amp/*.webmanifest && mv amp public/amp && node ampify.js",
+    "amp:build": "gatsby build && npm run amp:prepare && node ampify.js",
     "clean": "rimraf .cache public",
     "flow": "flow",
     "lint:js": "eslint --fix --cache --ext .js,.jsx .",
