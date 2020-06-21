@@ -50,13 +50,15 @@ recursive(inputDir, [], (err, files) => {
         <script type="application/json">{"vars": {"account": "' + GA_TRACKING_ID + '"},"triggers": {"trackPageview": {"on": "visible","request": "pageview"}}}</script>\
         </amp-analytics>');
 
-      /**************************************************************************************
-       * STYLES
-       *************************************************************************************/
-        // We are using Sass so we need to get each of the styles we need for the amp version of the pages
-        // and compile it to minified sass.
-      let css;
-      css = sass.renderSync({file: 'src/assets/scss/amp.scss', outputStyle: 'compressed'}).css.toString();
+      // *************************************************************************************
+      // * STYLES
+      // *************************************************************************************
+      // We are using Sass so we need to get each of the styles we need for the amp version of the pages
+      // and compile it to minified sass.
+      const webpackStats = JSON.parse(fs.readFileSync('public/webpack.stats.json'));
+      const files = webpackStats.namedChunkGroups.app.assets.filter(file => file.endsWith('.css'))
+      let css = files.map(file => sass.renderSync({file: `public/${file}`, outputStyle: 'compressed'}).css.toString()).join('')
+      css += sass.renderSync({file: 'src/assets/amp/svg.scss', outputStyle: 'compressed'}).css.toString()
 
       // Remove all important tags since they are not permitted in amp styles
       // css = css.replace(/!important/g, '');
