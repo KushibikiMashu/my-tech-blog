@@ -20,7 +20,7 @@
 
   &__body {
     & p {
-      font-size: $typographic-base-font-size * 0.9;
+      font-size: $typographic-base-font-size * 1;
       @include line-height(1.1);
     }
 
@@ -118,7 +118,7 @@
       @include margin-bottom(1.125);
 
       & p {
-        font-size: $typographic-base-font-size * 1.1;
+        font-size: $typographic-base-font-size * 1.125;
         @include margin-bottom(1.125);
         @include line-height(1.25);
       }
