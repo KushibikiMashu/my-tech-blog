@@ -31,13 +31,13 @@
     &-description {
       font-size: $typographic-base-font-size;
       @include line-height(1.25);
-      @include margin-top(0);
-      @include margin-bottom(0.25);
+      @include margin-top(0.1);
+      @include margin-bottom(0.1);
     }
 
     &-meta {
       text-align: right;
-      @include padding(.1, 0);
+      @include padding(.2, 0, 0.1);
 
       &-time {
         font-size: $typographic-small-font-size;

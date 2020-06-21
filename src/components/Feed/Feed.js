@@ -27,7 +27,7 @@ const Feed = ({ edges }: Props) => (
           </span>
         </div>
         <p className={styles['feed__item-description']}>
-          {edge.node.frontmatter.description}
+          {edge.node.frontmatter.description.length >= 120 ? `${edge.node.frontmatter.description.slice(0, 120)}...` : edge.node.frontmatter.description}
           <span className={styles['feed__item-readmore']}>
             <Link to={edge.node.fields.slug}>
               {' '}
