@@ -1,5 +1,5 @@
 [build]
   publish = "public"
-  command = "npm run build"
+  command = "npm run amp:build"
 [build.environment]
   NPM_VERSION = "6.12.0"
