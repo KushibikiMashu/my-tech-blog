@@ -215,11 +215,19 @@ module.exports = {
           }
         `,
         output: '/sitemap.xml',
-        serialize: ({ site, allSitePage }) => allSitePage.edges.map((edge) => ({
-          url: site.siteMetadata.siteUrl + edge.node.path,
-          changefreq: 'daily',
-          priority: 0.7
-        }))
+        serialize: ({ site, allSitePage }) => {
+          const pages = allSitePage.edges.map((edge) => ({
+            url: site.siteMetadata.siteUrl + edge.node.path,
+            changefreq: 'daily',
+            priority: 0.7
+          }));
+          const ampPages = allSitePage.edges.map((edge) => ({
+            url: `${site.siteMetadata.siteUrl}/amp${edge.node.path}`,
+            changefreq: 'daily',
+            priority: 0.7
+          }));
+          return [...pages, ...ampPages];
+        }
       }
     },
     {
