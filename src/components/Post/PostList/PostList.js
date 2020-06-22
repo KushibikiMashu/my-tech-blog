@@ -56,7 +56,7 @@ function isSamePost(title: string, postTitle: string): boolean {
 }
 
 const PostList = ({ tags, title }: Props) => {
-  const nodes = usePublishedPostList('DESC');
+  const nodes = usePublishedPostList();
 
   if (nodes.length === 0) {
     return null;
