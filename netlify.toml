@@ -3,3 +3,24 @@
   command = "npm run amp:build"
 [build.environment]
   NPM_VERSION = "6.12.0"
+
+[[redirects]]
+from = "/posts/*/"
+to = "/posts/*"
+status = 301
+force = false
+[[redirects]]
+from = "/posts/*/index.html"
+to = "/posts/*"
+status = 301
+force = false
+[[redirects]]
+from = "/amp/posts/*/"
+to = "/amp/posts/*"
+status = 301
+force = false
+[[redirects]]
+from = "/amp/posts/*/index.html"
+to = "/amp/posts/*"
+status = 301
+force = false
