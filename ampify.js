@@ -41,9 +41,9 @@ recursive(inputDir, [], (err, files) => {
       $('amp-iframe').attr('sandbox', 'allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox');
       $('amp-iframe').attr('layout', 'responsive');
       $('amp-video').attr('layout', 'responsive');
-      $('amp-img').attr('layout', 'responsive');
       $('amp-video').attr('height', '270');
       $('amp-video').attr('width', '450');
+      $('amp-img').attr('layout', 'responsive');
       $('amp-img').attr('height', '270');
       $('amp-img').attr('width', '450');
 
@@ -75,7 +75,6 @@ recursive(inputDir, [], (err, files) => {
 
       // Gatsbyの最適化をAMP対応のために外す
       $('amp-img').removeAttr('loading');
-      console.log($('title').text());
 
       const tags = $('picture');
 
