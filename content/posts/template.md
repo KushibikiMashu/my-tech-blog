@@ -3,7 +3,7 @@ title: ""
 date: "2020-00-00T00:00:00.000Z"
 updatedAt: ""
 template: "post"
-draft: false
+draft: true
 slug: "/posts/blog-title-in-english"
 category: ""
 tags:
