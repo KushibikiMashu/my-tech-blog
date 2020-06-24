@@ -1,8 +1,12 @@
 [build]
   publish = "public"
   command = "npm run amp:build"
+
 [build.environment]
   NPM_VERSION = "6.12.0"
+
+[[plugins]]
+  package = "netlify-plugin-gatsby-cache"
 
 [[redirects]]
 from = "/posts/*/"
