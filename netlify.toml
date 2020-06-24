@@ -6,21 +6,21 @@
 
 [[redirects]]
 from = "/posts/*/"
-to = "/posts/*"
+to = "/posts/:splat"
 status = 301
 force = true
 [[redirects]]
 from = "/posts/*/index.html"
-to = "/posts/*"
+to = "/posts/:splat"
 status = 301
 force = true
 [[redirects]]
 from = "/amp/posts/*/"
-to = "/amp/posts/*"
+to = "/amp/posts/:splat"
 status = 301
 force = true
 [[redirects]]
 from = "/amp/posts/*/index.html"
-to = "/amp/posts/*"
+to = "/amp/posts/:splat"
 status = 301
 force = true
