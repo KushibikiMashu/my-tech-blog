@@ -87,6 +87,15 @@ recursive(inputDir, [], (err, files) => {
           $(element).replaceWith(ampImg);
         });
       }
+
+      // SWを追加
+      $('head').prepend(`<script async custom-element="amp-install-serviceworker"
+  src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>`);
+
+      $('body').prepend(`<amp-install-serviceworker
+      src="/sw.js" data-iframe-src="https://panda-program.com/sw.html"
+      layout="nodisplay">
+</amp-install-serviceworker>`);
     }), 'utf8');
   }
   console.log('The site is now AMP ready');
