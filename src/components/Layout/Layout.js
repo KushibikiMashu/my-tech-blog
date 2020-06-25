@@ -10,7 +10,7 @@ type Props = {
   children: ReactNode,
   title: string,
   description?: string,
-  socialImage? :string
+  socialImage?: string
 };
 
 const Layout = ({
@@ -29,19 +29,19 @@ const Layout = ({
   return (
     <div className={styles.layout}>
       <Helmet>
-        <html lang="ja" />
+        <html lang="ja"/>
         <title>{title}</title>
-        <meta name="description" content={shortDescription} />
-        <meta property="og:site_name" content={title} />
-        <meta property="og:image" content={metaImageUrl} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={shortDescription} />
-        <meta name="twitter:image" content={metaImageUrl} />
+        <meta name="description" content={shortDescription}/>
+        <meta property="og:site_name" content={title}/>
+        <meta property="og:image" content={metaImageUrl}/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content={title}/>
+        <meta name="twitter:description" content={shortDescription}/>
+        <meta name="twitter:image" content={metaImageUrl}/>
         {/* google adsence */}
-        <script data-ad-client="ca-pub-4506236710956024" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
+        <script data-ad-client="ca-pub-4506236710956024" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"/>
         {/* SEO */}
-        {slug === undefined ? null : <link rel="canonical" href={canonicalUrl} /> }
+        {slug === undefined ? null : <link rel="canonical" href={canonicalUrl}/>}
       </Helmet>
       {children}
     </div>
