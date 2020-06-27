@@ -183,12 +183,10 @@ module.exports = {
     },
     'gatsby-plugin-netlify-cache',
     {
-      resolve: 'gatsby-plugin-google-gtag',
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingIds: [siteConfig.googleAnalyticsId],
-        pluginConfig: {
-          head: true,
-        },
+        trackingIds: siteConfig.googleAnalyticsId,
+        head: true,
       },
     },
     {
