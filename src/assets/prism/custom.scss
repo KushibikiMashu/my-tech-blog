@@ -2,7 +2,13 @@ pre[class*="language-"] {
   border-radius: 0.25rem;
 }
 
+// インラインの色
 :not(pre) > code[class*="language-"] {
   background-color: #f5f2f0;
   color: #222;
+}
+
+// コード内で折り返す
+pre[class*='language-'] > code {
+  white-space: pre-wrap;
 }
