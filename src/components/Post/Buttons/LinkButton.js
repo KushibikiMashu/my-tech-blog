@@ -5,6 +5,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import styles from './Buttons.module.scss';
 
 type Props = {
@@ -14,13 +15,22 @@ type Props = {
 const LinkButton = ({ url }: Props) => {
   const copyCallback = useCallback(() => toast.success('記事のURLがコピーされました 🎉'));
   return (
-    <div
+    <button
       className={styles['button']}
       style={{ backgroundColor: '#A0AEC0' }}
     >
       <CopyToClipboard
         text={url}
         onCopy={copyCallback}
+        onClick={(e) => {
+          e.preventDefault();
+
+          trackCustomEvent({
+            category: 'share',
+            action: 'click',
+            label: 'hatena'
+          });
+        }}
       >
         <FontAwesomeIcon
           color="white"
@@ -39,7 +49,7 @@ const LinkButton = ({ url }: Props) => {
         draggable
         pauseOnHover
       />
-    </div>
+    </button>
   );
 };
 export default LinkButton;
