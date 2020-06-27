@@ -19,6 +19,24 @@
 		"bing"
 	]
 
+# 2020/6/27に記事のURLを変更
+[[redirects]]
+from = "/posts/google-apps-script-api-templates"
+to = "/posts/gas-slack-line-bot"
+status = 301
+force = true
+[[redirects]]
+from = "/posts/collect-stripe-all-subscriptions-by-google-apps-script"
+to = "/posts/collect-stripe-subscriptions-by-gas"
+status = 301
+force = true
+[[redirects]]
+from = "/posts/make-uml-flowchart-from-spreadsheet-by-google-apps-script"
+to = "/posts/uml-from-spreadsheet-by-gas"
+status = 301
+force = true
+
+# 一般的なルール
 [[redirects]]
 from = "/posts/*/"
 to = "/posts/:splat"
