@@ -21,7 +21,7 @@ const Post = ({ post }: Props) => {
   const { id: postId, html, tableOfContents } = post;
   const { tagSlugs, slug } = post.fields;
   const {
-    tags, title, date, updatedAt
+    tags, title, date, updatedAt, category
   } = post.frontmatter;
 
   const { url: siteUrl, author } = useSiteMetadata();
@@ -43,6 +43,7 @@ const Post = ({ post }: Props) => {
           toc={tableOfContents}
           date={date}
           updatedAt={updatedAt}
+          category={category}
         />
       </div>
 

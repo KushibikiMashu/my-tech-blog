@@ -6,6 +6,16 @@
   padding: 0 15px;
   margin: 0 auto;
 
+  &__breadcrumb {
+    margin: 14px 0 14px;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    color: #4A5568;
+  }
+
   &__title {
     font-size: $typographic-base-font-size * 1.4;
     max-width: $layout-post-width;
@@ -14,7 +24,7 @@
     font-weight: 600;
     text-align: center;
     @include line-height(1.5);
-    @include margin-top(1);
+    @include margin-top(0);
     @include margin-bottom(0);
   }
 

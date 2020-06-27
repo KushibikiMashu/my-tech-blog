@@ -1,5 +1,6 @@
 // @flow strict
 import React, { useEffect, useState } from 'react';
+import kebabCase from 'lodash/kebabCase';
 import styles from './Content.module.scss';
 import Meta from '../Meta';
 
@@ -9,6 +10,7 @@ type Props = {
   toc: string,
   date: string,
   updatedAt?: string,
+  category?: string,
 };
 
 const insertTocIntoBody = (toc: string, body: string): string => {
@@ -21,7 +23,7 @@ const insertTocIntoBody = (toc: string, body: string): string => {
   }
 
   const h2: HTMLHeadingElement = document.createElement('h2');
-  const text:Text = document.createTextNode('目次');
+  const text: Text = document.createTextNode('目次');
   h2.appendChild(text);
 
   const div: HTMLDivElement = document.createElement('div');
@@ -35,7 +37,7 @@ const insertTocIntoBody = (toc: string, body: string): string => {
 };
 
 const Content = ({
-  body, title, toc, date, updatedAt
+  body, title, toc, date, updatedAt, category
 }: Props) => {
   const [article, setArticle] = useState<string>(body);
 
@@ -46,15 +48,30 @@ const Content = ({
   []);
 
   return (
-  <div className={styles['content']}>
-    <h1 className={styles['content__title']}>{title}</h1>
-    <Meta date={date} updatedAt={updatedAt}/>
+    <div className={styles['content']}>
 
-    <div className={styles['content__body']} dangerouslySetInnerHTML={{ __html: article }}/>
-    <div className={styles['content__body']}>
-      <p>Happy Coding 🎉</p>
+      <ul className={styles['content__breadcrumb']}>
+        <li>
+          <a href="/">TOP</a>{' '}›
+        </li>
+        {category === undefined ? null : (
+          <li>
+            <a href={`/category/${kebabCase(category)}`}>{category}</a>{' '}›
+          </li>
+        )}
+        <li>
+          {title}
+        </li>
+      </ul>
+
+      <h1 className={styles['content__title']}>{title}</h1>
+      <Meta date={date} updatedAt={updatedAt}/>
+
+      <div className={styles['content__body']} dangerouslySetInnerHTML={{ __html: article }}/>
+      <div className={styles['content__body']}>
+        <p>Happy Coding 🎉</p>
+      </div>
     </div>
-  </div>
   );
 };
 

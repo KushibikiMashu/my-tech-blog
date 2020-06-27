@@ -41,6 +41,7 @@ export const query = graphql`
         description
         tags
         title
+        category
         socialImage
         updatedAt(formatString: "YYYY年MM月DD日")
       }
