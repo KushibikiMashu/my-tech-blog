@@ -36,9 +36,10 @@ const Feed = ({ edges }: Props) => (
         </div>
         <p className={styles['feed__item-description']}>
           {shortDescription(edge.node.frontmatter.description)}
+          {'　'}
           <span className={styles['feed__item-readmore']}>
             <Link to={edge.node.fields.slug}>
-              {'　'}記事を読む
+              記事を読む
             </Link>
           </span>
         </p>
