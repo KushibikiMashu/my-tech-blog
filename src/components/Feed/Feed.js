@@ -8,6 +8,14 @@ type Props = {
   edges: Edges
 };
 
+const shortDescription = (description: ?string) => {
+  if (typeof description === 'undefined' || description === null) {
+    return null;
+  }
+
+  return description.length >= 120 ? `${description.slice(0, 120)}...` : description;
+};
+
 const Feed = ({ edges }: Props) => (
   <div className={styles['feed']}>
     {edges.map((edge) => (
@@ -27,11 +35,10 @@ const Feed = ({ edges }: Props) => (
           </span>
         </div>
         <p className={styles['feed__item-description']}>
-          {edge.node.frontmatter.description.length >= 120 ? `${edge.node.frontmatter.description.slice(0, 120)}...` : edge.node.frontmatter.description}
+          {shortDescription(edge.node.frontmatter.description)}
           <span className={styles['feed__item-readmore']}>
             <Link to={edge.node.fields.slug}>
-              {' '}
-              記事を読む
+              {'　'}記事を読む
             </Link>
           </span>
         </p>

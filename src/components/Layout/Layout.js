@@ -9,8 +9,9 @@ import styles from './Layout.module.scss';
 type Props = {
   children: ReactNode,
   title: string,
+  slug?: string,
   description?: string,
-  socialImage?: string
+  socialImage?: string,
 };
 
 const Layout = ({
@@ -23,8 +24,10 @@ const Layout = ({
   const { author, url } = useSiteMetadata();
   const metaImage = socialImage != null ? socialImage : author.photo;
   const metaImageUrl = url + withPrefix(metaImage);
-  const shortDescription = description.slice(0, 120);
-  const canonicalUrl = `${url}${slug}} `;
+  const shortDescription = typeof description === 'undefined' ? '' : description.slice(0, 120);
+  const hasSlug = slug !== undefined;
+  // flowで落ちるのであえて繰り返している
+  const canonicalUrl = slug !== undefined ? `${url}${slug}` : null;
 
   return (
     <div className={styles.layout}>
@@ -41,7 +44,7 @@ const Layout = ({
         {/* google adsence */}
         <script data-ad-client="ca-pub-4506236710956024" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"/>
         {/* SEO */}
-        {slug === undefined ? null : <link rel="canonical" href={canonicalUrl}/>}
+        {hasSlug ? <link rel="canonical" href={canonicalUrl}/> : null}
       </Helmet>
       {children}
     </div>

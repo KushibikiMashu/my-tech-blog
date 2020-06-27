@@ -11,7 +11,8 @@ describe('Layout', () => {
     ...siteMetadata,
     children: 'test',
     description: 'test',
-    title: 'test'
+    title: 'test',
+    slug: '/posts/test',
   };
 
   beforeEach(() => {
