@@ -6,9 +6,6 @@
   NPM_VERSION = "6.12.0"
 
 [[plugins]]
-  package = "netlify-plugin-gatsby-cache"
-
-[[plugins]]
   package = "netlify-plugin-submit-sitemap"
 
 	[plugins.inputs]
