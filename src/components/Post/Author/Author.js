@@ -30,13 +30,12 @@ const Author = ({
         <div className={styles['author__bio-description']}>
           <span className={styles['author__bio-name']}>プログラミングをするパンダ</span>
           <div className={styles['author__bio-twitter']}>
-            Twitter:{' '}
             <a
               href={getContactHref('twitter', contacts.twitter)}
               rel="noopener noreferrer"
               target="_blank"
             >
-              <span className={styles['author__bio-twitter__name']}>@Panda_Program</span>
+              <span className={styles['author__bio-twitter__name']}>Twitter:{' '}@Panda_Program</span>
             </a>
           </div>
         </div>
