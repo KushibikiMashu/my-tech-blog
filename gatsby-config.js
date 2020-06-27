@@ -113,7 +113,16 @@ module.exports = {
         plugins: [
           'gatsby-remark-mermaid',
           'gatsby-remark-relative-images',
-          'gatsby-remark-prismjs',
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              classPrefix: 'language-',
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: true,
+              noInlineHighlight: false,
+            },
+          },
           {
             resolve: 'gatsby-remark-katex',
             options: {

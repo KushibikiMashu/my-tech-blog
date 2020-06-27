@@ -1,4 +1,7 @@
 'use strict';
 
 require('./src/assets/scss/init.scss');
-require('prismjs/themes/prism.css');
+
+// prism.js
+require('prismjs/themes/prism-tomorrow.css');
+require('./src/assets/prism/custom.scss');

@@ -1,0 +1,8 @@
+pre[class*="language-"] {
+  border-radius: 0.25rem;
+}
+
+:not(pre) > code[class*="language-"] {
+  background-color: #f5f2f0;
+  color: #222;
+}
