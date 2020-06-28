@@ -7,13 +7,19 @@
   margin: 0 auto;
 
   &__breadcrumb {
-    margin: 14px 0 14px;
+    margin: 14px 0 7px;
     padding-left: 0;
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     font-size: 14px;
     color: #4A5568;
+
+    li {
+      @include margin-top(0);
+      @include margin-bottom(0);
+    }
   }
 
   &__title {
@@ -122,6 +128,10 @@
 @include breakpoint-md {
   .content {
     padding: 0;
+
+    &__breadcrumb {
+      margin: 21px 0 7px;
+    }
 
     &__body {
       font-size: $typographic-base-font-size * 1.125;
