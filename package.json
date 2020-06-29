@@ -8,7 +8,7 @@
     "build": "gatsby build",
     "start": "gatsby serve",
     "deploy": "gatsby build --prefix-paths",
-    "ampify": "cp -r public amp && rm amp/*.js amp/*.map amp/*.css amp/*.xml amp/*.json amp/*.txt amp/*.webmanifest && mv amp public/amp && node ampify.js",
+    "ampify": "cp -r public amp && rm -rf public/amp/amp && rm amp/*.js amp/*.map amp/*.css amp/*.xml amp/*.json amp/*.txt amp/*.webmanifest && mv amp public/amp && node ampify.js",
     "amp:build": "gatsby build && npm run ampify && node ampify.js",
     "clean": "rimraf .cache public",
     "flow": "flow",
