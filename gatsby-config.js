@@ -268,6 +268,7 @@ module.exports = {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
         siteUrl: siteConfig.url,
+        stripQueryString: true,
       },
     },
     {
