@@ -76,6 +76,7 @@
     "gatsby-remark-katex": "^3.3.4",
     "gatsby-remark-mermaid": "^1.2.0",
     "gatsby-remark-prismjs": "^3.5.4",
+    "gatsby-remark-prismjs-title": "^1.0.0",
     "gatsby-remark-relative-images": "^0.2.3",
     "gatsby-remark-responsive-iframe": "^2.4.5",
     "gatsby-remark-smartypants": "^2.3.4",

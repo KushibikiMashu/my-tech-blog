@@ -111,8 +111,7 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          'gatsby-remark-mermaid',
-          'gatsby-remark-relative-images',
+          'gatsby-remark-prismjs-title',
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
@@ -129,6 +128,7 @@ module.exports = {
               strict: 'ignore'
             }
           },
+          'gatsby-remark-relative-images',
           {
             resolve: 'gatsby-remark-images',
             options: {
