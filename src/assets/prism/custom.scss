@@ -12,3 +12,18 @@ pre[class*="language-"] {
 pre[class*='language-'] > code {
   white-space: pre-wrap;
 }
+
+// コードブロックのタイトル
+div.gatsby-code-title {
+  margin: 0 0 -12px;
+  padding: 6px 12px 8px;
+
+  background: #999;
+  color: #eee;
+  display: table;
+  text-align: left;
+  font-size: 0.9rem;
+  line-height: 1;
+  font-weight: bold;
+  border-radius: 4px 4px 0 0;
+}
