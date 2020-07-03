@@ -1,5 +1,8 @@
 pre[class*="language-"] {
   border-radius: 0.25rem;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  overflow: auto;
 }
 
 // インラインの色
@@ -15,8 +18,8 @@ pre[class*='language-'] > code {
 
 // コードブロックのタイトル
 div.gatsby-code-title {
-  margin: 0 0 -12px;
-  padding: 6px 12px 8px;
+  margin: 0 0 -1.8rem;
+  padding: 6px 12px 10px;
 
   background: #999;
   color: #eee;
@@ -26,4 +29,30 @@ div.gatsby-code-title {
   line-height: 1;
   font-weight: bold;
   border-radius: 4px 4px 0 0;
+}
+
+code[class*=language-] {
+  color: #ccc;
+  background: none;
+  font-family: Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+// ハイライト
+.gatsby-highlight-code-line {
+  background-color: rgb(53, 59, 69);
+  display: block;
+  margin-right: -1em;
+  margin-left: -16px;
+  padding-right: 1em;
+  padding-left: 10px;
+  border-left: 6px solid #3ec93e;
 }
