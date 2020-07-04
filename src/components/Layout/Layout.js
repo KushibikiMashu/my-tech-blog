@@ -31,6 +31,7 @@ const Layout = ({
         <html lang="ja"/>
         <title>{title}</title>
         <meta name="description" content={shortDescription}/>
+        <meta name="og:description" content={shortDescription}/>
         <meta property="og:site_name" content={title}/>
         <meta property="og:image" content={metaImageUrl}/>
         <meta name="twitter:card" content="summary_large_image"/>
