@@ -12,9 +12,9 @@ pre[class*="language-"] {
 }
 
 // コード内で折り返す
-pre[class*='language-'] > code {
-  white-space: pre-wrap;
-}
+//pre[class*='language-'] > code {
+//  white-space: pre-wrap;
+//}
 
 // コードブロックのタイトル
 div.gatsby-code-title {
