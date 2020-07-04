@@ -47,10 +47,11 @@ code[class*=language-] {
 }
 
 // ハイライト
-.gatsby-highlight-code-line {
+span.gatsby-highlight-code-line {
+  margin: 0 -16px;
+  padding:0 16px 0 10px;
+
   background-color: rgb(53, 59, 69);
   display: block;
-  margin-right: -1em;
-  margin-left: -16px;
-  padding-right: 1em;
+  border-left: 6px solid #3ec93e;
 }
