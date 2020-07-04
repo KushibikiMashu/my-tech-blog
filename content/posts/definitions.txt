@@ -1,0 +1,10 @@
+# Next.js
+**[Next.js](https://nextjs.org/)はVercelが作成しているReactのフレームワークです。**面倒な設定を書かなくてもすぐに使えるZero Configを標榜しており、実際にwebpackやTypeScriptと一緒にReactを書く際にも特別な準備は不要です。SSRにも対応しており、Reactで開発するならNext.jsかFacebook製のCreate React Appを使うのがスタンダードになっています。
+
+# Tailwind CSS
+**[Tailwind CSS](https://tailwindcss.com/)はユーティリティファーストのCSSフレームワークです。**その特徴は、Tailwind CSSによって提供されるクラスを組み合わせてコンポーネントを作り、サイトをデザインしていくところにあります。さらにCSSフレームワークなので、CSSに慣れていない人でも簡単に使うことができます。
+
+# Slack
+**[Slack](https://slack.com/intl/ja-jp/)は、主にIT企業で導入されている非同期コミュニケーションが可能なチャットツールです。**様々なツールと連携できるところに特徴があり、サーバーの監視ログやあらゆる通知をSlackのチャンネルに集約できます。
+
+
