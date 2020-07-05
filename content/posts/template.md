@@ -16,6 +16,8 @@ socialImage: "/media/2020/0/00/2020_00_00__0.png"
 vercel-cache-gatsbyjs
 
 https://vercel.com/docs/v2/edge-network/caching
+https://github.com/pillarjs/path-to-regexp/tree/v6.1.0
+https://vercel.com/docs/v2/platform/frequently-asked-questions#invalid-route-source-pattern
 
 ## Vercelの設定ファイルにキャッシュの設定をする
 
