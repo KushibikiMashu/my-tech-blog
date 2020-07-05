@@ -7,6 +7,8 @@
 # GatsbyJS
 **[GatsbyJS](https://www.gatsbyjs.org/)とは、React.js製の静的サイトジェネレータです。SSRをすることでビルド時に最適化された静的ファイルを生成するため、サイトの表示速度が爆速になります。**ブログで使われているケースが多いです。
 
+GatsbyJSについては[「GatsbyJSで実現する、高速&実用的なサイト構築」](https://amzn.to/38qah1o)という本が詳しいです。GatsbyJSの作りやGraphQLの使い方などが解説されています。
+
 # SWR
 [SWR](https://github.com/vercel/swr)とは、Next.jsを作成しているVercel製のライブラリです。**SWRは`useSWR`というReact Hooksを提供し、APIを通じたデータの取得をラクに記述する手助けをしてくれます。**このライブラリはなんとGitHubスター数を10,700も獲得しています。
 

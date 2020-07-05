@@ -12,6 +12,18 @@ description: ""
 socialImage: "/media/2020/0/00/2020_00_00__0.png"
 ---
 
+```
+vercel-cache-gatsbyjs
+
+https://vercel.com/docs/v2/edge-network/caching
+
+## Vercelの設定ファイルにキャッシュの設定をする
+
+
+### エラーが出るのでビルドでこける
+
+```
+
 howを書くときはカテゴリーは"how to"
 これは検索流入狙い
 
