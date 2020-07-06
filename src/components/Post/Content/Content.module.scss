@@ -92,7 +92,7 @@
 
 
     & figure {
-      @include margin-bottom(1);
+      @include margin-bottom(0);
 
       & blockquote {
         & p {

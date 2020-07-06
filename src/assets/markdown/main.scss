@@ -1,0 +1,65 @@
+// パンダの吹き出し
+.explain {
+  padding: 16px 0;
+
+  display: flex;
+
+  &__figure {
+    width: 100px;
+
+    &Wrapper {
+      width: 100px;
+    }
+
+    &Image {
+
+    }
+
+    &Caption {
+      text-align: left;
+      font-style: normal;
+    }
+  }
+
+  &__paragraph {
+    &Wrapper {
+      margin-left: 0;
+      max-width: calc(100% - 60px);
+      width: 70%;
+      border: 3px solid #eee;
+      background-color: #fff;
+      color: #444;
+      padding: 0 2%;
+      position: relative;
+      border-radius: 15px;
+
+      &::before{
+        border-right: 8px solid #eee;
+        border-bottom: 8px solid transparent;
+        border-top: 8px solid transparent;
+        top: 42px;
+        left: -11px;
+
+        content: "";
+        position: absolute;
+      }
+
+      &::after{
+        border-right: 10px solid #fff;
+        border-bottom: 8px solid transparent;
+        border-top: 8px solid transparent;
+        top: 42px;
+        left: -7px;
+
+        content: "";
+        position: absolute;
+      }
+    }
+
+    &Content {
+      padding: 0 12px;
+
+      font-size: 1rem;
+    }
+  }
+}

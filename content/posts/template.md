@@ -85,6 +85,20 @@ designed by [freepik.com](https://stories.freepik.com/)
 unsplash
 Photo by []() on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
+---解説テンプレート
+
+<div class="explain">
+  <figure class="explain__figure">
+    <div class="explain__figureWrapper">
+      <img class="explain__figureImage" src="/photo.jpg" alt="解説パンダくん" width="100" height="100" data-lazy-loaded="true">
+    </div>
+    <figcaption class="explain__figureCaption">解説パンダくん</figcaption>
+  </figure>
+  <div class="explain__paragraphWrapper">
+    <p class="explain__paragraphContent">foo</p>
+  </div>
+</div>
+
 
 ##
 
