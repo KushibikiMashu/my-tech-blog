@@ -2,7 +2,7 @@
 **[Next.js](https://nextjs.org/)とはVercelが作成しているReactのフレームワークです。**面倒な設定を書かなくてもすぐに使えるZero Configを標榜しており、実際にwebpackやTypeScriptと一緒にReactを書く際にも特別な準備は不要です。SSRにも対応しており、Reactで開発するならNext.jsかFacebook製のCreate React Appを使うのがスタンダードになっています。
 
 # Vercel
-**[Vercel](https://vercel.com/)とはVercel社（旧ZEIT）が開発しているサーバレスなホスティングサービスです。**VercelはJAMStackなアプリケーションをデプロイするために最適で、Vue、Nuxt.js、React、Next.js、GatsbyJSなどフロントエンドのアプリケーションを簡単にデプロイできます。
+**[Vercel](https://vercel.com/)とはVercel社（旧ZEIT）が開発しているサーバレスなホスティングサービスです。**VercelはCDNであるためJAMStackなアプリケーションをデプロイするために最適で、Vue、Nuxt.js、React、Next.js、GatsbyJSなどフロントエンドのアプリケーションのデプロイ先として相性がとても良いです。
 
 # GatsbyJS
 **[GatsbyJS](https://www.gatsbyjs.org/)とは、React.js製の静的サイトジェネレータです。SSRをすることでビルド時に最適化された静的ファイルを生成するため、サイトの表示速度が爆速になります。**ブログで使われているケースが多いです。
