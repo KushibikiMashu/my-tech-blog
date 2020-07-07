@@ -17,4 +17,4 @@ sed "3s/2020-00-00T00:00:00.000Z/$now/g" "./content/posts/template.md" \
   | sed "s|$img_template|$img|" > "./content/posts/2020/$name"
 
 mkdir "$(date '+static/media/%Y/%m/%d')"
-touch "static/${img}"
+cp static/photo.jpg "static/${img}"

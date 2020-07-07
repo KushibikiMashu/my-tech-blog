@@ -1,19 +1,25 @@
-# Next.js
+# JavaScript
+## React
+### Next.js
 **[Next.js](https://nextjs.org/)とはVercelが作成しているReactのフレームワークです。**面倒な設定を書かなくてもすぐに使えるZero Configを標榜しており、実際にwebpackやTypeScriptと一緒にReactを書く際にも特別な準備は不要です。SSRにも対応しており、Reactで開発するならNext.jsかFacebook製のCreate React Appを使うのがスタンダードになっています。
+
+### GatsbyJS
+**[GatsbyJS](https://www.gatsbyjs.org/)とは、React.js製の静的サイトジェネレータです。SSRをすることでビルド時に最適化された静的ファイルを生成するため、サイトの表示速度が爆速になります。**
+
+GatsbyJSについては[「GatsbyJSで実現する、高速&実用的なサイト構築」](https://amzn.to/38qah1o)という本が詳しいです。GatsbyJSの作りやGraphQLの使い方などが解説されています。
+
+### SWR
+[SWR](https://github.com/vercel/swr)とは、Next.jsを作成しているVercel製のライブラリです。**SWRは`useSWR`というReact Hooksを提供し、APIを通じたデータの取得をラクに記述する手助けをしてくれます。**このライブラリはなんとGitHubスター数を10,700も獲得しています。
+
+# CSS
+## Tailwind CSS
+**[Tailwind CSS](https://tailwindcss.com/)とはユーティリティファーストのCSSフレームワークです。**その特徴は、Tailwind CSSによって提供されるクラスを組み合わせてコンポーネントを作り、サイトをデザインしていくところにあります。さらにCSSフレームワークなので、CSSに慣れていない人でも簡単に使うことができます。
 
 # Vercel
 **[Vercel](https://vercel.com/)とはVercel社（旧ZEIT）が開発しているサーバレスなホスティングサービスです。**VercelはCDNであるためJAMStackなアプリケーションをデプロイするために最適で、Vue、Nuxt.js、React、Next.js、GatsbyJSなどフロントエンドのアプリケーションのデプロイ先として相性がとても良いです。
 
-# GatsbyJS
-**[GatsbyJS](https://www.gatsbyjs.org/)とは、React.js製の静的サイトジェネレータです。SSRをすることでビルド時に最適化された静的ファイルを生成するため、サイトの表示速度が爆速になります。**ブログで使われているケースが多いです。
-
-GatsbyJSについては[「GatsbyJSで実現する、高速&実用的なサイト構築」](https://amzn.to/38qah1o)という本が詳しいです。GatsbyJSの作りやGraphQLの使い方などが解説されています。
-
-# SWR
-[SWR](https://github.com/vercel/swr)とは、Next.jsを作成しているVercel製のライブラリです。**SWRは`useSWR`というReact Hooksを提供し、APIを通じたデータの取得をラクに記述する手助けをしてくれます。**このライブラリはなんとGitHubスター数を10,700も獲得しています。
-
-# Tailwind CSS
-**[Tailwind CSS](https://tailwindcss.com/)とはユーティリティファーストのCSSフレームワークです。**その特徴は、Tailwind CSSによって提供されるクラスを組み合わせてコンポーネントを作り、サイトをデザインしていくところにあります。さらにCSSフレームワークなので、CSSに慣れていない人でも簡単に使うことができます。
+# Netlify
+**[Netlify](https://www.netlify.com/)とは、静的サイトのためのホスティングサービスです。**Netlifyへのデプロイの手順は簡単な上にパフォーマンスが高くスケーラブルであるため、ReactやVue.jsといったフロントエンドのJavaScriptフレームワークで作られたサイトと相性が良いです。[Jamstack](https://jamstack.org)はNetlifyによって提唱された技術スタックです。
 
 # Slack
 **[Slack](https://slack.com/intl/ja-jp/)とは、主にIT企業で導入されている非同期コミュニケーションが可能なチャットツールです。**様々なツールと連携できるところに特徴があり、サーバーの監視ログやあらゆる通知をSlackのチャンネルに集約できます。
