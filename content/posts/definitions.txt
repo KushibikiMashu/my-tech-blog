@@ -19,7 +19,7 @@ GatsbyJSについては[「GatsbyJSで実現する、高速&実用的なサイ�
 **[Vercel](https://vercel.com/)とはVercel社（旧ZEIT）が開発しているサーバレスなホスティングサービスです。**VercelはCDNであるためJAMStackなアプリケーションをデプロイするために最適で、Vue、Nuxt.js、React、Next.js、GatsbyJSなどフロントエンドのアプリケーションのデプロイ先として相性がとても良いです。
 
 # Netlify
-**[Netlify](https://www.netlify.com/)とは、静的サイトのためのホスティングサービスです。**Netlifyへのデプロイの手順は簡単な上にパフォーマンスが高くスケーラブルであるため、ReactやVue.jsといったフロントエンドのJavaScriptフレームワークで作られたサイトと相性が良いです。[Jamstack](https://jamstack.org)はNetlifyによって提唱された技術スタックです。
+**[Netlify](https://www.netlify.com/)とは、静的サイトのためのホスティングサービスです。**Netlifyへのデプロイの手順は簡単な上にパフォーマンスが高くスケーラブルであるため、ReactやVue.jsといったフロントエンドのJavaScriptフレームワークで作られたサイトと相性が良いです。なお、[Jamstack](https://jamstack.org)はNetlifyによって提唱された技術スタックです。
 
 # Slack
 **[Slack](https://slack.com/intl/ja-jp/)とは、主にIT企業で導入されている非同期コミュニケーションが可能なチャットツールです。**様々なツールと連携できるところに特徴があり、サーバーの監視ログやあらゆる通知をSlackのチャンネルに集約できます。
