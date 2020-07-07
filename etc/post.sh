@@ -15,3 +15,6 @@ name=$(date "+%Y-%m-%d.md")
 sed "3s/2020-00-00T00:00:00.000Z/$now/g" "./content/posts/template.md" \
   | sed "6s/true/false/g" \
   | sed "s|$img_template|$img|" > "./content/posts/2020/$name"
+
+mkdir "$(date '+static/media/%Y/%m/%d')"
+touch "static/${img}"
