@@ -52,7 +52,7 @@ const Post = ({ post }: Props) => {
 
         <div className={styles['post__footer-share']}>
           <p className={styles['post__footer-shareComment']}>
-            記事が良かったらシェアをお願いします😊
+            記事をシェアする😊🐼
           </p>
           <div className={styles['post__footer-shareButtons']}>
             <ShareButtons shareTitle={shareTitle} url={postUrl}/>
