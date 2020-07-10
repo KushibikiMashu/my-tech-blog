@@ -3,20 +3,11 @@
 const siteConfig = require('./config.js');
 const postCssPlugins = require('./postcss-config.js');
 
-const {
-  NODE_ENV,
-  URL: NETLIFY_SITE_URL = 'https://panda-program.com',
-  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
-  CONTEXT: NETLIFY_ENV = NODE_ENV
-} = process.env;
-const isNetlifyProduction = NETLIFY_ENV === 'production';
-const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
-
 module.exports = {
   pathPrefix: siteConfig.pathPrefix,
   siteMetadata: {
     url: siteConfig.url,
-    siteUrl,
+    siteUrl: siteConfig.url,
     title: siteConfig.title,
     subtitle: siteConfig.subtitle,
     copyright: siteConfig.copyright,
@@ -151,47 +142,6 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
-      resolve: 'gatsby-plugin-netlify',
-      options: {
-        headers: {
-          '/*.html': [
-            'cache-control: public, max-age=0, must-revalidate;'
-          ],
-          '/static/*': [
-            'cache-control: public, max-age=31536000, immutable;'
-          ],
-          '/icons/*': [
-            'cache-control: public, max-age=31536000, immutable;'
-          ],
-          '/media/*': [
-            'cache-control: public, max-age=31536000, immutable;'
-          ],
-          '/**/*.js': [
-            'cache-control: public, max-age=31536000, immutable;'
-          ],
-          '/**/*.css': [
-            'cache-control: public, max-age=31536000, immutable;'
-          ],
-          '/sw.js': [
-            'cache-control: public, max-age=0, must-revalidate;'
-          ],
-        },
-        allPageHeaders: [],
-        mergeSecurityHeaders: true,
-        mergeLinkHeaders: true,
-        mergeCachingHeaders: true,
-        transformHeaders: (headers) => headers,
-        generateMatchPathRewrites: true,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-netlify-cms',
-      options: {
-        modulePath: `${__dirname}/src/cms/index.js`,
-      }
-    },
-    'gatsby-plugin-netlify-cache',
-    {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: siteConfig.googleAnalyticsId,
@@ -270,27 +220,6 @@ module.exports = {
         siteUrl: siteConfig.url,
         stripQueryString: true,
       },
-    },
-    {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        resolveEnv: () => NETLIFY_ENV,
-        env: {
-          production: {
-            policy: [{ userAgent: '*', allow: '/' }],
-          },
-          'branch-deploy': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
-            sitemap: null,
-            host: null
-          },
-          'deploy-preview': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
-            sitemap: null,
-            host: null
-          }
-        }
-      }
     },
     {
       resolve: 'gatsby-plugin-disqus',
