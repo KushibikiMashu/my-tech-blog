@@ -21,7 +21,7 @@ const TwitterButton = ({ url, title }: Props) => (
       trackCustomEvent({
         category: 'share',
         action: 'click',
-        label: 'hatena'
+        label: 'twitter'
       });
     }}
   >

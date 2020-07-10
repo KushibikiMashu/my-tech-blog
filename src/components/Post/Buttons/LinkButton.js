@@ -29,7 +29,7 @@ const LinkButton = ({ url }: Props) => {
           trackCustomEvent({
             category: 'share',
             action: 'click',
-            label: 'hatena'
+            label: 'link'
           });
         }}
       >
