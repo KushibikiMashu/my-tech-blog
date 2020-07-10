@@ -63,6 +63,7 @@ const SideMenu = ({ nodes, postId }: Props) => {
         <button
           className={styles['sideMenu__fab-button']}
           type="button"
+          aria-label={isOpen ? 'show post list' : 'close post list'}
           onClick={toggleCallback}
         >
           {isOpen ? <FontAwesomeIcon className={styles['sideMenu__fab-icon']} icon={faTimes} />

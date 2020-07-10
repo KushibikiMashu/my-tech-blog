@@ -17,6 +17,7 @@ const LinkButton = ({ url }: Props) => {
   return (
     <button
       className={styles['button']}
+      aria-label="copy link"
       style={{ backgroundColor: '#A0AEC0' }}
     >
       <CopyToClipboard
