@@ -1,16 +1,27 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
+
+const clickPostEvent = (category, label) => (e) => {
+  e.preventDefault();
+
+  trackCustomEvent({
+    category,
+    label,
+    action: 'click',
+  });
+};
 
 const Ranking = () => {
   const posts = [
     {
       title: 'Next.js + esa.io + VercelでJAMStackな爆速ブログを構築する',
-      path: '/posts/nextjs-with-cms-esa',
+      slug: '/posts/nextjs-with-cms-esa',
       count: 75,
     },
     {
       title: 'テスト駆動開発（TDD）とは何か。コードで実践方法を解説します',
-      path: '/posts/test-driven-development',
+      slug: '/posts/test-driven-development',
       count: 72,
     },
   ];
@@ -21,7 +32,7 @@ const Ranking = () => {
       <ul style={{ paddingLeft: '20px' }}>
         {posts.map((post) => (
           <li key={post.title}>
-            <Link to={post.path}>「{post.title}」(はてブ数 {post.count})</Link>
+            <Link to={post.slug} onClick={clickPostEvent('ranking', post.slug)}>「{post.title}」(はてブ数 {post.count})</Link>
           </li>
         ))}
       </ul>

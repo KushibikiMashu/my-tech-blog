@@ -1,6 +1,7 @@
 // @flow strict
 import React from 'react';
 import { Link } from 'gatsby';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import { usePublishedPostList } from '../../../hooks';
 import styles from './PostList.module.scss';
 
@@ -53,6 +54,16 @@ function isSamePost(title: string, postTitle: string): boolean {
   return title === postTitle;
 }
 
+const clickPostEvent = (label) => (e) => {
+  e.preventDefault();
+
+  trackCustomEvent({
+    label: JSON.stringify(label),
+    category: 'related post',
+    action: 'click',
+  });
+};
+
 const PostList = ({ tags, title }: Props) => {
   const nodes = usePublishedPostList();
 
@@ -69,7 +80,7 @@ const PostList = ({ tags, title }: Props) => {
         <p className={styles['postList__heading-title']}>{tags[0]}に関する記事</p>
         {posts.map(({ title, slug }: Post) => (
           <div className={styles['postList__post']} key={title}>
-            <Link className={styles['postList__post-link']} to={slug}>
+            <Link className={styles['postList__post-link']} to={slug} onClick={clickPostEvent({ slug, postTitle: title })}>
               <p>
                 <span className={styles['postList__post-icon']}>›</span>
                 {title}

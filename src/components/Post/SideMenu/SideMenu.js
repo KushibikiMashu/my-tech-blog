@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faChevronRight, faChevronLeft, faAngleRight, faTimes
 } from '@fortawesome/free-solid-svg-icons';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import styles from './SideMenu.module.scss';
 import type { FrontmatterObj } from '../../../types';
 
@@ -12,6 +13,16 @@ type Props = {
   postId: string,
   nodes: FrontmatterObj[]
 }
+
+const clickPostEvent = (label) => (e) => {
+  e.preventDefault();
+
+  trackCustomEvent({
+    label: JSON.stringify(label),
+    category: 'side menu post',
+    action: 'click',
+  });
+};
 
 const SideMenu = ({ nodes, postId }: Props) => {
   const [isOpen, toggle] = useState<boolean>(false);
@@ -25,6 +36,7 @@ const SideMenu = ({ nodes, postId }: Props) => {
         <Link
           to={slug}
           activeClassName={styles['sideMenu__drawer-list__item-activeLink']}
+          onClick={clickPostEvent({ slug })}
         >
           {isActivePost ? <FontAwesomeIcon icon={faAngleRight} size="1x" className={styles['sideMenu__drawer-list__item-icon']} /> : null}
           {title}
