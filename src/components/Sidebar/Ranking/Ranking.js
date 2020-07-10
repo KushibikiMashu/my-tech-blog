@@ -26,7 +26,7 @@ const Ranking = () => {
       <ul style={{ paddingLeft: '20px' }}>
         {posts.map((post) => (
           <li key={post.title}>
-            <Link to={post.path}>「{post.title}」(はてブ数 {post.count})</Link>
+            <Link to={post.path}>{post.title}(はてブ数 {post.count})</Link>
           </li>
         ))}
       </ul>
