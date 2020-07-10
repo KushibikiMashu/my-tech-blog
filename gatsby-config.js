@@ -178,12 +178,7 @@ module.exports = {
             changefreq: 'daily',
             priority: 0.7
           }));
-          const ampPages = allSitePage.edges.map((edge) => ({
-            url: `${site.siteMetadata.siteUrl}/amp${edge.node.path}`,
-            changefreq: 'daily',
-            priority: 0.7
-          }));
-          return [...pages, ...ampPages];
+          return [...pages];
         }
       }
     },
