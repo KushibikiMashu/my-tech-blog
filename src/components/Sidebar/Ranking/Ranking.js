@@ -13,6 +13,11 @@ const Ranking = () => {
       path: '/posts/test-driven-development',
       count: 72,
     },
+    {
+      title: 'Tailwind CSS入門 - フロントエンドで素晴らしい開発体験を得るために',
+      slug: '/posts/recommend-developers-use-tailwind-css',
+      count: 2,
+    },
   ];
 
   return (
