@@ -1,6 +1,5 @@
 // @flow strict
 import React, { useState } from 'react';
-import Link from 'gatsby-link';
 import SiteCard from './SiteCard';
 import './portfolio.modules.scss';
 import type { Language } from '../../types';
@@ -12,16 +11,16 @@ type Props = {
 
 const Component: React.FC<Props> = (props) => (
   <div>
-    <div className="mx-auto container">
-      <div className="self-start pt-4 justify-center my-auto">
-        <ul className="flex justify-end px-3 pt-3 list-reset leading-narrow">
-          <li className="text-3xl cursor-pointer mr-2">
+    <div className="portfolio">
+      <div className="portfolio__flags">
+        <ul className="flex justify-end px-3 pt-3 list-reset">
+          <li className="text3xl cursor-pointer mr-2">
             <button type="button" aria-label="Japanese" onClick={() => props.handleClick('ja')}>🇯🇵</button>
           </li>
-          <li className="text-3xl cursor-pointer px-2 border-l border-r border-solid border-grey-dark">
+          <li className="text3xl cursor-pointer px-2">
             <button type="button" aria-label="English" onClick={() => props.handleClick('en')}>🇬🇧</button>
           </li>
-          <li className="text-3xl cursor-pointer mx-2">
+          <li className="text3xl cursor-pointer mx-2">
             <button type="button" aria-label="Chinese" onClick={() => props.handleClick('ch')}>🇨🇳</button>
           </li>
         </ul>
@@ -73,32 +72,32 @@ const Component: React.FC<Props> = (props) => (
       {/*  </div> */}
       {/* </div> */}
       <div className="pb-6">
-        <h1 className="text-center font-bold">個人開発サイト</h1>
+        <h1 className="text-center font-bold mt-0">個人開発サイト</h1>
         <div className="flex flex-wrap justify-center">
           <SiteCard language={props.language}/>
         </div>
       </div>
-      <div className="py-6"><h1 className="section-title">OTHERS</h1>
-        <div className="others-container">
-          <div className="other-item">
-            <Link to="/"><img
-              className="other-image hover:shadow-lg" src="/media/portfolio/techblog.png"
-              alt="my tech blog"/></Link>
-            <div className="other-text">Tech Blog</div>
-          </div>
-          <div className="other-item"><a className="no-underline"
-                                         href="https://note.mu/panda_programm/n/n5135b0294d85"><img
-            className="other-image hover:shadow-lg" src="/media/portfolio/lightning_talk.jpg"
-            alt="Giving a lightning talk"/></a>
-            <div className="other-text">Lightning Talk</div>
-          </div>
-          <div className="other-item"><a className="no-underline" href="https://ccculture.netlify.com/"><img
-            className="other-image hover:shadow-lg" src="/media/portfolio/blog.png"
-            alt="Blog about travel in China"/></a>
-            <div className="other-text">Travel Blog</div>
-          </div>
-        </div>
-      </div>
+      {/* <div className="py-6"><h1 className="section-title">OTHERS</h1> */}
+      {/*  <div className="others-container"> */}
+      {/*    <div className="other-item"> */}
+      {/*      <Link to="/"><img */}
+      {/*        className="other-image hover:shadow-lg" src="/media/portfolio/techblog.png" */}
+      {/*        alt="my tech blog"/></Link> */}
+      {/*      <div className="other-text">Tech Blog</div> */}
+      {/*    </div> */}
+      {/*    <div className="other-item"><a className="no-underline" */}
+      {/*                                   href="https://note.mu/panda_programm/n/n5135b0294d85"><img */}
+      {/*      className="other-image hover:shadow-lg" src="/media/portfolio/lightning_talk.jpg" */}
+      {/*      alt="Giving a lightning talk"/></a> */}
+      {/*      <div className="other-text">Lightning Talk</div> */}
+      {/*    </div> */}
+      {/*    <div className="other-item"><a className="no-underline" href="https://ccculture.netlify.com/"><img */}
+      {/*      className="other-image hover:shadow-lg" src="/media/portfolio/blog.png" */}
+      {/*      alt="Blog about travel in China"/></a> */}
+      {/*      <div className="other-text">Travel Blog</div> */}
+      {/*    </div> */}
+      {/*  </div> */}
+      {/* </div> */}
     </div>
   </div>
 );
