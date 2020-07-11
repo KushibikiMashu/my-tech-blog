@@ -1,0 +1,99 @@
+.flex {
+  display: flex;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.px-3 {
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+
+.pt-3 {
+  padding-top: 0.75rem;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  font-size: 1.875rem;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.mr-2 {
+  margin-right: .5rem;
+}
+
+.px-2 {
+  padding-right: .5rem;
+  padding-left: .5rem;
+}
+
+.border-grey-dark {
+  border-color: #8795a1;
+}
+
+.mx-2 {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.text3xl {
+  font-size: 1.875rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.my-0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+
+.portfolio {
+  margin-left: auto;
+  margin-right: auto;
+
+  &__flags {
+    padding-top: 0.75rem;
+  }
+}
