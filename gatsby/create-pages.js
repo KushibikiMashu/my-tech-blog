@@ -27,6 +27,12 @@ const createPages = async ({ graphql, actions }) => {
     component: path.resolve('./src/templates/categories-list-template.js')
   });
 
+  // Portfolio
+  createPage({
+    path: '/portfolio',
+    component: path.resolve('./src/templates/portfolio-template.js')
+  });
+
   // Posts and pages from markdown
   const result = await graphql(`
     {

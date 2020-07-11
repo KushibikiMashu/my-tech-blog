@@ -24,6 +24,14 @@ const items = [
 const Menu = ({ menu }: Props) => (
   <nav className={styles['menu']}>
     <ul className={styles['menu__list']}>
+      <li className={styles['menu__list-item']} key="portfolio">
+        <Link
+          to='/portfolio'
+          className={styles['menu__list-item-link']}
+        >
+          ポートフォリオ
+        </Link>
+      </li>
       {menu.map((item, index) => (
         <li className={styles['menu__list-item']} key={index}>
           <Link
@@ -46,7 +54,7 @@ const Menu = ({ menu }: Props) => (
           </a>
         </li>
       ))}
-      <li className={styles['menu__list-item']} key="github">
+      <li className={styles['menu__list-item']} key="policy">
         <Link
           to='/pages/policy'
           className={styles['menu__list-item-link']}
