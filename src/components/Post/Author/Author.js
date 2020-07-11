@@ -9,7 +9,6 @@ type Props = {
   photo: string,
   contacts: {
     twitter: string,
-    github: string,
   }
 }
 

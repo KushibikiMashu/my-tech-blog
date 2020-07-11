@@ -100,29 +100,6 @@ const Component: React.FC<Props> = (props) => (
         </div>
       </div>
     </div>
-
-    {/* side barのコンタクトに移動する */}
-    {/* <div> */}
-    {/*  <div className="bg-grey-lighter text-center"><h1 */}
-    {/*    className="w-full py-4 text-3xl md:text-2xl text-grey-darkest">CONTACT</h1> */}
-    {/*    <div><a className="no-underline" href="https://twitter.com/Panda_Program"><span */}
-    {/*      className="footer-icon text-twitter">
-        <i className="fab fa-twitter-square"></i></span></a><a */}
-    {/*      className="no-underline" href="https://www.facebook.com/mashu.kushibiki"><span */}
-    {/*      className="footer-icon text-facebook">
-        <i className="fab fa-facebook"></i></span></a><a */}
-    {/*      className="no-underline" href="https://www.linkedin.com/in/mashu-kushibiki"><span */}
-    {/*      className="footer-icon text-linkedin">
-        <i className="fab fa-linkedin"></i></span></a><a */}
-    {/*      className="no-underline" href="https://github.com/KushibikiMashu"><span */}
-    {/*      className="footer-icon text-github">
-        <i className="fab fa-github-square"></i></span></a></div> */}
-    {/*    <div className="pt-4 pb-3 text-grey-darker"> */}
-    {/*      <p className="text-base md:text-sm">by MASHU KUSHIBIKI</p><p */}
-    {/*      className="text-base md:text-sm">created with Elm</p></div> */}
-    {/*  </div> */}
-    {/* </div> */}
-
   </div>
 );
 

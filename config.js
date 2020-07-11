@@ -15,14 +15,19 @@ module.exports = {
       label: '記事一覧',
       path: '/'
     },
+    {
+      label: 'ポートフォリオ',
+      path: '/portfolio',
+    }
   ],
   author: {
     name: 'プログラミングをするパンダ',
     photo: '/photo.jpg',
-    bio: 'XP、OOP、TDDとペア・モブプロが好きなエンジニア。React&TypeScriptも好き。弁護士ドットコム（株）所属',
+    bio: 'React、TypeScriptが得意。OOP、TDDとペア・モブプロでクリーンな設計のコードを書くエンジニア。モダンなPHPも書きます。弁護士ドットコム（株）所属',
     contacts: {
       twitter: 'Panda_Program',
       github: 'KushibikiMashu',
+      linkedin: 'mashu-kushibiki',
     }
   }
 };

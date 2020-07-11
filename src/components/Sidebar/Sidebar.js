@@ -20,10 +20,10 @@ const Sidebar = ({ isIndex }: Props) => {
     <div className={styles['sidebar']}>
       <div className={styles['sidebar__inner']}>
         <Author author={author} isIndex={isIndex} />
+        <Contacts contacts={author.contacts} />
         <Ranking />
         <Menu menu={menu} />
         <Category hasHeading={true} />
-        <Contacts contacts={author.contacts} />
         <Copyright copyright={copyright} />
       </div>
     </div>
