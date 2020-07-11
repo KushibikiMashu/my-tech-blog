@@ -1,14 +1,11 @@
 import React from 'react';
-import { webSiteData } from './data';
+import { getWebSiteData } from './data';
+import type { Language } from '../../types';
 
 type Props = {
   sites: {
     title: string,
-    description: {
-      ja: string,
-      en: string,
-      ch: string,
-    },
+    description: string,
     techs: string[],
     image: {
       src: string,
@@ -30,7 +27,7 @@ const Component: React.FC<Props> = (props) => (
           <div className="px-8 py-4">
             <p className="card-text md:h-105px">
               <div>
-                {site.description.ja}
+                {site.description}
               </div>
             </p>
           </div>
@@ -43,9 +40,17 @@ const Component: React.FC<Props> = (props) => (
   </>
 );
 
-type ContainerProps = {}
+type ContainerProps = {
+  language: Language
+}
 
-const Container: React.FC<ContainerProps> = () => <Component sites={webSiteData}/>;
+const Container: React.FC<ContainerProps> = (props) => {
+  const sites = getWebSiteData(props.language);
+
+  console.log(sites);
+
+  return <Component sites={sites}/>;
+};
 
 Container.displayName = 'SiteCard';
 

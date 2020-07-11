@@ -65,3 +65,6 @@ export type AllMarkdownRemark = {
 };
 
 export type MarkdownRemark = Node;
+
+// Portfolio
+export type Language = 'ja' | 'en' | 'ch'
