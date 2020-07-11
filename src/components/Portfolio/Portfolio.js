@@ -9,7 +9,7 @@ const Component: React.FC<Props> = () => (
     {/* <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"/> */}
     <div>
       <div>
-        <div className="max-w-xl mx-auto container">
+        <div className="mx-auto container">
           <div className="self-start pt-4 justify-center my-auto">
             <ul className="flex justify-end px-3 pt-3 list-reset leading-narrow">
               <li className="text-3xl cursor-pointer mr-2">🇯🇵</li>
@@ -63,30 +63,34 @@ const Component: React.FC<Props> = () => (
           {/*    </div> */}
           {/*  </div> */}
           {/* </div> */}
-          <div className="py-6"><h1 className="section-title">PORTFOLIO</h1>
-            <div className="card-container">
-              <div className="card hover:shadow-lg my-5 md:my-0"><a className="no-underline"
-                                                                    href="https://creepynutsfans.com/">
-                <div className="flex items-center h-74px py-3 px-4"><span
-                  className="card-avatar text-white bg-blue-darkest"><i className="fas fa-music"></i></span>
-                  <div className="portfolio-card-title">Creepy Nuts Fans</div>
-                </div>
-                <img className="w-full" src="/media/portfolio/creepynutsfans.png" alt="Creepy Nuts Fans"/>
-                <div className="px-8 py-4">
-                  <p className="card-text md:h-105px">
-                    <div>日本一のラッパーR-指定、世界一のDJ松永のユニットCreepy Nutsの最新情報が集まるサイト。
-                      Next.js+TypeScriptで作り、Vercelにデプロイ</div>
-                  </p>
-                </div>
-                <div className="px-5 pt-2 pb-4"><span className="tooltip">#Next.js</span><span
-                  className="tooltip">#React</span><span className="tooltip">#TypeScript</span><span
-                  className="tooltip">#Tailwind CSS</span><span className="tooltip">#Vercel</span></div>
-              </a>
+          <div className="py-6">
+            <div className="flex flex-wrap justify-center">
+              <div className="card hover:shadow-lg my-5 md:my-4">
+                <a className="no-underline" href="https://creepynutsfans.com/">
+                  <div className="flex items-center h-74px py-3 px-4">
+                    <div className="portfolio-card-title">Creepy Nuts Fans</div>
+                  </div>
+                  <img className="w-full" src="/media/portfolio/creepynutsfans.png" alt="Creepy Nuts Fans"/>
+                  <div className="px-8 py-4">
+                    <p className="card-text md:h-105px">
+                      <div>
+                        日本一のラッパーR-指定、世界一のDJ松永のユニットCreepy Nutsの最新情報が集まるサイト。
+                        Next.js+TypeScriptで作り、Vercelにデプロイ
+                      </div>
+                    </p>
+                  </div>
+                  <div className="px-5 pt-2 pb-4">
+                    <span className="tooltip">#Next.js</span>
+                    <span className="tooltip">#React</span>
+                    <span className="tooltip">#TypeScript</span>
+                    <span className="tooltip">#Tailwind CSS</span>
+                    <span className="tooltip">#Vercel</span>
+                  </div>
+                </a>
               </div>
               <div className="card hover:shadow-lg my-5 md:my-0"><a className="no-underline"
                                                                     href="https://bitcoin-chart.netlify.com/">
-                <div className="flex items-center h-74px py-3 px-4"><span
-                  className="text-2.5rem text-bitcoin-chart mr-4"><i className="fab fa-bitcoin"></i></span>
+                <div className="flex items-center h-74px py-3 px-4">
                   <div className="portfolio-card-title">Bitcoin Chart</div>
                 </div>
                 <img className="w-full" src="/media/portfolio/bitcoin_chart.png" alt="Bitcoin chart"/>
@@ -105,8 +109,7 @@ const Component: React.FC<Props> = () => (
               </div>
               <div className="card hover:shadow-lg my-5 md:my-0"><a className="no-underline"
                                                                     href="https://japanese-whisky-nav.net">
-                <div className="flex items-center h-74px py-3 px-4"><span
-                  className="card-avatar text-white bg-orange-darker"><i className="fas fa-glass-whiskey"></i></span>
+                <div className="flex items-center h-74px py-3 px-4">
                   <div className="portfolio-card-title">Whisky Distilleries Navi</div>
                 </div>
                 <img className="w-full" src="/media/portfolio/whisky_distilleries.png"
@@ -143,22 +146,29 @@ const Component: React.FC<Props> = () => (
             </div>
           </div>
         </div>
-        <div>
-          <div className="bg-grey-lighter text-center"><h1
-            className="w-full py-4 text-3xl md:text-2xl text-grey-darkest">CONTACT</h1>
-            <div><a className="no-underline" href="https://twitter.com/Panda_Program"><span
-              className="footer-icon text-twitter"><i className="fab fa-twitter-square"></i></span></a><a
-              className="no-underline" href="https://www.facebook.com/mashu.kushibiki"><span
-              className="footer-icon text-facebook"><i className="fab fa-facebook"></i></span></a><a
-              className="no-underline" href="https://www.linkedin.com/in/mashu-kushibiki"><span
-              className="footer-icon text-linkedin"><i className="fab fa-linkedin"></i></span></a><a
-              className="no-underline" href="https://github.com/KushibikiMashu"><span
-              className="footer-icon text-github"><i className="fab fa-github-square"></i></span></a></div>
-            <div className="pt-4 pb-3 text-grey-darker">
-              <p className="text-base md:text-sm">by MASHU KUSHIBIKI</p><p
-              className="text-base md:text-sm">created with Elm</p></div>
-          </div>
-        </div>
+
+        {/* side barのコンタクトに移動する */}
+        {/* <div> */}
+        {/*  <div className="bg-grey-lighter text-center"><h1 */}
+        {/*    className="w-full py-4 text-3xl md:text-2xl text-grey-darkest">CONTACT</h1> */}
+        {/*    <div><a className="no-underline" href="https://twitter.com/Panda_Program"><span */}
+        {/*      className="footer-icon text-twitter">
+        <i className="fab fa-twitter-square"></i></span></a><a */}
+        {/*      className="no-underline" href="https://www.facebook.com/mashu.kushibiki"><span */}
+        {/*      className="footer-icon text-facebook">
+        <i className="fab fa-facebook"></i></span></a><a */}
+        {/*      className="no-underline" href="https://www.linkedin.com/in/mashu-kushibiki"><span */}
+        {/*      className="footer-icon text-linkedin">
+        <i className="fab fa-linkedin"></i></span></a><a */}
+        {/*      className="no-underline" href="https://github.com/KushibikiMashu"><span */}
+        {/*      className="footer-icon text-github">
+        <i className="fab fa-github-square"></i></span></a></div> */}
+        {/*    <div className="pt-4 pb-3 text-grey-darker"> */}
+        {/*      <p className="text-base md:text-sm">by MASHU KUSHIBIKI</p><p */}
+        {/*      className="text-base md:text-sm">created with Elm</p></div> */}
+        {/*  </div> */}
+        {/* </div> */}
+
       </div>
     </div>
   </>
