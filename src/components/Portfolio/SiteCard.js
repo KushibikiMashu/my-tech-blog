@@ -1,3 +1,4 @@
+// @flow strict
 import React from 'react';
 import { getWebSiteData } from './data';
 import type { Language } from '../../types';
@@ -46,8 +47,6 @@ type ContainerProps = {
 
 const Container: React.FC<ContainerProps> = (props) => {
   const sites = getWebSiteData(props.language);
-
-  console.log(sites);
 
   return <Component sites={sites}/>;
 };

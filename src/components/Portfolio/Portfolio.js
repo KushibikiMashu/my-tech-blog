@@ -1,4 +1,4 @@
-// eslint-disable
+// @flow strict
 import React, { useState } from 'react';
 import Link from 'gatsby-link';
 import SiteCard from './SiteCard';

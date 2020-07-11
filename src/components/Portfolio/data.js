@@ -1,3 +1,4 @@
+// @flow strict
 import type { Language } from '../../types';
 
 // eslint-disable-next-line
