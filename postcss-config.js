@@ -33,5 +33,7 @@ module.exports = [
     mediaQuery: false,
     minPixelValue: 0
   }),
-  autoprefixer()
+  autoprefixer(),
+  require('tailwindcss'),
+  require('./tailwind.config.js'),
 ];

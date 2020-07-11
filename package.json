@@ -63,6 +63,7 @@
     "gatsby-plugin-netlify-cms": "^4.3.5",
     "gatsby-plugin-offline": "^3.2.9",
     "gatsby-plugin-optimize-svgs": "^1.0.4",
+    "gatsby-plugin-postcss": "^2.3.11",
     "gatsby-plugin-react-helmet": "^3.3.4",
     "gatsby-plugin-robots-txt": "^1.5.1",
     "gatsby-plugin-sass": "^2.3.4",
@@ -99,6 +100,7 @@
     "react-helmet": "^5.2.1",
     "react-share": "^3.0.1",
     "react-toastify": "^5.5.0",
+    "tailwindcss": "^1.4.6",
     "textlint-rule-preset-ja-technical-writing": "^4.0.0"
   },
   "devDependencies": {

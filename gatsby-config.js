@@ -222,5 +222,6 @@ module.exports = {
         shortname: 'panda-program'
       }
     },
+    'gatsby-plugin-postcss',
   ]
 };

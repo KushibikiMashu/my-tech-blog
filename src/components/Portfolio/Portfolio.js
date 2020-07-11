@@ -1,65 +1,68 @@
 // eslint-disable
 import React from 'react';
+import './portfolio.modules.scss';
 
 type Props = {}
 
 const Component: React.FC<Props> = () => (
   <>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"/>
+    {/* <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"/> */}
     <div>
       <div>
         <div className="max-w-xl mx-auto container">
           <div className="self-start pt-4 justify-center my-auto">
             <ul className="flex justify-end px-3 pt-3 list-reset leading-narrow">
-              <li className="flag mr-2">🇯🇵</li>
-              <li className="flag px-2 border-l border-r border-solid border-grey-dark">🇬🇧</li>
-              <li className="flag mx-2">🇨🇳</li>
+              <li className="text-3xl cursor-pointer mr-2">🇯🇵</li>
+              <li className="text-3xl cursor-pointer px-2 border-l border-r border-solid border-grey-dark">🇬🇧</li>
+              <li className="text-3xl cursor-pointer mx-2">🇨🇳</li>
             </ul>
           </div>
-          <div className="pb-6"><h1 className="section-title">ABOUT</h1>
-            <div className="card-container">
-              <div className="card">
-                <div className="about-card-title">Career</div>
-                <i
-                  className="fas fa-shoe-prints py-6 w-full text-center text-4rem
-                   md:text-5xl rotate-1/8 text-red-darker"></i>
-                <div className="px-8 py-6">
-                  <p className="card-text md:h-210px">
-                    <div>1991年生まれ。2015年京都大学法学部卒業。総合商社に新卒で入社し、経理として働く。
-                      2017年に退社し、海外旅行をしてブログ立ち上げ。ブログ制作を通してプログラミングに目覚め、
-                      独学の後、2018年1月より未経験からエンジニアとしてWeb制作会社に就職。
-                      現在、都内のIT企業にてエンジニアとして働いている。</div>
-                  </p>
-                </div>
-              </div>
-              <div className="card">
-                <div className="about-card-title">Experiences</div>
-                <i className="fas fa-code py-2 md:py-4 w-full text-4rem text-center text-blue-dark"></i>
-                <div className="px-8 py-6">
-                  <p className="card-text md:h-210px">
-                    <div>PHP (Laravel, WordPress, Yii).
-                      JavaScript (React / Redux / Flow, Node.js). Python (Jupyter
-                      Notebook, Pandas, matplotlib, Word2vec).
-                      CSS (Bootstrap 4). AWS (Lambda, Cloud Watch, EC2,
-                      Route53, KMS). Docker, Vagrant. Selenium, Puppeteer etc.
-                      このサイトはElmとTailwind CSSで作成しています。
-                    </div>
-                  </p>
-                </div>
-              </div>
-              <div className="card">
-                <div className="about-card-title">Favorites</div>
-                <i className="fas fa-star py-2 md:py-4 w-full text-4rem text-center text-yellow-dark"></i>
-                <div className="px-8 py-6">
-                  <p className="card-text md:h-210px">
-                    <div>プログラミング・日本語ラップ・ウィスキー・旅行（国内・海外）・
-                      歴史・伝統・思想・哲学・企業分析・水泳・英語・中国茶・食べ歩き・
-                      カフェ巡り・新しい技術。何より学ぶことが好き。</div>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* <div className="pb-6"><h1 className="section-title">ABOUT</h1> */}
+          {/*  <div className="card-container"> */}
+          {/*    <div className="card"> */}
+          {/*      <div className="about-card-title">Career</div> */}
+          {/*      <i */}
+          {/*        className="fas fa-shoe-prints py-6 w-full text-center text-4rem */}
+          {/*         md:text-5xl rotate-1/8 text-red-darker"></i> */}
+          {/*      <div className="px-8 py-6"> */}
+          {/*        <p className="card-text md:h-210px"> */}
+          {/*          <div>1991年生まれ。2015年京都大学法学部卒業。総合商社に新卒で入社し、経理として働く。 */}
+          {/*            2017年に退社し、海外旅行をしてブログ立ち上げ。ブログ制作を通してプログラミングに目覚め、 */}
+          {/*            独学の後、2018年1月より未経験からエンジニアとしてWeb制作会社に就職。 */}
+          {/*            現在、都内のIT企業にてエンジニアとして働いている。</div> */}
+          {/*        </p> */}
+          {/*      </div> */}
+          {/*    </div> */}
+          {/*    <div className="card"> */}
+          {/*      <div className="about-card-title">Experiences</div> */}
+          {/*      <i className="fas fa-code py-2 md:py-4 w-full
+           text-4rem text-center text-blue-dark"></i> */}
+          {/*      <div className="px-8 py-6"> */}
+          {/*        <p className="card-text md:h-210px"> */}
+          {/*          <div>PHP (Laravel, WordPress, Yii). */}
+          {/*            JavaScript (React / Redux / Flow, Node.js). Python (Jupyter */}
+          {/*            Notebook, Pandas, matplotlib, Word2vec). */}
+          {/*            CSS (Bootstrap 4). AWS (Lambda, Cloud Watch, EC2, */}
+          {/*            Route53, KMS). Docker, Vagrant. Selenium, Puppeteer etc. */}
+          {/*            このサイトはElmとTailwind CSSで作成しています。 */}
+          {/*          </div> */}
+          {/*        </p> */}
+          {/*      </div> */}
+          {/*    </div> */}
+          {/*    <div className="card"> */}
+          {/*      <div className="about-card-title">Favorites</div> */}
+          {/*      <i className="fas fa-star py-2 md:py-4 w-full text-4rem
+          text-center text-yellow-dark"></i> */}
+          {/*      <div className="px-8 py-6"> */}
+          {/*        <p className="card-text md:h-210px"> */}
+          {/*          <div>プログラミング・日本語ラップ・ウィスキー・旅行（国内・海外）・ */}
+          {/*            歴史・伝統・思想・哲学・企業分析・水泳・英語・中国茶・食べ歩き・ */}
+          {/*            カフェ巡り・新しい技術。何より学ぶことが好き。</div> */}
+          {/*        </p> */}
+          {/*      </div> */}
+          {/*    </div> */}
+          {/*  </div> */}
+          {/* </div> */}
           <div className="py-6"><h1 className="section-title">PORTFOLIO</h1>
             <div className="card-container">
               <div className="card hover:shadow-lg my-5 md:my-0"><a className="no-underline"
