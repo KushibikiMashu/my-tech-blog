@@ -8,7 +8,8 @@ type Props = {
 
 const Copyright = ({ copyright }: Props) => (
   <div className={styles['copyright']}>
-    {copyright}
+    <p>This site uses Google Analytics</p>
+    <p>{copyright}</p>
   </div>
 );
 
