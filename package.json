@@ -100,6 +100,7 @@
     "react-helmet": "^5.2.1",
     "react-share": "^3.0.1",
     "react-toastify": "^5.5.0",
+    "sharp": "^0.25.4",
     "tailwindcss": "^1.4.6",
     "textlint-rule-preset-ja-technical-writing": "^4.0.0"
   },
@@ -110,6 +111,7 @@
     "@babel/plugin-transform-flow-strip-types": "^7.10.1",
     "@babel/preset-env": "7.6.3",
     "@babel/preset-react": "7.6.3",
+    "@types/sharp": "^0.25.0",
     "ampifyjs": "0.0.3",
     "autoprefixer": "9.6.4",
     "babel-core": "7.0.0-bridge.0",
