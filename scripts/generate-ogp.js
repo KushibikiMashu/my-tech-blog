@@ -18,8 +18,8 @@ const media = path.resolve(__dirname, `../static/media/${year}/${month}/${date}`
 const target = `${media}/${year}_${month}_${date}__0.png`;
 
 (async () => {
-  const font = path.resolve(__dirname, './modules/NotoSansJP-Bold.otf');
-  const src = path.resolve(__dirname, './modules/ogp-base.png');
+  const font = path.resolve(__dirname, './assets/NotoSansJP-Bold.otf');
+  const src = path.resolve(__dirname, './assets/ogp-base.png');
 
   registerFont(font, { family: 'NotoSansJP' });
 
