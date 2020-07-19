@@ -39,5 +39,10 @@ const target = `${media}/${year}_${month}_${date}__0.png`;
   ctx.fillText(text.split('\\n').join('\n'), width / 2, height * 2.8 / 7, 500);
 
   const buf = canvas.toBuffer();
+
+  if (!fs.existsSync(media)) {
+    fs.mkdirSync(media);
+  }
+
   fs.writeFileSync(target, buf);
 })();
