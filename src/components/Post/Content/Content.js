@@ -30,8 +30,7 @@ const insertTocIntoBody = (toc: string, body: string): string => {
   div.innerHTML = toc;
   div.classList.add(styles['content__body-toc']);
 
-  // 最初の画像の下の位置に目次を追加する
-  article.insertBefore(div, firstElement.nextSibling);
+  article.insertBefore(div, firstElement);
   article.insertBefore(h2, div);
   return article.outerHTML;
 };
