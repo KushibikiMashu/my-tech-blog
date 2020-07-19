@@ -13,7 +13,7 @@ type Props = {
 }
 
 const LinkButton = ({ url }: Props) => {
-  const copyCallback = useCallback(() => toast.success('記事のURLがコピーされました 🎉'));
+  const copyCallback = useCallback(() => toast.success('記事のURLをコピーしました'));
   return (
     <button
       className={styles['button']}
@@ -36,7 +36,7 @@ const LinkButton = ({ url }: Props) => {
         <FontAwesomeIcon
           color="white"
           icon={faLink}
-          size='lg'
+          size='sm'
         />
       </CopyToClipboard>
       <ToastContainer
@@ -49,6 +49,7 @@ const LinkButton = ({ url }: Props) => {
         pauseOnVisibilityChange
         draggable
         pauseOnHover
+        style={{ fontSize: 16 }}
       />
     </button>
   );
