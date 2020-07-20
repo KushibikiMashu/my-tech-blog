@@ -16,5 +16,10 @@ sed "3s/2020-00-00T00:00:00.000Z/$now/g" "./content/posts/template.md" \
   | sed "6s/true/false/g" \
   | sed "s|$img_template|$img|" > "./content/posts/2020/$name"
 
-mkdir "$(date '+static/media/%Y/%m/%d')"
+dirname="$(date '+static/media/%Y/%m/%d')"
+
+if  [ ! -e "$dirname" ]; then
+  mkdir "$dirname"
+fi
+
 cp static/photo.jpg "static/${img}"
