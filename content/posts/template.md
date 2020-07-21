@@ -80,6 +80,21 @@ Photo by []() on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium
     <figcaption class="explain__figureCaption">解説パンダくん</figcaption>
   </figure>
   <div class="explain__paragraphWrapper">
+    <p class="explain__paragraphContent">
+        <a href="https://github.com/vercel/next.js/tree/canary/examples" target="_blank" rel="noopener">Next.jsのExamplesのページ</a>
+        には、Tailwind CSSなど各種ツールの設定サンプルが書かれているんだよ。サンプルの数は200種類以上あるから、Next.jsにツールを導入したい時はまずここから探すことをオススメするよ。
+    </p>
+  </div>
+</div>
+
+<div class="explain">
+  <figure class="explain__figure">
+    <div class="explain__figureWrapper">
+      <img class="explain__figureImage" src="/photo.jpg" alt="解説パンダくん" width="100" height="100" data-lazy-loaded="true">
+    </div>
+    <figcaption class="explain__figureCaption">解説パンダくん</figcaption>
+  </figure>
+  <div class="explain__paragraphWrapper">
     <p class="explain__paragraphContent">foo</p>
   </div>
 </div>
