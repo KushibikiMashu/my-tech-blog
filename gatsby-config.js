@@ -45,6 +45,14 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://panda-program.com',
+        sitemap: 'https://panda-program.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
+    {
       resolve: 'gatsby-plugin-feed',
       options: {
         query: `
