@@ -10,7 +10,6 @@ import type { Node, FrontmatterObj } from '../../types';
 import PostList from './PostList';
 import styles from './Post.module.scss';
 import ShareButtons from './Buttons';
-import NextPrevPost from './NextPrevPost';
 import SideMenu from './SideMenu';
 
 type Props = {
@@ -29,7 +28,7 @@ const Post = ({ post }: Props) => {
   const shareTitle = `「${title}」\n`;
 
   const nodes: FrontmatterObj[] = usePublishedPostList();
-  const hasPosts = nodes.length !== 0;
+  // const hasPosts = nodes.length !== 0;
 
   return (
     <div className={styles['post']}>
@@ -48,24 +47,22 @@ const Post = ({ post }: Props) => {
       </div>
 
       <div className={styles['post__footer']}>
+        <PostList tags={tags} title={title}/>
+
         {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs}/>}
 
         <div className={styles['post__footer-share']}>
-          <p className={styles['post__footer-shareComment']}>
-            記事をシェアする😊🐼
-          </p>
           <div className={styles['post__footer-shareButtons']}>
             <ShareButtons shareTitle={shareTitle} url={postUrl}/>
           </div>
         </div>
 
-        <PostList tags={tags} title={title}/>
+        {/* 前後の記事 */}
+        {/* {hasPosts ? <NextPrevPost date={date} nodes={nodes}/> : null} */}
 
-        {hasPosts ? <NextPrevPost date={date} nodes={nodes}/> : null}
-
-         <div className={styles['post__navButton']}>
+        <div className={styles['post__navButton']}>
           <Link className={styles['post__homeButton']} to="/">Topに戻る</Link>
-         </div>
+        </div>
 
         <Author {...author}/>
       </div>
