@@ -38,10 +38,6 @@
     &-share {
       @include padding(2, 0);
 
-      &Comment {
-        text-align: center;
-      }
-
       &Buttons {
         display: flex;
         justify-content: center;

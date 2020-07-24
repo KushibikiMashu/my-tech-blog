@@ -66,7 +66,7 @@ const PostList = ({ tags, title }: Props) => {
   return posts.length === 0 ? null
     : (
       <div className={styles['postList']}>
-        <p className={styles['postList__heading-title']}>{tags[0]}に関する記事</p>
+        <h2 className={styles['postList__heading-title']}>{tags[0]}に関する記事</h2>
         {posts.map(({ title, slug }: Post) => (
           <div className={styles['postList__post']} key={title}>
             <Link className={styles['postList__post-link']} to={slug}>
