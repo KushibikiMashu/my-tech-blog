@@ -20,8 +20,8 @@ const Layout = ({
   description,
   socialImage,
 }: Props) => {
-  const { author, url } = useSiteMetadata();
-  const metaImage = socialImage != null ? socialImage : author.photo;
+  const { url } = useSiteMetadata();
+  const metaImage = socialImage != null ? socialImage : '/site.png';
   const metaImageUrl = url + withPrefix(metaImage);
   const shortDescription = typeof description === 'undefined' ? '' : description.slice(0, 120);
 
