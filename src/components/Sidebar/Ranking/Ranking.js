@@ -6,7 +6,7 @@ const Ranking = () => {
     {
       title: 'Next.js + esa.io + VercelでJAMStackな爆速ブログを構築する',
       path: '/posts/nextjs-with-cms-esa',
-      count: 75,
+      count: 76,
     },
     {
       title: 'テスト駆動開発（TDD）とは何か。コードで実践方法を解説します',
@@ -16,6 +16,11 @@ const Ranking = () => {
     {
       title: 'Tailwind CSS入門 - フロントエンドで素晴らしい開発体験を得るために',
       slug: '/posts/recommend-developers-use-tailwind-css',
+      count: 2,
+    },
+    {
+      title: 'Clean Coderに挙げられている「ソフトウェアのプロが備えるべき最低限のこと」',
+      slug: '/posts/requirements-for-a-professional-programmer',
       count: 2,
     },
   ];
