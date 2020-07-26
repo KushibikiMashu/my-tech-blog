@@ -23,9 +23,8 @@
   }
 
   &__title {
-    width: 575px;
+    max-width: 575px;
     font-size: $typographic-base-font-size * 1.65;
-    max-width: $layout-post-width;
     margin-left: auto;
     margin-right: auto;
     font-weight: 600;
