@@ -31,7 +31,7 @@ const Layout = ({
         <html lang="ja"/>
         <title>{title}</title>
         <meta name="description" content={shortDescription}/>
-        {/* <meta name="image" content={metaImageUrl} /> */}
+        <meta name="image" content={metaImageUrl} />
         <meta property="og:description" content={shortDescription}/>
         <meta property="og:site_name" content={title}/>
         <meta property="og:image" content={metaImageUrl}/>
