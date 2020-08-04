@@ -25,7 +25,7 @@ const TwitterButton = ({ url, title }: Props) => (
       });
     }}
   >
-    <TwitterIcon className={styles['button-icon']} size={40} borderRadius={10} round />
+    <TwitterIcon className={styles['button-icon']} size={40} borderRadius={10} />
   </TwitterShareButton>
 );
 
