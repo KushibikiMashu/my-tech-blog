@@ -38,9 +38,6 @@ const Layout = ({
         <meta property="twitter:title" content={title}/>
         <meta property="twitter:description" content={shortDescription}/>
         <meta property="twitter:image" content={metaImageUrl}/>
-        {/* google adsence */}
-        <script data-ad-client="ca-pub-4506236710956024" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"/>
-        {/* SEO */}
       </Helmet>
       {children}
     </div>
