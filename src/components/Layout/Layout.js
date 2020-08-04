@@ -31,13 +31,14 @@ const Layout = ({
         <html lang="ja"/>
         <title>{title}</title>
         <meta name="description" content={shortDescription}/>
+        {/* <meta name="image" content={metaImageUrl} /> */}
         <meta property="og:description" content={shortDescription}/>
         <meta property="og:site_name" content={title}/>
         <meta property="og:image" content={metaImageUrl}/>
-        <meta property="twitter:card" content="summary_large_image"/>
-        <meta property="twitter:title" content={title}/>
-        <meta property="twitter:description" content={shortDescription}/>
-        <meta property="twitter:image" content={metaImageUrl}/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content={title}/>
+        <meta name="twitter:description" content={shortDescription}/>
+        <meta name="twitter:image" content={metaImageUrl}/>
       </Helmet>
       {children}
     </div>
