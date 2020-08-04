@@ -40,10 +40,6 @@
         &-activeLink {
           color: #6B46C1;
         }
-
-        &-icon {
-          margin-right: 8px;
-        }
       }
     }
   }
@@ -82,11 +78,6 @@
 
     :hover {
       cursor: pointer;
-    }
-
-    &-icon {
-      font-size: 16px;
-      padding-bottom: 3px;
     }
 
     &-button {

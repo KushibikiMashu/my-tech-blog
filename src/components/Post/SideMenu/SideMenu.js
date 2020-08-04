@@ -66,11 +66,11 @@ const SideMenu = ({ nodes, postId }: Props) => {
           aria-label={isOpen ? 'show post list' : 'close post list'}
           onClick={toggleCallback}
         >
-          {isOpen ? <FontAwesomeIcon className={styles['sideMenu__fab-icon']} icon={faTimes} />
+          {isOpen ? <FontAwesomeIcon icon={faTimes} size="xs" />
             : <>
-              <FontAwesomeIcon className={styles['sideMenu__fab-icon']} icon={faChevronLeft} />
+              <FontAwesomeIcon icon={faChevronLeft} size="xs" />
               {' '}
-              <FontAwesomeIcon className={styles['sideMenu__fab-icon']} icon={faChevronRight} />
+              <FontAwesomeIcon icon={faChevronRight} size="xs" />
             </>
           }
         </button>
