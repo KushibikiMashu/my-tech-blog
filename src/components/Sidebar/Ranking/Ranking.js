@@ -14,13 +14,13 @@ const Ranking = () => {
       count: 72,
     },
     {
-      title: 'Tailwind CSS入門 - フロントエンドで素晴らしい開発体験を得るために',
-      slug: '/posts/recommend-developers-use-tailwind-css',
-      count: 2,
+      title: 'jQueryの作者による「毎日コードを書く」習慣の効果と自分で半年やってみた感想',
+      slug: '/posts/write-code-every-day',
+      count: 9,
     },
     {
-      title: 'Clean Coderに挙げられている「ソフトウェアのプロが備えるべき最低限のこと」',
-      slug: '/posts/requirements-for-a-professional-programmer',
+      title: 'Next.js + TypeScriptにStorybookを導入して遭遇したエラーを全て共有します',
+      slug: '/posts/nextjs-storybook-typescript-errors',
       count: 2,
     },
   ];
