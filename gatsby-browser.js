@@ -1,5 +1,8 @@
 'use strict';
 
+// SVGが一瞬大きくなる（huge）のを防ぐ
+require('@fortawesome/fontawesome-svg-core/styles.css');
+
 require('./src/assets/scss/init.scss');
 
 // prism.js
