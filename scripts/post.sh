@@ -21,5 +21,3 @@ dirname="$(date '+static/media/%Y/%m/%d')"
 if  [ ! -e "$dirname" ]; then
   mkdir "$dirname"
 fi
-
-cp static/photo.jpg "static/${img}"
