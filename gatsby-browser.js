@@ -1,5 +1,8 @@
 'use strict';
 
+// 数式のCSS
+require('katex/dist/katex.min.css');
+
 // SVGが一瞬大きくなる（huge）のを防ぐ
 require('@fortawesome/fontawesome-svg-core/styles.css');
 
