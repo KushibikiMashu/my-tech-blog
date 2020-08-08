@@ -29,7 +29,8 @@
     margin-right: auto;
     font-weight: 600;
     text-align: center;
-    word-break: break-all;
+    word-break: normal;
+    overflow-wrap: normal;
     @include line-height(1.5);
     @include margin-top(0.5);
     @include margin-bottom(0.5);
