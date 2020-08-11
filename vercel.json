@@ -3,10 +3,7 @@
     { "source": "/posts/google-apps-script-api-templates", "destination": "/posts/gas-slack-line-bot" },
     { "source": "/posts/collect-stripe-all-subscriptions-by-google-apps-script", "destination": "/posts/collect-stripe-subscriptions-by-gas" },
     { "source": "/posts/make-uml-flowchart-from-spreadsheet-by-google-apps-script", "destination": "/posts/uml-from-spreadsheet-by-gas" },
-    { "source": "/posts/(.*)/", "destination": "/posts/$1" },
-    { "source": "/posts/(.*)/index.html", "destination": "/posts/$1" },
-    { "source": "/amp/posts/(.*)/", "destination": "/amp/posts/$1" },
-    { "source": "/amp/posts/(.*)/index.html", "destination": "/amp/posts/$1" }
+    { "source": "/posts/(.*)/", "destination": "/posts/$1" }
   ],
   "headers": [
     {
