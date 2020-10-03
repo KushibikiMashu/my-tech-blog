@@ -19,5 +19,5 @@ sed "3s/2020-00-00T00:00:00.000Z/$now/g" "./content/posts/template.md" \
 dirname="$(date '+static/media/%Y/%m/%d')"
 
 if  [ ! -e "$dirname" ]; then
-  mkdir "$dirname"
+  mkdir -p "$dirname"
 fi
