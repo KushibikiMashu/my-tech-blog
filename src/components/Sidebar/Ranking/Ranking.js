@@ -5,7 +5,7 @@ const Ranking = () => {
   const posts = [
     {
       title: 'Next.js + esa.io + VercelでJAMStackな爆速ブログを構築する',
-      path: '/posts/nextjs-with-cms-esa',
+      path: '/posts/nextjs-with-cms-esa/',
     },
     {
       title: 'テスト駆動開発（TDD）とは何か。コードで実践方法を解説します',
