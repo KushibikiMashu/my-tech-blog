@@ -20,7 +20,8 @@
     "test": "jest -o --config ./jest/jest-config.js",
     "test:coverage": "jest --coverage --config ./jest/jest-config.js",
     "test:watch": "jest --watch --config ./jest/jest-config.js",
-    "test:update": "jest -o --config ./jest/jest-config.js --updateSnapshot -u"
+    "test:update": "jest -o --config ./jest/jest-config.js --updateSnapshot -u",
+    "upgrade-interactive": "npm-check --update"
   },
   "repository": "https://github.com/KushibikiMashu/my-tech-blog",
   "keywords": [
@@ -139,6 +140,7 @@
     "jest-cli": "^25.5.4",
     "lint-staged": "^10.2.11",
     "lost": "8.3.1",
+    "npm-check": "^5.9.2",
     "postcss-pxtorem": "4.0.1",
     "react-test-renderer": "16.10.2",
     "recursive-readdir": "^2.2.2",
