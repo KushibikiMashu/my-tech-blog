@@ -1,6 +1,11 @@
 ---
 title: "プライバシーポリシー"
+date: "2019-01-01T00:00:00.000Z"
+updatedAt: ""
 template: "page"
+draft: false
+slug: "/posts/policy"
+socialImage: "/media/site.png"
 ---
 
 ## サイトアドレス
