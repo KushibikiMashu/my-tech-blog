@@ -157,12 +157,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-adsense',
-      options: {
-        publisherId: 'ca-pub-4506236710956024'
-      },
-    },
-    {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         query: `
