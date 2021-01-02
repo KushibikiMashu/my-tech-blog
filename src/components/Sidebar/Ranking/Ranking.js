@@ -25,9 +25,12 @@ const PostList = (props: { heading: string, posts: RankingPost[], host?: string 
     <ul style={{ paddingLeft: '20px' }}>
       {props.posts.map((post) => (
         <li key={post.title}>
-          {props.host ? <a href={`${props.host}${post.path}`}>{post.title}</a> : <Link to={post.path}>{post.title}</Link> }
+          {props.host
+            ? <a href={`${props.host}${post.path}`} target="_blank">{post.title}</a>
+            : <Link to={post.path}>{post.title}</Link>
+          }
           <div style={{ height: 13 }}>
-            <a href={post.hatenaUrl}>
+            <a href={post.hatenaUrl} target="_blank">
               <img src={post.hatenaImgUrl} alt="はてなブックマーク数"/>
             </a>
           </div>
