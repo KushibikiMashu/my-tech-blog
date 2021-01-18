@@ -7,33 +7,37 @@ export type Post = {
 export const posts: Post[] = [
   {
     title: 'Next.jsのISRを使ってスプレッドシートをデータソースにして業務フローを変えた話',
-    path: '/posts/nextjs-isr-spreadsheet',
+    slug: '/nextjs-isr-spreadsheet',
   },
   {
     title: 'テスト駆動開発（TDD）とは何か。コードで実践方法を解説します',
-    path: '/posts/test-driven-development/',
+    slug: '/test-driven-development/',
   },
   {
     title: 'Next.js + esa.io + VercelでJAMStackな爆速ブログを構築する',
-    path: '/posts/nextjs-with-cms-esa/',
+    slug: '/nextjs-with-cms-esa/',
   },
   {
     title: '弁護士ドットコムライブラリーのフロントエンドのアーキテクチャ（Next.js + TypeScript）',
-    path: '/posts/bengo4com-library-frontend',
+    slug: '/bengo4com-library-frontend',
   },
   {
     title: 'jQueryの作者による「毎日コードを書く」習慣の効果と自分で半年やってみた感想',
-    path: '/posts/write-code-every-day',
+    slug: '/write-code-every-day',
   },
-];
+].map((post) => ({ ...post, path: `/posts${post.slug}` }));
 
 export const zennPosts: Post[] = [
   {
+    title: 'Next.jsに「できるだけ」依存しないReactアプリケーションの構成',
+    slug: '/nextjs-architecture',
+  },
+  {
     title: 'Next.jsのルーティングにTypeScriptで型をつけたい',
-    path: '/panda_program/articles/typescript-nextjs-routing',
+    slug: '/typescript-nextjs-routing',
   },
   {
     title: 'Reactコンポーネントの抽象化とインターフェースのリファクタリング',
-    path: '/panda_program/articles/interface-and-refactoring',
+    slug: '/interface-and-refactoring',
   },
-];
+].map((post) => ({ ...post, path: `/panda_program/articles${post.slug}` }));
