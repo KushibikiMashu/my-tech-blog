@@ -12,21 +12,6 @@ description: ""
 socialImage: "/media/2021/0/00/2021_00_00__0.png"
 ---
 
-データ構造記事
-----
-👈 この記事
-
-- [配列: ArrayStack・ArrayQueue・ArrayDeque](/posts/data-structure-array)
-- [連結リスト: SLList(Singly-Linked List)・DLList(Doubly-Linked List)](/posts/data-structure-linked-list)
-- [チェイン法を使ったハッシュテーブル: ChainedHashTable](/posts/data-structure-hash-table)
-- [二分木・二分探索木: BinaryTree・BinarySearchTree](/posts/data-structure-binary-tree)
-- [赤黒木: RedBlackTree](/posts/data-structure-red-black-tree)
-- [二分ヒープ: BinaryHeap](/posts/data-structure-binary-heap)
-- [ソート: MergeSort・QuickSort](/posts/data-structure-sort-algorithms)
-- グラフの探索: 幅優先探索・深さ優先探索
-
-----
-
 howを書くときはカテゴリーは"how to"
 これは検索流入狙い
 
@@ -126,8 +111,6 @@ Photo by []() on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium
 
 ##
 
-![](/media/2021/0/00/2021_00_00__0.png)
-![](/media/2021/0/00/2021_00_00__0.png)
 ![](/media/2021/0/00/2021_00_00__0.png)
 ![](/media/2021/0/00/2021_00_00__0.png)
 ![](/media/2021/0/00/2021_00_00__0.png)
