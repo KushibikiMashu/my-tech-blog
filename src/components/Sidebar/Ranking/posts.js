@@ -29,6 +29,10 @@ export const posts: Post[] = [
 
 export const zennPosts: Post[] = [
   {
+    title: 'React を深く知るための入り口',
+    slug: '/deep-dive-into-react'
+  },
+  {
     title: 'Next.jsに「できるだけ」依存しないReactアプリケーションの構成',
     slug: '/nextjs-architecture',
   },

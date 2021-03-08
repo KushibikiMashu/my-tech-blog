@@ -13,7 +13,7 @@ type RankingPost = {
 const hatena = 'https://b.hatena.ne.jp/entry';
 const zenn = 'https://zenn.dev';
 
-const getHatenaPosts = (posts: Post[], url: string): RankingPost[] => posts.map((post) => ({
+const getPosts = (posts: Post[], url: string): RankingPost[] => posts.map((post) => ({
   ...post,
   hatenaUrl: `${hatena}/${url}${post.path}`,
   hatenaImgUrl: `${hatena}/image/${url}${post.path}`,
@@ -44,8 +44,8 @@ const Ranking = () => {
   const { url } = useSiteMetadata();
 
   return <>
-    <PostList heading="人気記事" posts={getHatenaPosts(posts, url)} />
-    <PostList heading="Zenn 投稿記事" posts={getHatenaPosts(zennPosts, zenn)} host={zenn} />
+    <PostList heading="人気記事" posts={getPosts(posts, url)} />
+    <PostList heading="Zenn 投稿記事" posts={getPosts(zennPosts, zenn)} host={zenn} />
   </>;
 };
 
