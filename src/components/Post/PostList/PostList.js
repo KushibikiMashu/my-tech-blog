@@ -40,7 +40,7 @@ const relatedPosts = (tags: string[], title: string, nodes: Nodes): Array<Post> 
         continue;
       }
 
-      if (postTags.includes(tag)) {
+      if (postTags && postTags.includes(tag)) {
         posts.push(node);
       }
     }
