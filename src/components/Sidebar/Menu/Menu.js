@@ -25,7 +25,7 @@ const Menu = ({ menu }: Props) => (
       ))}
       <li className={styles['menu__list-item']} key="policy">
         <Link
-          to='/pages/policy'
+          to='/posts/policy'
           className={styles['menu__list-item-link']}
         >
           プライバシーポリシー
