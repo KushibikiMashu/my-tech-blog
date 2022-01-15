@@ -1,6 +1,6 @@
 ---
 title: ""
-date: "2021-00-00T00:00:00.000Z"
+date: "2022-00-00T00:00:00.000Z"
 updatedAt: ""
 template: "post"
 draft: true
@@ -9,7 +9,7 @@ category: ""
 tags:
     - ""
 description: ""
-socialImage: "/media/2021/0/00/2021_00_00__0.png"
+socialImage: "/media/2022/0/00/2022_00_00__0.png"
 ---
 
 howを書くときはカテゴリーは"how to"
@@ -64,7 +64,7 @@ SEO対策
 （## 今回のコード全文を掲載します）
 -----
 
-![](/media/2021/0/00/2021_00_00__0.png)
+![](/media/2022/0/00/2022_00_00__0.png)
 designed by [freepik.com](https://stories.freepik.com/)
 
 unsplash
@@ -111,9 +111,9 @@ Photo by []() on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium
 
 ##
 
-![](/media/2021/0/00/2021_00_00__0.png)
-![](/media/2021/0/00/2021_00_00__0.png)
-![](/media/2021/0/00/2021_00_00__0.png)
+![](/media/2022/0/00/2022_00_00__0.png)
+![](/media/2022/0/00/2022_00_00__0.png)
+![](/media/2022/0/00/2022_00_00__0.png)
 
 
 ```

@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # date書き換え
-year=2021
+year=2022
 now=$(date "+%Y-%m-%dT%H:%M:%S.000Z")
 img_template="/media/${year}/0/00/${year}_00_00__0.png"
 img=$(date "+/media/%Y/%m/%d/%Y_%m_%d__0.png")
